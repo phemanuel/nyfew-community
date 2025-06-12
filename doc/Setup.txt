@@ -1,0 +1,235 @@
+Complete all migration file contents for the tables defined?
+
+Complete all Eloquent model files with relationships?
+
+Set up factories and seeders for testing?
+
+Install and configure Spatie Roles & Permissions?
+
+Build authentication & profile flow using Laravel Breeze or Jetstream?
+
+Set up authentication (Laravel Breeze, Fortify, Jetstream)?
+
+Scaffold the admin panel for roles & permissions?
+
+Start building the frontend (Blade/Livewire/Vue)?
+-------------------------------
+
+Database structure
+-----------------------
+✅ Users & Roles
+php
+Copy
+Edit
+users
+- id
+- name
+- email
+- password
+- avatar
+- bio
+- location
+- rank_id (FK)
+- credit (default 0)
+- created_at, updated_at
+Using Spatie:
+
+php
+Copy
+Edit
+roles
+permissions
+model_has_roles
+model_has_permissions
+role_has_permissions
+🧾 Profiles & Timeline
+If profile is extended heavily:
+
+php
+Copy
+Edit
+profiles
+- id
+- user_id (FK)
+- dob
+- gender
+- phone
+- social_links (JSON)
+- created_at, updated_at
+php
+Copy
+Edit
+timeline_activities
+- id
+- user_id
+- type (e.g., post, badge, quest, group_join)
+- reference_id (polymorphic)
+- created_at
+📢 Posts & Newsfeed
+php
+Copy
+Edit
+posts
+- id
+- user_id
+- content
+- image (nullable)
+- type (text, image, link, poll)
+- visibility (public, friends, group)
+- created_at, updated_at
+php
+Copy
+Edit
+post_comments
+- id
+- post_id
+- user_id
+- comment
+- created_at
+php
+Copy
+Edit
+post_likes
+- id
+- post_id
+- user_id
+- created_at
+👥 Groups
+php
+Copy
+Edit
+groups
+- id
+- name
+- description
+- type (public/private/hidden)
+- avatar
+- owner_id
+- created_at
+php
+Copy
+Edit
+group_members
+- id
+- group_id
+- user_id
+- role (admin/moderator/member)
+- joined_at
+php
+Copy
+Edit
+group_posts
+- id
+- group_id
+- user_id
+- post_id (FK to posts table)
+- created_at
+🏅 Badges, Quests & Ranks
+php
+Copy
+Edit
+badges
+- id
+- name
+- description
+- icon
+- created_at
+php
+Copy
+Edit
+user_badges
+- id
+- badge_id
+- user_id
+- awarded_at
+php
+Copy
+Edit
+quests
+- id
+- name
+- description
+- reward_credit
+- created_at
+php
+Copy
+Edit
+user_quests
+- id
+- quest_id
+- user_id
+- completed_at
+php
+Copy
+Edit
+ranks
+- id
+- name
+- level
+- min_credit
+- created_at
+💬 Forum
+php
+Copy
+Edit
+forums
+- id
+- title
+- description
+- parent_id (nullable) // for sub-forums
+- created_at
+php
+Copy
+Edit
+threads
+- id
+- forum_id
+- user_id
+- title
+- content
+- created_at
+php
+Copy
+Edit
+thread_replies
+- id
+- thread_id
+- user_id
+- content
+- created_at
+💳 Credit System
+Already partially included in users.credit.
+
+php
+Copy
+Edit
+credit_logs
+- id
+- user_id
+- type (earned/spent)
+- amount
+- description
+- created_at
+🛒 Marketplace
+php
+Copy
+Edit
+marketplace_items
+- id
+- user_id
+- title
+- description
+- price
+- type (product/service)
+- image
+- status (pending/approved/rejected)
+- created_at
+php
+Copy
+Edit
+marketplace_orders
+- id
+- buyer_id
+- item_id
+- status (pending/completed/canceled)
+- created_at
