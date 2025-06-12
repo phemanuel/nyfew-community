@@ -20,8 +20,8 @@ class ForumFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->words(3, true),
-            'description' => $this->faker->sentence,
+            'title' => $this->faker->realText(50),
+            'description' => $this->faker->realText(80),
             'parent_id' => null, 
             'user_id' => User::factory(),
         ];

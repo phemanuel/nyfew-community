@@ -17,7 +17,7 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
-            'content' => $this->faker->paragraph,
+            'content' => $this->faker->realText(200),
             'image' => $this->faker->imageUrl(640, 480, 'cats', true, 'Post'), // Random image
             'type' => $this->faker->randomElement(['text', 'image', 'video']), // You can define your own list
             'visibility' => $this->faker->randomElement(['public', 'private', 'friends']),

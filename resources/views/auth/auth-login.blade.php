@@ -19,7 +19,7 @@
 }
     </style>
 	</head>
-	<body>
+	<body style="background: url('{{ asset('login/images/back.png') }}') no-repeat center center fixed; background-size: cover;">
 	<section class="ftco-section">
 		<div class="container">
 			

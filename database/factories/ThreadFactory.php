@@ -19,8 +19,8 @@ class ThreadFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->sentence(4),
-            'content' => $this->faker->paragraph(3),
+            'title' => $this->faker->realText(50), 
+            'content' => $this->faker->paragraphs(3, true),
             'forum_id' => Forum::factory(),
             'user_id' => User::factory(),
         ];

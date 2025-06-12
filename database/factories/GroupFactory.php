@@ -20,10 +20,10 @@ class GroupFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->unique()->words(3, true),
-            'description' => $this->faker->sentence(),
+            'name' => $this->faker->realText(15),
+            'description' => $this->faker->realText(80),
             'type' => $this->faker->randomElement(['public', 'private']),
-            'avatar' => 'uploads/profile-pictures/blank.png', 
+            'avatar' => 'blank.png', 
             'owner_id' => User::factory(),
         ];
     }

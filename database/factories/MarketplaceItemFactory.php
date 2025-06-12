@@ -17,11 +17,11 @@ class MarketplaceItemFactory extends Factory
     public function definition(): array
     {
             return [
-            'title' => fake()->words(3, true),
-            'description' => fake()->paragraph(),
+            'title' => $this->faker->realText(10),
+            'description' => $this->faker->realText(80),
             'price' => fake()->randomFloat(2, 10, 500),
             'type' => fake()->randomElement(['digital', 'physical']),
-            'image' => 'uploads/marketplace/default.png', // or fake()->imageUrl()
+            'image' => 'default.png', 
             'status' => fake()->randomElement(['available', 'sold']),
         ];
     }

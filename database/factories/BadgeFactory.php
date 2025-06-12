@@ -19,9 +19,9 @@ class BadgeFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->unique()->word(),
-            'description' => $this->faker->sentence(),
-            'icon' => 'uploads/badges/default.png', 
+            'name' => $this->faker->realText(10),
+            'description' => $this->faker->realText(80), 
+            'icon' => 'default.png',
         ];
     }
 }

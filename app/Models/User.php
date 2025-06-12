@@ -12,7 +12,7 @@ class User extends Authenticatable
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
-    protected $fillable = ['name', 'email', 'password', 'avatar', 'bio', 'location', 'rank_id', 'credit'];
+    protected $fillable = ['last_name','first_name', 'middle_name', 'email', 'password', 'avatar', 'bio', 'location', 'rank_id', 'credit'];
 
     public function profile() { return $this->hasOne(Profile::class); }
     public function timelineActivities() { return $this->hasMany(TimelineActivity::class); }
