@@ -60,7 +60,7 @@ class AuthController extends Controller
                 'password' => Hash::make($validatedData['password']),                
                 'email_verified_status' => 0,
                 'remember_token' => $email_token,                             
-                'image' => 'blank.jpg',                
+                'avatar' => 'blank.jpg',                
                 'login_attempts' => 0,
             ]);
             

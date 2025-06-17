@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CustomForgotPasswordController;
 use App\Http\Middleware\TrackFailedLoginAttempts;
 use Illuminate\Support\Facades\Route;
@@ -52,6 +53,10 @@ Route::post('/reset-password', [CustomForgotPasswordController::class, 'resetPas
     ->name('resend-verification');
     Route::post('email-not-verify', [MailController::class, 'emailNotVerify'])
     ->name('email-not-verify');
+
+    //----Dashboard routes-----------------
+     Route::get('user/dashboard', [DashboardController::class,'index'])->middleware('auth')
+    ->name('user-dashboard');
 
 // Route::get('/', function () {
 //     return view('welcome');

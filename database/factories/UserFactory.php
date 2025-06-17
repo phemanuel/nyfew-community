@@ -32,6 +32,7 @@ class UserFactory extends Factory
             'password' => static::$password ??= Hash::make('password123'),
             'remember_token' => Str::random(10),
             'avatar' => 'blank.png',
+            'email_verified_status' => 1,
         ];
     }
 
