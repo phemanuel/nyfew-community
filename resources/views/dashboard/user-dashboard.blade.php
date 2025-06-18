@@ -8,6 +8,7 @@
 
     <!-- Favicon -->
     <link href="{{asset('dashboard/assets/images/favicon.png')}}" rel="icon" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.19.3/dist/css/uikit.min.css" />
 
     <!-- Basic Page Needs
         ================================================== -->
@@ -759,134 +760,95 @@
                 
                         <a href="#birthdays" uk-toggle>
                             <div class="bg-white mb-5 px-4 py-3 rounded-md shadow">
-                                <h3 class="text-line-through font-semibold mb-1"> Birthdays </h3>
-                                <div class="-mx-2 duration-300 flex hover:bg-gray-50 px-2 py-2 rounded-md">
-                                    <img src="{{asset('dashboard/assets/images/icons/gift-icon.png')}}" class="w-9 h-9 mr-3" alt="">
-                                    <p class="line-clamp-2 leading-6"> <strong> Jessica Erica </strong> and <strong> two others </strong>
-                                        have a birthdays to day .
-                                    </p>
-                                </div>
+                                <h3 class="font-semibold mb-1">Birthdays</h3>
+
+                               @php
+                                    $filteredBirthdayUsers = $birthdayUsers->filter(function ($user) {
+                                        return (int) $user->id !== (int) auth()->id();
+                                    });
+                                @endphp
+
+                                @if($filteredBirthdayUsers->count() > 0)
+                                    @php
+                                        $first = $filteredBirthdayUsers->first();
+                                        $othersCount = $filteredBirthdayUsers->count() - 1;
+                                    @endphp
+
+                                    <div class="-mx-2 duration-300 flex hover:bg-gray-50 px-2 py-2 rounded-md">
+                                        <img src="{{ asset('dashboard/assets/images/icons/gift-icon.png') }}" class="w-9 h-9 mr-3" alt="">
+
+                                        <p class="line-clamp-2 leading-6">
+                                            <strong>{{ $first->first_name }} {{ $first->last_name }}</strong>
+                                            @if($othersCount > 0)
+                                                and <strong>{{ $othersCount }} other{{ $othersCount > 1 ? 's' : '' }}</strong>
+                                            @endif
+                                            have birthday{{ $filteredBirthdayUsers->count() > 1 ? 's' : '' }} today.
+                                        </p>
+                                    </div>
+                                @else
+                                    <div class="-mx-2 duration-300 flex hover:bg-gray-50 px-2 py-2 rounded-md">
+                                        <img src="{{ asset('dashboard/assets/images/icons/gift-icon.png') }}" class="w-9 h-9 mr-3" alt="">
+                                        <p class="line-clamp-2 leading-6">No birthdays today.</p>
+                                    </div>
+                                @endif
+
                             </div>
                         </a>
 
-                        <h3 class="text-xl font-semibold"> Contacts </h3>
-                
-                        <div class="" uk-sticky="offset:80">
-                
-                            <nav class="responsive-nav border-b extanded mb-2 -mt-2">
-                                <ul uk-switcher="connect: #group-details; animation: uk-animation-fade">
-                                    <li class="uk-active"><a class="active" href="#0">  Friends  <span> 310 </span> </a></li>
-                                    <li><a href="#0">Groups</a></li>
-                                </ul>
-                            </nav>
-                
-                            <div class="contact-list">
-                
-                                <a href="#">
-                                    <div class="contact-avatar">
-                                        <img src="assets/images/avatars/avatar-1.jpg" alt="">
-                                        <span class="user_status status_online"></span>
-                                    </div>
-                                    <div class="contact-username"> Dennis Han</div>
-                                </a>
-                                <div uk-drop="pos: left-center ;animation: uk-animation-slide-left-small">
-                                    <div class="contact-list-box">
-                                        <div class="contact-avatar">
-                                            <img src="assets/images/avatars/avatar-2.jpg" alt="">
-                                            <span class="user_status status_online"></span>
-                                        </div>
-                                        <div class="contact-username">   Dennis Han</div>
-                                        <p> 
-                                            <ion-icon name="people" class="text-lg mr-1"></ion-icon> Become friends with 
-                                            <strong> Stella Johnson </strong> and <strong> 14 Others</strong>
-                                        </p>
-                                        <div class="contact-list-box-btns">
-                                            <button type="button" class="button primary flex-1 block mr-2">
-                                                <i class="uil-envelope mr-1"></i> Send message</button>
-                                            <button type="button"  href="#" class="button secondary button-icon mr-2">
-                                                <i class="uil-list-ul"> </i> </button>
-                                            <button type="button" a href="#" class="button secondary button-icon"> 
-                                                <i class="uil-ellipsis-h"> </i> 
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                
-                                <a href="#">
-                                    <div class="contact-avatar">
-                                        <img src="assets/images/avatars/avatar-2.jpg" alt="">
-                                        <span class="user_status"></span>
-                                    </div>
-                                    <div class="contact-username"> Erica Jones</div>
-                                </a>
-                                <div uk-drop="pos: left-center ;animation: uk-animation-slide-left-small">
-                                    <div class="contact-list-box">
-                                        <div class="contact-avatar">
-                                            <img src="assets/images/avatars/avatar-1.jpg" alt="">
-                                            <span class="user_status"></span>
-                                        </div>
-                                        <div class="contact-username">  Erica Jones </div>
-                                        <p> 
-                                            <ion-icon name="people" class="text-lg mr-1"></ion-icon> Become friends with 
-                                            <strong> Stella Johnson </strong> and <strong> 14 Others</strong>
-                                        </p>
-                                        <div class="contact-list-box-btns">
-                                            <button type="button" class="button primary flex-1 block mr-2">
-                                                <i class="uil-envelope mr-1"></i> Send message</button>
-                                            <button type="button"  href="#" class="button secondary button-icon mr-2">
-                                                <i class="uil-list-ul"> </i> </button>
-                                            <button type="button" a href="#" class="button secondary button-icon"> 
-                                                <i class="uil-ellipsis-h"> </i> 
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="timeline.html">
-                                    <div class="contact-avatar">
-                                        <img src="assets/images/avatars/avatar-5.jpg" alt="">
-                                        <span class="user_status status_online"></span>
-                                    </div>
-                                    <div class="contact-username">Stella Johnson</div>
-                                </a>
-                                <a href="timeline.html">
-                                    <div class="contact-avatar">
-                                        <img src="assets/images/avatars/avatar-6.jpg" alt="">
-                                    </div>
-                                    <div class="contact-username"> Alex Dolgove</div>
-                                </a>
-                                
-                                <a href="timeline.html">
-                                    <div class="contact-avatar">
-                                        <img src="assets/images/avatars/avatar-1.jpg" alt="">
-                                        <span class="user_status status_online"></span>
-                                    </div>
-                                    <div class="contact-username"> Dennis Han</div>
-                                </a>
-                                <a href="timeline.html">
-                                    <div class="contact-avatar">
-                                        <img src="assets/images/avatars/avatar-2.jpg" alt="">
-                                        <span class="user_status"></span>
-                                    </div>
-                                    <div class="contact-username"> Erica Jones</div>
-                                </a>
-                                <a href="timeline.html">
-                                    <div class="contact-avatar">
-                                        <img src="assets/images/avatars/avatar-7.jpg" alt="">
-                                    </div>
-                                    <div class="contact-username">Stella Johnson</div>
-                                </a>
-                                <a href="timeline.html">
-                                    <div class="contact-avatar">
-                                        <img src="assets/images/avatars/avatar-4.jpg" alt="">
-                                    </div>
-                                    <div class="contact-username"> Alex Dolgove</div>
-                                </a>
-                
-                
+
+                        <h3 class="text-xl font-semibold">Contacts</h3>
+
+<div class="" uk-sticky="offset:80">
+    <nav class="responsive-nav border-b extanded mb-2 -mt-2">
+        <ul uk-switcher="connect: #group-details; animation: uk-animation-fade">
+            <li class="uk-active"><a class="active" href="#0">Members <span>{{ $members->count() }}</span></a></li>
+            <li><a href="#0">Groups <span>{{ $groups->count() }}</span></a></li>
+        </ul>
+    </nav>
+
+            <ul id="group-details" class="uk-switcher">
+            {{-- Friends tab --}}
+            <li>
+                <div class="contact-list" style="max-height: 350px; overflow-y: auto;">
+                    @foreach($members as $member)
+                        <a href="#"
+                        class="contact-item"
+                        data-avatar="{{ asset('uploads/profile-pictures/' . ($member->avatar ?? 'blank.png')) }}"
+                        data-name="{{ $member->last_name . ' ' . $member->first_name . ' ' . $member->middle_name }}"
+                        data-status="{{ $member->is_online ? 'Online' : 'Offline' }}"
+                        data-message-url="#"
+                        data-chat-url="#"
+                        onclick="openMemberModal(this)">
+                            <div class="contact-avatar">
+                                <img src="{{ asset('uploads/profile-pictures/' . ($member->avatar ?? 'blank.png')) }}" alt="">
+                                <span class="user_status {{ $member->is_online ? 'status_online' : '' }}"></span>
                             </div>
-                
-                
-                        </div>
+                            <div class="contact-username">
+                                {{ $member->last_name . ' ' . $member->first_name . ' ' . $member->middle_name }}
+                            </div>
+                        </a>
+                    @endforeach
+                </div>
+            </li>
+
+            {{-- Groups tab --}}
+            <li>
+                <div class="contact-list" style="max-height: 350px; overflow-y: auto;">
+                    @foreach($groups as $group)
+                        <a href="#"
+                        data-name="{{ $group->name }}"
+                        data-description="{{ $group->description ?? 'No description available' }}"
+                        data-view-url="#"
+                        onclick="openGroupModal(this)">
+                            <div class="contact-username">{{ $group->name }}</div>
+                        </a>
+                    @endforeach
+                </div>
+            </li>
+        </ul>
+
+</div>
+
                 
                     </div>
                 </div>
@@ -897,86 +859,52 @@
     </div>
  
     <!-- birthdays modal -->
-    <div id="birthdays" uk-modal>
-        <div class="uk-modal-dialog uk-modal-body rounded-xl shadow-lg">
-            <!-- close button -->
-            <button class="uk-modal-close-default p-2.5 bg-gray-100 rounded-full m-3" type="button" uk-close></button>
+<div id="birthdays" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body rounded-xl shadow-lg">
+        <!-- close button -->
+        <button class="uk-modal-close-default p-2.5 bg-gray-100 rounded-full m-3" type="button" uk-close></button>
 
-            <div class="flex items-center space-x-3 mb-10">
-                <ion-icon name="gift" class="text-yellow-500 text-xl bg-yellow-50 p-1 rounded-md"></ion-icon>
-                <div class="text-xl font-semibold">   Today's birthdays </div>
-            </div>
-
-            <div class="space-y-6">
-                <div class="sm:space-y-8 space-y-6 pb-2">
-    
-                    <div class="flex items-center sm:space-x-6 space-x-3">
-                        <img src="assets/images/avatars/avatar-3.jpg" alt="" class="sm:w-16 sm:h-16 w-14 h-14 rounded-full">
-                        <div class="flex-1">
-                            <div class="flex items-center justify-between mb-3">
-                                <div class="text-base font-semibold"> <a href="#">  Alex Dolgove </a> </div>
-                                <div class="font-medium text-sm text-gray-400"> 19 years old</div>
-                            </div>
-                            <div class="relative">
-                                <input type="text" name="" id="" class="with-border" placeholder="Write her on Timeline">
-                                <ion-icon name="happy" class="absolute right-3 text-2xl top-1/4"></ion-icon>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex items-center sm:space-x-6 space-x-3">
-                        <img src="assets/images/avatars/avatar-2.jpg" alt="" class="sm:w-16 sm:h-16 w-14 h-14 rounded-full">
-                        <div class="flex-1">
-                            <div class="flex items-center justify-between mb-3">
-                                <div class="text-base font-semibold"> <a href="#"> Stella Johnson </a> </div>
-                                <div class="font-medium text-sm text-gray-400"> 19 years old</div>
-                            </div>
-                            <div class="relative">
-                                <input type="text" name="" id="" class="with-border" placeholder="Write her on Timeline">
-                                <ion-icon name="happy" class="absolute right-3 text-2xl top-1/4"></ion-icon>
-                            </div>
-                        </div>
-                    </div>
-    
-                </div>
-                <div class="relative cursor-pointer" uk-toggle="target: #upcoming; animation: uk-animation-fade">
-                    <div class="bg-gray-50 rounded-lg px-5 py-4 font-semibold text-base"> Upcoming birthdays </div>
-                    <i class="-translate-y-1/2 absolute icon-feather-chevron-up right-4 text-xl top-1/2 transform text-gray-400" id="upcoming" hidden></i>
-                    <i class="-translate-y-1/2 absolute icon-feather-chevron-down right-4 text-xl top-1/2 transform text-gray-400" id="upcoming"></i>
-                </div>
-                <div class="mt-5 sm:space-y-8 space-y-6" id="upcoming" hidden>
-    
-                    <div class="flex items-center sm:space-x-6 space-x-3">
-                        <img src="assets/images/avatars/avatar-6.jpg" alt="" class="sm:w-16 sm:h-16 w-14 h-14 rounded-full">
-                        <div class="flex-1">
-                            <div class="flex items-center justify-between mb-3">
-                                <div class="text-base font-semibold"> <a href="#">  Erica Jones </a> </div>
-                                <div class="font-medium text-sm text-gray-400"> 19 years old</div>
-                            </div>
-                            <div class="relative">
-                                <input type="text" name="" id="" class="with-border" placeholder="Write her on Timeline">
-                                <ion-icon name="happy" class="absolute right-3 text-2xl top-1/4"></ion-icon>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex items-center sm:space-x-6 space-x-3">
-                        <img src="assets/images/avatars/avatar-5.jpg" alt="" class="sm:w-16 sm:h-16 w-14 h-14 rounded-full">
-                        <div class="flex-1">
-                            <div class="flex items-center justify-between mb-3">
-                                <div class="text-base font-semibold"> <a href="#"> Dennis Han </a> </div>
-                                <div class="font-medium text-sm text-gray-400"> 19 years old</div>
-                            </div>
-                            <div class="relative">
-                                <input type="text" name="" id="" class="with-border" placeholder="Write her on Timeline">
-                                <ion-icon name="happy" class="absolute right-3 text-2xl top-1/4"></ion-icon>
-                            </div>
-                        </div>
-                    </div>
-    
-                </div>
-            </div>
-
+        <div class="flex items-center space-x-3 mb-10">
+            <ion-icon name="gift" class="text-yellow-500 text-xl bg-yellow-50 p-1 rounded-md"></ion-icon>
+            <div class="text-xl font-semibold">Today's Birthdays</div>
         </div>
+
+        <div class="space-y-6">
+        @php $foundOtherBirthdays = false; @endphp
+
+        @foreach($birthdayUsers as $user)
+            @if($user->id != auth()->id())
+                @php $foundOtherBirthdays = true; @endphp
+                <div class="flex items-center sm:space-x-6 space-x-3">
+                    <img src="{{ asset($user->avatar ? 'uploads/profile-pictures/' . $user->avatar : 'uploads/profile-pictures/blank.png') }}"
+                        alt="" class="sm:w-16 sm:h-16 w-14 h-14 rounded-full">
+
+                    <div class="flex-1">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="text-base font-semibold">
+                                <a href="#"> {{ $user->first_name }} {{ $user->last_name }} </a>
+                            </div>
+                            <div class="font-medium text-sm text-gray-400">
+                                {{ \Carbon\Carbon::parse($user->profile->dob)->age }} years old
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <input type="text" class="with-border" placeholder="Write {{ $user->first_name }} on Timeline">
+                            <ion-icon name="happy" class="absolute right-3 text-2xl top-1/4"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+            @endif
+        @endforeach
+
+        @if(!$foundOtherBirthdays)
+            <p class="text-gray-500 text-sm">No birthdays today.</p>
+        @endif
     </div>
+
+    </div>
+</div>
+
 
     <!-- open chat box -->
     <div uk-toggle="target: #offcanvas-chat" class="start-chat">
@@ -1172,7 +1100,7 @@
 
             </div>
         </div>
-    </div>q\
+    </div>
 
     <!-- story-preview -->
     <div class="story-prev">
@@ -1438,6 +1366,68 @@
             </div>
         </div>
     </div>
+
+    <!-- Member Modal -->
+    <div id="memberModal" class="uk-modal" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body uk-border-rounded uk-box-shadow-large" style="max-width: 400px; background-color: #fffaf0;">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+
+            <div class="uk-text-center uk-margin">
+                <img id="memberAvatar" src="" alt="" class="uk-border-circle" width="80" height="80">
+                <h4 id="memberName" class="uk-margin-small-top uk-margin-remove-bottom"></h4>
+                <p id="memberStatus" class="uk-text-meta uk-margin-remove-top"></p>
+            </div>
+
+            <div class="uk-flex uk-flex-center uk-margin-top uk-grid-small" uk-grid>
+                <div>
+                    <a href="#" id="viewProfileBtn" class="uk-button uk-button-secondary">View Profile</a>
+                </div>
+                <div>
+                    <a href="#" id="messageBtn" class="uk-button uk-button-default">Message</a>
+                </div>
+                <div>
+                    <a href="#" id="chatBtn" class="uk-button uk-button-primary">Chat</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Group Modal -->
+    <div id="groupModal" class="uk-modal" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body uk-border-rounded uk-box-shadow-large" style="max-width: 400px; background-color: #fffaf0;">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+
+            <div class="uk-text-center uk-margin">
+                <h4 id="groupName" class="uk-margin-remove-bottom"></h4>
+                <p id="groupDescription" class="uk-text-meta uk-margin-small-top"></p>
+            </div>
+
+            <div class="uk-flex uk-flex-center uk-margin-top">
+                <a href="#" id="viewGroupBtn" class="uk-button uk-button-primary">View Group</a>
+            </div>
+        </div>
+    </div>
+
+<script>
+    function openMemberModal(el) {
+        document.getElementById('memberAvatar').src = el.dataset.avatar;
+        document.getElementById('memberName').textContent = el.dataset.name;
+        document.getElementById('memberStatus').textContent = el.dataset.status;
+        document.getElementById('messageBtn').href = el.dataset.messageUrl;
+        document.getElementById('chatBtn').href = el.dataset.chatUrl;
+
+        UIkit.modal('#memberModal').show();
+    }
+
+    function openGroupModal(el) {
+        document.getElementById('groupName').textContent = el.dataset.name;
+        document.getElementById('groupDescription').textContent = el.dataset.description;
+        document.getElementById('viewGroupBtn').href = el.dataset.viewUrl;
+
+        UIkit.modal('#groupModal').show();
+    }
+</script>
  
     <!-- For Night mode -->
     <script>
@@ -1474,7 +1464,12 @@
     
         })(window, document);
     </script>  
-    
+    <script>
+    document.getElementById('seeMoreBtn')?.addEventListener('click', function () {
+        document.querySelectorAll('.extra-contact').forEach(el => el.classList.remove('hidden'));
+        this.remove(); // hide the button after expanding
+    });
+</script>
      <!-- Javascript
     ================================================== -->
      <script src="../../code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -1484,7 +1479,8 @@
     <script src="{{asset('dashboard/assets/js/custom.js')}}"></script>
     <script src="{{asset('dashboard/assets/js/bootstrap-select.min.js')}}"></script>
     <script src="../../unpkg.com/ionicons%405.2.3/dist/ionicons.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.19.3/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.19.3/dist/js/uikit-icons.min.js"></script>
 </body>
 
 <!-- Mirrored from demo.foxthemes.net/socialite/feed.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 20 Jul 2023 17:41:40 GMT -->

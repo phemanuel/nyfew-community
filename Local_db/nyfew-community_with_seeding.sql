@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2025 at 08:10 PM
+-- Generation Time: Jun 18, 2025 at 10:09 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -41,16 +41,16 @@ CREATE TABLE `badges` (
 --
 
 INSERT INTO `badges` (`id`, `name`, `description`, `icon`, `created_at`, `updated_at`) VALUES
-(1, 'When the.', 'This time there were three little sisters--they were learning to draw, you.', 'default.png', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(2, 'Him, and.', 'Mock Turtle\'s heavy sobs. Lastly, she pictured to herself in a trembling.', 'default.png', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(3, 'Who ever.', 'Duchess: \'flamingoes and mustard both bite. And the moral of that is--\"Oh.', 'default.png', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(4, 'Dormouse.', 'Gryphon added \'Come, let\'s try Geography. London is the same tone, exactly as.', 'default.png', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(5, 'Said his.', 'Footman continued in the window?\' \'Sure, it\'s an arm for all that.\' \'Well.', 'default.png', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(6, 'King and.', 'They had not gone far before they saw her, they hurried back to my jaw, Has.', 'default.png', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(7, 'And here.', 'Alice; but she added, \'and the moral of that dark hall, and close to them.', 'default.png', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(8, 'Then she.', 'IS it to annoy, Because he knows it teases.\' CHORUS. (In which the March Hare.', 'default.png', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(9, 'I should.', 'Alice could think of nothing better to say anything. \'Why,\' said the Knave, \'I.', 'default.png', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(10, 'King put.', 'Dinn may be,\' said the Dormouse, and repeated her question. \'Why did they live.', 'default.png', '2025-06-13 01:09:03', '2025-06-13 01:09:03');
+(1, 'Dinah my.', 'Why, I do hope it\'ll make me smaller, I can guess that,\' she added aloud. \'Do.', 'default.png', '2025-06-18 04:57:20', '2025-06-18 04:57:20'),
+(2, 'I know!\'.', 'Said the mouse to the Knave. The Knave shook his grey locks, \'I kept all my.', 'default.png', '2025-06-18 04:57:20', '2025-06-18 04:57:20'),
+(3, 'Alice, a.', 'Queen in front of the suppressed guinea-pigs, filled the air, and came back.', 'default.png', '2025-06-18 04:57:20', '2025-06-18 04:57:20'),
+(4, 'Dormouse.', 'King eagerly, and he hurried off. Alice thought decidedly uncivil. \'But.', 'default.png', '2025-06-18 04:57:20', '2025-06-18 04:57:20'),
+(5, 'For this.', 'Alice indignantly. \'Ah! then yours wasn\'t a bit of the others all joined in.', 'default.png', '2025-06-18 04:57:20', '2025-06-18 04:57:20'),
+(6, 'They had.', 'Alice, and tried to look for her, and she was peering about anxiously among.', 'default.png', '2025-06-18 04:57:20', '2025-06-18 04:57:20'),
+(7, 'On which.', 'Alice thought to herself, rather sharply; \'I advise you to learn?\' \'Well.', 'default.png', '2025-06-18 04:57:20', '2025-06-18 04:57:20'),
+(8, 'Cat, and.', 'Hatter hurriedly left the court, \'Bring me the truth: did you call him.', 'default.png', '2025-06-18 04:57:20', '2025-06-18 04:57:20'),
+(9, 'Cheshire.', 'I eat or drink anything; so I\'ll just see what the moral of that is, but I.', 'default.png', '2025-06-18 04:57:20', '2025-06-18 04:57:20'),
+(10, 'The next.', 'She pitied him deeply. \'What is his sorrow?\' she asked the Mock Turtle. \'No.', 'default.png', '2025-06-18 04:57:20', '2025-06-18 04:57:20');
 
 -- --------------------------------------------------------
 
@@ -111,6 +111,20 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `failed_logins`
+--
+
+CREATE TABLE `failed_logins` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `ip_address` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `forums`
 --
 
@@ -129,69 +143,69 @@ CREATE TABLE `forums` (
 --
 
 INSERT INTO `forums` (`id`, `title`, `description`, `parent_id`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 'Alice thought to herself. Imagine her surprise.', 'Dinah, if I fell off the cake. * * * * * * * * CHAPTER II. The Pool of Tears.', NULL, 1, '2025-06-13 01:09:02', '2025-06-13 01:09:02'),
-(2, 'Shall I try the effect: the next moment a shower.', 'I ever saw one that size? Why, it fills the whole pack rose up into a sort of.', NULL, 1, '2025-06-13 01:09:02', '2025-06-13 01:09:02'),
-(3, 'MYSELF, I\'m afraid, but you might do something.', 'I would talk on such a thing I ever saw in another moment, when she looked up.', 1, 1, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(4, 'Dinah, if I shall only look up in her face, with.', 'Alice doubtfully: \'it means--to--make--anything--prettier.\' \'Well, then,\' the.', 1, 1, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(5, 'He got behind Alice as he spoke, and added with.', 'Rabbit in a sulky tone; \'Seven jogged my elbow.\' On which Seven looked up.', 2, 1, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(6, 'I\'d been the whiting,\' said Alice, quite.', 'Ma!\' said the Mock Turtle sighed deeply, and drew the back of one flapper.', 2, 1, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(7, 'In another moment it was YOUR table,\' said.', 'Alice for protection. \'You shan\'t be beheaded!\' \'What for?\' said Alice. \'Why?\'.', NULL, 2, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(8, 'Rabbit whispered in a hurry to change them--\'.', 'Alice could see this, as she did not get hold of anything, but she remembered.', NULL, 2, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(9, 'THAT direction,\' the Cat said, waving its tail.', 'Alice started to her ear. \'You\'re thinking about something, my dear, YOU must.', 7, 2, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(10, 'White Rabbit; \'in fact, there\'s nothing written.', 'Hatter trembled so, that Alice said; but was dreadfully puzzled by the way.', 7, 2, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(11, 'I must go and take it away!\' There was a.', 'King added in an undertone, \'important--unimportant--unimportant--important--\'.', 8, 2, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(12, 'Alice waited till she too began dreaming after a.', 'WAS a narrow escape!\' said Alice, quite forgetting in the air: it puzzled her.', 8, 2, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(13, 'After a time she had brought herself down to her.', 'Gryphon, \'you first form into a pig,\' Alice quietly said, just as well. The.', NULL, 3, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(14, 'Northumbria--\"\' \'Ugh!\' said the Mock Turtle.', 'I\'ll go round and get ready to agree to everything that was lying under the.', NULL, 3, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(15, 'After a minute or two, they began moving about.', 'Alice tried to curtsey as she could, \'If you do. I\'ll set Dinah at you!\' There.', 13, 3, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(16, 'King said, with a soldier on each side, and.', 'Majesty!\' the Duchess replied, in a twinkling! Half-past one, time for.', 13, 3, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(17, 'Pig!\' She said this she looked up, and began to.', 'Alice. \'Come on, then,\' said the King. On this the White Rabbit blew three.', 14, 3, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(18, 'YET,\' she said to herself, as she was ready to.', 'WHAT things?\' said the Pigeon; \'but if they do, why then they\'re a kind of.', 14, 3, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(19, 'Alice. \'Who\'s making personal remarks now?\' the.', 'I look like one, but it puzzled her a good way off, panting, with its tongue.', NULL, 4, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(20, 'Caterpillar sternly. \'Explain yourself!\' \'I.', 'Alice: \'--where\'s the Duchess?\' \'Hush! Hush!\' said the Dormouse: \'not in that.', NULL, 4, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(21, 'Alice, as she tucked it away under her arm, that.', 'Alice ventured to taste it, and very soon finished it off. \'If everybody.', 19, 4, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(22, 'The first thing she heard a voice sometimes.', 'So Alice got up this morning? I almost wish I\'d gone to see that the way out.', 19, 4, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(23, 'I\'ll tell you more than Alice could not answer.', 'Alice. \'Come on, then,\' said Alice, (she had kept a piece of bread-and-butter.', 20, 4, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(24, 'When the Mouse heard this, it turned round and.', 'Even the Duchess was sitting on a three-legged stool in the lap of her own.', 20, 4, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(25, 'Alice, who felt very lonely and low-spirited. In.', 'Queen of Hearts, and I had our Dinah here, I know who I WAS when I got up and.', NULL, 5, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(26, 'I suppose.\' So she set off at once, in a long.', 'I can find out the Fish-Footman was gone, and, by the way, was the matter on.', NULL, 5, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(27, 'Knave of Hearts, who only bowed and smiled in.', 'I should say \"With what porpoise?\"\' \'Don\'t you mean that you had been found.', 25, 5, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(28, 'Forty-two. ALL PERSONS MORE THAN A MILE HIGH TO.', 'March Hare: she thought it had no very clear notion how delightful it will be.', 25, 5, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(29, 'Allow me to him: She gave me a pair of white kid.', 'French mouse, come over with fright. \'Oh, I beg your pardon,\' said Alice.', 26, 5, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(30, 'Queen: so she turned to the end: then stop.\'.', 'I do so like that curious song about the temper of your flamingo. Shall I try.', 26, 5, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(31, 'Which way?\', holding her hand again, and we put.', 'The door led right into a graceful zigzag, and was going a journey, I should.', NULL, 6, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(32, 'Alice, rather alarmed at the end.\' \'If you.', 'I didn\'t!\' interrupted Alice. \'You are,\' said the last word with such sudden.', NULL, 6, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(33, 'Rabbit\'s voice; and Alice joined the procession.', 'Hatter. \'It isn\'t directed at all,\' said the King. \'Nothing whatever,\' said.', 31, 6, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(34, 'March Hare took the cauldron of soup off the top.', 'I\'ve seen that done,\' thought Alice. \'Now we shall have to fly; and the.', 31, 6, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(35, 'I\'ve finished.\' So they couldn\'t get them out.', 'Alice heard the King and the whole pack of cards, after all. \"--SAID I COULD.', 32, 6, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(36, 'Alice\'s shoulder as she could have told you.', 'Let me see--how IS it to half-past one as long as I tell you, you coward!\' and.', 32, 6, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(37, 'NOT!\' cried the Mock Turtle, \'but if they do.', 'Gryphon, with a yelp of delight, which changed into alarm in another moment.', NULL, 7, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(38, 'She had just begun to dream that she tipped over.', 'NEVER get any older than you, and must know better\'; and this he handed over.', NULL, 7, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(39, 'Alice herself, and fanned herself with one eye.', 'March Hare. Alice was silent. The Dormouse again took a great deal to come.', 37, 7, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(40, 'NOT be an advantage,\' said Alice, \'because I\'m.', 'Alice remarked. \'Right, as usual,\' said the King said, turning to the other.', 37, 7, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(41, 'WHATEVER?\' persisted the King. \'Then it doesn\'t.', 'MUST have meant some mischief, or else you\'d have signed your name like an.', 38, 7, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(42, 'March Hare meekly replied. \'Yes, but I don\'t.', 'English, who wanted leaders, and had no pictures or conversations?\' So she.', 38, 7, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(43, 'Dormouse; \'--well in.\' This answer so confused.', 'Mock Turtle in a languid, sleepy voice. \'Who are YOU?\' Which brought them back.', NULL, 8, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(44, 'Dormouse again, so that her shoulders were.', 'Duck and a piece of it had struck her foot! She was close behind it was all.', NULL, 8, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(45, 'Dodo could not help bursting out laughing: and.', 'But the snail replied \"Too far, too far!\" and gave a little of it?\' said the.', 43, 8, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(46, 'She was moving them about as much as she could.', 'SIT down,\' the King sharply. \'Do you play croquet with the other: the only.', 43, 8, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(47, 'Shakespeare, in the distance, sitting sad and.', 'Alice. \'Off with his whiskers!\' For some minutes it seemed quite dull and.', 44, 8, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(48, 'The hedgehog was engaged in a low voice, to the.', 'I only knew how to spell \'stupid,\' and that he shook both his shoes on. \'--and.', 44, 8, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(49, 'Dormouse,\' the Queen said--\' \'Get to your.', 'ARE OLD, FATHER WILLIAM,\' to the end of every line: \'Speak roughly to your.', NULL, 9, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(50, 'Queen, tossing her head in the flurry of the.', 'Dormouse followed him: the March Hare took the opportunity of saying to.', NULL, 9, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(51, 'Alice sharply, for she was up to her feet, they.', 'Alice joined the procession, wondering very much confused, \'I don\'t think it\'s.', 49, 9, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(52, 'Very soon the Rabbit say, \'A barrowful will do.', 'Gryphon. \'We can do no more, whatever happens. What WILL become of it; and the.', 49, 9, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(53, 'PLEASE mind what you\'re talking about,\' said.', 'Why, there\'s hardly room to open them again, and put it into his plate. Alice.', 50, 9, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(54, 'Then it got down off the top of the game, the.', 'Alice to herself, \'after such a new pair of the jurymen. \'No, they\'re not,\'.', 50, 9, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(55, 'Caterpillar was the Duchess\'s cook. She carried.', 'When the Mouse replied rather impatiently: \'any shrimp could have told you.', NULL, 10, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(56, 'Alice started to her that she was considering in.', 'I shall never get to the heads of the Lobster Quadrille?\' the Gryphon hastily.', NULL, 10, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(57, 'At last the Caterpillar called after it; and as.', 'Alice, and she went down on their slates, \'SHE doesn\'t believe there\'s an atom.', 55, 10, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(58, 'The rabbit-hole went straight on like a tunnel.', 'Alice began to get into her eyes; and once she remembered that she knew that.', 55, 10, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(59, 'She said this she looked up and saying, \'Thank.', 'I can guess that,\' she added in a dreamy sort of idea that they had a little.', 56, 10, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(60, 'I\'m angry. Therefore I\'m mad.\' \'I call it sad?\'.', 'VERY wide, but she heard it say to itself \'Then I\'ll go round and look up and.', 56, 10, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(61, 'But I\'ve got to grow larger again, and Alice.', 'Duchess, who seemed to think to herself, \'the way all the party sat silent and.', NULL, 11, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(62, 'Duchess, digging her sharp little chin. \'I\'ve a.', 'Alice. \'Now we shall have to ask the question?\' said the Rabbit\'s little white.', NULL, 12, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(63, 'Mouse, who seemed ready to sink into the garden.', 'PROVES his guilt,\' said the King, the Queen, tossing her head down to the.', NULL, 13, '2025-06-13 01:09:03', '2025-06-13 01:09:03');
+(1, 'I suppose it were nine o\'clock in the pictures.', 'Hatter. \'Stolen!\' the King eagerly, and he poured a little irritated at the.', NULL, 1, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(2, 'Hatter hurriedly left the court, without even.', 'Elsie, Lacie, and Tillie; and they sat down again very sadly and quietly, and.', NULL, 1, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(3, 'Caterpillar. \'Is that all?\' said the cook.', 'The Cat seemed to be executed for having cheated herself in a minute or two.', 1, 1, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(4, 'I THINK,\' said Alice. \'I\'ve read that in some.', 'It\'s the most confusing thing I ask! It\'s always six o\'clock now.\' A bright.', 1, 1, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(5, 'Alice, she went on, half to herself, for she.', 'She was walking by the fire, stirring a large one, but the three gardeners.', 2, 1, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(6, 'Gryphon said to the Knave of Hearts, carrying.', 'YOU, and no one else seemed inclined to say it any longer than that,\' said the.', 2, 1, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(7, 'VERY wide, but she felt a very poor speaker,\'.', 'March Hare. \'Sixteenth,\' added the Gryphon, and the poor child, \'for I never.', NULL, 2, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(8, 'Let me see: that would happen: \'\"Miss Alice!.', 'Hatter grumbled: \'you shouldn\'t have put it more clearly,\' Alice replied in a.', NULL, 2, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(9, 'Alice. \'It must have been changed for any.', 'Dinah stop in the chimney as she could have told you that.\' \'If I\'d been the.', 7, 2, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(10, 'Mock Turtle repeated thoughtfully. \'I should.', 'Alice as she could, and soon found herself in the pool of tears which she had.', 7, 2, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(11, 'I can\'t take more.\' \'You mean you can\'t swim.', 'Alice glanced rather anxiously at the number of executions the Queen ordering.', 8, 2, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(12, 'Hatter, \'when the Queen to-day?\' \'I should like.', 'Time!\' \'Perhaps not,\' Alice cautiously replied, not feeling at all.', 8, 2, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(13, 'Alice, with a deep sigh, \'I was a dead silence.', 'Queen added to one of the e--e--evening, Beautiful, beauti--FUL SOUP!\' \'Chorus.', NULL, 3, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(14, 'For some minutes the whole head appeared, and.', 'Hatter: \'let\'s all move one place on.\' He moved on as he came, \'Oh! the.', NULL, 3, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(15, 'However, on the floor, and a large mustard-mine.', 'HE taught us Drawling, Stretching, and Fainting in Coils.\' \'What was THAT.', 13, 3, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(16, 'English, who wanted leaders, and had just begun.', 'Caterpillar. \'Well, I\'ve tried to fancy to herself that perhaps it was out of.', 13, 3, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(17, 'Because he knows it teases.\' CHORUS. (In which.', 'Alice thought), and it was done. They had a little bit, and said \'That\'s very.', 14, 3, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(18, 'March Hare and the Gryphon never learnt it.\'.', 'Hatter said, tossing his head contemptuously. \'I dare say you never tasted an.', 14, 3, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(19, 'CHAPTER II. The Pool of Tears \'Curiouser and.', 'Time as well say this), \'to go on for some time in silence: at last it.', NULL, 4, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(20, 'Alice to herself, \'Now, what am I to do?\' said.', 'The Cat\'s head began fading away the time. Alice had no reason to be sure.', NULL, 4, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(21, 'Hatter. \'You MUST remember,\' remarked the King.', 'At this moment the King, \'that only makes the matter worse. You MUST have.', 19, 4, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(22, 'In a minute or two. \'They couldn\'t have wanted.', 'It\'s high time to see if he doesn\'t begin.\' But she did not like to drop the.', 19, 4, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(23, 'Dodo solemnly presented the thimble, saying \'We.', 'She carried the pepper-box in her own mind (as well as she went slowly after.', 20, 4, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(24, 'ONE.\' \'One, indeed!\' said Alice, (she had grown.', 'Alice panted as she could, and soon found out that she let the jury--\' \'If any.', 20, 4, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(25, 'Alice panted as she went to him,\' said Alice.', 'Alice. \'I\'m glad they\'ve begun asking riddles.--I believe I can guess that,\'.', NULL, 5, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(26, 'English coast you find a pleasure in all.', 'I used--and I don\'t like it, yer honour, at all, as the other.\' As soon as.', NULL, 5, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(27, 'See how eagerly the lobsters to the Mock Turtle.', 'Lizard, who seemed too much frightened that she knew she had never seen such a.', 25, 5, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(28, 'I was thinking I should frighten them out of the.', 'Yet you turned a corner, \'Oh my ears and the baby at her feet as the hall was.', 25, 5, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(29, 'THAT in a trembling voice:-- \'I passed by his.', 'Alice did not much larger than a real nose; also its eyes by this time.).', 26, 5, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(30, 'The Mouse only shook its head impatiently, and.', 'The Queen had only one way of expecting nothing but out-of-the-way things to.', 26, 5, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(31, 'When the pie was all finished, the Owl, as a.', 'There was no one else seemed inclined to say \"HOW DOTH THE LITTLE BUSY BEE,\".', NULL, 6, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(32, 'Alice, and her eyes filled with cupboards and.', 'Alice called after her. \'I\'ve something important to say!\' This sounded.', NULL, 6, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(33, 'King: \'however, it may kiss my hand if it wasn\'t.', 'Beautiful, beautiful Soup! \'Beautiful Soup! Who cares for fish, Game, or any.', 31, 6, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(34, 'THAT. Then again--\"BEFORE SHE HAD THIS FIT--\".', 'Alice, surprised at her for a minute or two she stood watching them, and then.', 31, 6, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(35, 'Alice took up the fan and the Queen\'s hedgehog.', 'Will you, won\'t you, will you join the dance. Would not, could not, could not.', 32, 6, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(36, 'It was the fan she was now the right way to.', 'Some of the March Hare. \'I didn\'t know it to annoy, Because he knows it.', 32, 6, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(37, 'Story \'You can\'t think how glad I am in the pool.', 'So she began: \'O Mouse, do you know I\'m mad?\' said Alice. \'I\'m a--I\'m a--\'.', NULL, 7, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(38, 'It\'s the most curious thing I ever was at in all.', 'Alice very politely; but she did so, very carefully, with one finger pressed.', NULL, 7, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(39, 'Which shall sing?\' \'Oh, YOU sing,\' said the Mock.', 'Gryphon, and the fall was over. However, when they liked, so that by the fire.', 37, 7, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(40, 'Caterpillar sternly. \'Explain yourself!\' \'I.', 'Dormouse sulkily remarked, \'If you do. I\'ll set Dinah at you!\' There was.', 37, 7, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(41, 'White Rabbit returning, splendidly dressed, with.', 'Gryphon never learnt it.\' \'Hadn\'t time,\' said the Cat. \'I said pig,\' replied.', 38, 7, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(42, 'Queen. \'I never heard it say to itself, half to.', 'Alice sadly. \'Hand it over afterwards, it occurred to her that she had nothing.', 38, 7, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(43, 'Alice sadly. \'Hand it over a little bird as soon.', 'Soup, so rich and green, Waiting in a ring, and begged the Mouse was bristling.', NULL, 8, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(44, 'ARE OLD, FATHER WILLIAM,\"\' said the Hatter; \'so.', 'Alice, \'shall I NEVER get any older than I am very tired of this. I vote the.', NULL, 8, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(45, 'Next came the guests, mostly Kings and Queens.', 'That\'s all.\' \'Thank you,\' said the Hatter: \'but you could only hear whispers.', 43, 8, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(46, 'The Mouse only shook its head impatiently, and.', 'Will you, won\'t you, will you, won\'t you, will you join the dance? \"You can.', 43, 8, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(47, 'I dare say you\'re wondering why I don\'t want to.', 'How brave they\'ll all think me at home! Why, I do it again and again.\' \'You.', 44, 8, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(48, 'Gryphon. \'Then, you know,\' the Hatter went on.', 'Alice: \'--where\'s the Duchess?\' \'Hush! Hush!\' said the Hatter: \'but you could.', 44, 8, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(49, 'Alice, \'Have you guessed the riddle yet?\' the.', 'I shall think nothing of the miserable Mock Turtle. \'She can\'t explain MYSELF.', NULL, 9, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(50, 'I must have been a holiday?\' \'Of course it is,\'.', 'I suppose you\'ll be asleep again before it\'s done.\' \'Once upon a low curtain.', NULL, 9, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(51, 'Improve his shining tail, And pour the waters of.', 'Dormouse!\' And they pinched it on both sides of it; so, after hunting all.', 49, 9, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(52, 'And with that she was a most extraordinary noise.', 'Alice went timidly up to the company generally, \'You are all pardoned.\' \'Come.', 49, 9, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(53, 'King, who had followed him into the court.', 'Mock Turtle, and to stand on your shoes and stockings for you now, dears? I\'m.', 50, 9, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(54, 'Then came a little timidly, \'why you are.', 'As soon as it was too much of it at all,\' said the Caterpillar. \'I\'m afraid I.', 50, 9, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(55, 'Alice replied thoughtfully. \'They have their.', 'March Hare said in a moment: she looked down at them, and was going on rather.', NULL, 10, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(56, 'I hadn\'t to bring tears into her face, and was.', 'The Mouse gave a sudden leap out of a sea of green leaves that lay far below.', NULL, 10, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(57, 'Rabbit came up to them to sell,\' the Hatter went.', 'Said the mouse to the game. CHAPTER IX. The Mock Turtle went on, \'--likely to.', 55, 10, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(58, 'VERY nearly at the March Hare. \'He denies it,\'.', 'This seemed to have got altered.\' \'It is wrong from beginning to feel which.', 55, 10, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(59, 'Alice an excellent opportunity for making her.', 'VERY long claws and a great hurry, muttering to himself as he spoke, and then.', 56, 10, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(60, 'Alice remarked. \'Oh, you foolish Alice!\' she.', 'Hatter, and here the Mock Turtle said with a knife, it usually bleeds; and she.', 56, 10, '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(61, 'Alice looked at Alice, as she spoke--fancy.', 'Mock Turtle, capering wildly about. \'Change lobsters again!\' yelled the.', NULL, 11, '2025-06-18 04:57:20', '2025-06-18 04:57:20'),
+(62, 'I hadn\'t begun my tea--not above a week or.', 'Gryphon said, in a ring, and begged the Mouse was speaking, and this he handed.', NULL, 12, '2025-06-18 04:57:20', '2025-06-18 04:57:20'),
+(63, 'Let me see--how IS it to annoy, Because he knows.', 'There was a child,\' said the Lory, who at last the Mock Turtle, suddenly.', NULL, 13, '2025-06-18 04:57:20', '2025-06-18 04:57:20');
 
 -- --------------------------------------------------------
 
@@ -215,11 +229,11 @@ CREATE TABLE `groups` (
 --
 
 INSERT INTO `groups` (`id`, `name`, `description`, `type`, `avatar`, `owner_id`, `created_at`, `updated_at`) VALUES
-(1, 'And I declare.', 'Let me see: that would be like, \'--for they haven\'t got much evidence YET,\'.', 'public', 'blank.png', 14, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(2, 'Who ever saw.', 'I haven\'t been invited yet.\' \'You\'ll see me there,\' said the March Hare said.', 'public', 'blank.png', 15, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(3, 'When she got.', 'Duchess began in a deep voice, \'are done with blacking, I believe.\' \'Boots and.', 'private', 'blank.png', 16, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(4, 'Magpie began.', 'Alice. \'That\'s very curious.\' \'It\'s all her riper years, the simple and loving.', 'private', 'blank.png', 17, '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(5, 'Dormouse was.', 'She went on in these words: \'Yes, we went to work very diligently to write.', 'private', 'blank.png', 18, '2025-06-13 01:09:03', '2025-06-13 01:09:03');
+(1, 'Mary Ann, and.', 'Dodo, a Lory and an Eaglet, and several other curious creatures. Alice led the.', 'private', 'blank.png', 14, '2025-06-18 04:57:20', '2025-06-18 04:57:20'),
+(2, 'This was not.', 'There could be beheaded, and that he shook his head sadly. \'Do I look like.', 'public', 'blank.png', 15, '2025-06-18 04:57:20', '2025-06-18 04:57:20'),
+(3, 'Gryphon said.', 'Then she went round the table, but it did not get hold of this remark, and.', 'public', 'blank.png', 16, '2025-06-18 04:57:20', '2025-06-18 04:57:20'),
+(4, 'QUITE as much.', 'Gryphon. \'They can\'t have anything to say, she simply bowed, and took the.', 'private', 'blank.png', 17, '2025-06-18 04:57:20', '2025-06-18 04:57:20'),
+(5, 'And the moral.', 'I\'m grown up now,\' she added in a voice she had felt quite strange at first.', 'public', 'blank.png', 18, '2025-06-18 04:57:20', '2025-06-18 04:57:20');
 
 -- --------------------------------------------------------
 
@@ -241,31 +255,31 @@ CREATE TABLE `group_members` (
 --
 
 INSERT INTO `group_members` (`id`, `group_id`, `user_id`, `role`, `created_at`, `updated_at`) VALUES
-(1, 1, 15, 'member', NULL, NULL),
-(2, 1, 8, 'member', NULL, NULL),
-(3, 1, 2, 'member', NULL, NULL),
+(1, 1, 11, 'member', NULL, NULL),
+(2, 1, 3, 'member', NULL, NULL),
+(3, 1, 15, 'member', NULL, NULL),
 (4, 1, 10, 'member', NULL, NULL),
-(5, 1, 7, 'member', NULL, NULL),
-(6, 2, 3, 'member', NULL, NULL),
-(7, 2, 15, 'member', NULL, NULL),
+(5, 1, 4, 'member', NULL, NULL),
+(6, 2, 7, 'member', NULL, NULL),
+(7, 2, 2, 'member', NULL, NULL),
 (8, 2, 6, 'member', NULL, NULL),
 (9, 2, 1, 'member', NULL, NULL),
-(10, 2, 16, 'member', NULL, NULL),
+(10, 2, 4, 'member', NULL, NULL),
 (11, 3, 2, 'member', NULL, NULL),
-(12, 3, 15, 'member', NULL, NULL),
-(13, 3, 11, 'member', NULL, NULL),
-(14, 3, 12, 'member', NULL, NULL),
-(15, 3, 17, 'member', NULL, NULL),
-(16, 4, 16, 'member', NULL, NULL),
-(17, 4, 8, 'member', NULL, NULL),
-(18, 4, 15, 'member', NULL, NULL),
-(19, 4, 14, 'member', NULL, NULL),
-(20, 4, 1, 'member', NULL, NULL),
-(21, 5, 13, 'member', NULL, NULL),
-(22, 5, 11, 'member', NULL, NULL),
-(23, 5, 15, 'member', NULL, NULL),
-(24, 5, 5, 'member', NULL, NULL),
-(25, 5, 4, 'member', NULL, NULL);
+(12, 3, 14, 'member', NULL, NULL),
+(13, 3, 3, 'member', NULL, NULL),
+(14, 3, 4, 'member', NULL, NULL),
+(15, 3, 11, 'member', NULL, NULL),
+(16, 4, 3, 'member', NULL, NULL),
+(17, 4, 10, 'member', NULL, NULL),
+(18, 4, 7, 'member', NULL, NULL),
+(19, 4, 12, 'member', NULL, NULL),
+(20, 4, 16, 'member', NULL, NULL),
+(21, 5, 16, 'member', NULL, NULL),
+(22, 5, 18, 'member', NULL, NULL),
+(23, 5, 4, 'member', NULL, NULL),
+(24, 5, 13, 'member', NULL, NULL),
+(25, 5, 10, 'member', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -341,48 +355,44 @@ CREATE TABLE `marketplace_items` (
 --
 
 INSERT INTO `marketplace_items` (`id`, `user_id`, `title`, `description`, `price`, `type`, `image`, `status`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Cat, and.', 'I\'ll kick you down stairs!\' \'That is not said right,\' said the Gryphon went on.', 287, 'digital', 'default.png', 'sold', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(2, 1, 'IT TO BE.', 'Mock Turtle: \'why, if a dish or kettle had been of late much accustomed to.', 480, 'physical', 'default.png', 'available', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(3, 2, 'Dormouse.', 'Majesty!\' the Duchess was sitting on the Duchess\'s knee, while plates and.', 101, 'digital', 'default.png', 'sold', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(4, 3, 'They are.', 'Alice was a good deal: this fireplace is narrow, to be sure! However.', 59, 'digital', 'default.png', 'available', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(5, 3, 'For some.', 'No, no! You\'re a serpent; and there\'s no use in waiting by the fire, licking.', 292, 'physical', 'default.png', 'available', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(6, 3, 'King put.', 'YOU must cross-examine THIS witness.\' \'Well, if I fell off the mushroom, and.', 244, 'digital', 'default.png', 'sold', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(7, 4, 'King. On.', 'So you see, so many different sizes in a natural way again. \'I should have.', 310, 'physical', 'default.png', 'sold', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(8, 4, 'Duchess!.', 'Alice, thinking it was not otherwise than what you like,\' said the King. The.', 282, 'digital', 'default.png', 'sold', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(9, 4, 'Cat in a.', 'Gryphon. Alice did not seem to have him with them,\' the Mock Turtle said: \'I\'m.', 494, 'physical', 'default.png', 'available', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(10, 5, 'I almost.', 'Alice glanced rather anxiously at the door--I do wish I hadn\'t quite finished.', 17, 'digital', 'default.png', 'sold', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(11, 6, 'THE KING.', 'Queen. First came ten soldiers carrying clubs; these were ornamented all over.', 454, 'physical', 'default.png', 'available', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(12, 6, 'Dinah my.', 'Alice, \'but I haven\'t had a large caterpillar, that was said, and went in. The.', 130, 'physical', 'default.png', 'available', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(13, 6, 'HAVE you.', 'I\'d gone to see that queer little toss of her childhood: and how she would.', 459, 'physical', 'default.png', 'available', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(14, 7, 'She felt.', 'White Rabbit returning, splendidly dressed, with a kind of authority among.', 55, 'digital', 'default.png', 'sold', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(15, 7, 'I wonder.', 'Gryphon said to herself, \'Why, they\'re only a child!\' The Queen smiled and.', 121, 'physical', 'default.png', 'sold', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(16, 8, 'I to get.', 'Queen to play with, and oh! ever so many different sizes in a fight with.', 309, 'physical', 'default.png', 'available', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(17, 8, 'I know I.', 'Dormouse indignantly. However, he consented to go and get ready to sink into.', 92, 'digital', 'default.png', 'available', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(18, 9, 'I was, I.', 'Rabbit asked. \'No, I give you fair warning,\' shouted the Queen to play croquet.', 188, 'digital', 'default.png', 'sold', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(19, 9, 'They all.', 'Please, Ma\'am, is this New Zealand or Australia?\' (and she tried to beat them.', 122, 'digital', 'default.png', 'available', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(20, 9, 'I should.', 'HE taught us Drawling, Stretching, and Fainting in Coils.\' \'What was that?\'.', 133, 'digital', 'default.png', 'available', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(21, 10, 'I\'ve got.', 'Queen, who were giving it a bit, if you were all writing very busily on.', 243, 'digital', 'default.png', 'sold', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(22, 10, 'They had.', 'However, she got up, and began staring at the door-- Pray, what is the capital.', 491, 'digital', 'default.png', 'sold', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(23, 11, 'Dormouse.', 'I think--\' (for, you see, as she spoke. \'I must be kind to them,\' thought.', 51, 'digital', 'default.png', 'sold', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(24, 11, 'It\'s the.', 'White Rabbit blew three blasts on the floor, as it lasted.) \'Then the words.', 147, 'digital', 'default.png', 'sold', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(25, 11, 'Sing her.', 'Lobster Quadrille?\' the Gryphon only answered \'Come on!\' cried the Gryphon.', 414, 'digital', 'default.png', 'available', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(26, 12, 'Turtle.\'.', 'Hatter: \'it\'s very rude.\' The Hatter was the Duchess\'s knee, while plates and.', 99, 'physical', 'default.png', 'sold', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(27, 12, 'They all.', 'Alice looked at the cook took the place where it had entirely disappeared; so.', 20, 'digital', 'default.png', 'sold', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(28, 12, 'It means.', 'Who would not give all else for two Pennyworth only of beautiful Soup?.', 131, 'physical', 'default.png', 'sold', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(29, 13, 'Off with.', 'Hatter: \'it\'s very easy to take the hint; but the three gardeners, oblong and.', 46, 'digital', 'default.png', 'available', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(30, 13, 'She felt.', 'Grammar, \'A mouse--of a mouse--to a mouse--a mouse--O mouse!\') The Mouse.', 31, 'physical', 'default.png', 'available', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(31, 14, 'Rabbit\'s.', 'Alice! Come here directly, and get in at all?\' said Alice, who felt very.', 377, 'physical', 'default.png', 'available', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(32, 14, 'I know I.', 'Mock Turtle angrily: \'really you are very dull!\' \'You ought to be an old.', 33, 'digital', 'default.png', 'available', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(33, 15, 'M?\' said.', 'THIS FIT--\" you never to lose YOUR temper!\' \'Hold your tongue!\' said the.', 152, 'physical', 'default.png', 'available', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(34, 15, 'When the.', 'Alice cautiously replied: \'but I haven\'t been invited yet.\' \'You\'ll see me.', 215, 'physical', 'default.png', 'sold', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(35, 16, 'Alice as.', 'Alice as he could go. Alice took up the fan she was quite tired of swimming.', 445, 'physical', 'default.png', 'sold', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(36, 16, 'I should.', 'Dormouse go on in a piteous tone. And she thought there was a bright brass.', 220, 'digital', 'default.png', 'available', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(37, 17, 'ONE with.', 'Alice. \'Of course it was,\' the March Hare,) \'--it was at in all directions.', 258, 'digital', 'default.png', 'sold', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(38, 17, 'She took.', 'THAT direction,\' the Cat in a mournful tone, \'he won\'t do a thing before, but.', 488, 'physical', 'default.png', 'available', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(39, 17, 'HIS time.', 'Cheshire Cat,\' said Alice: \'allow me to introduce it.\' \'I don\'t think they.', 258, 'digital', 'default.png', 'available', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(40, 18, 'Alice to.', 'LESS,\' said the Cat again, sitting on a bough of a globe of goldfish she had.', 159, 'physical', 'default.png', 'sold', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(41, 18, 'I hadn\'t.', 'I breathe\"!\' \'It IS the same size: to be Number One,\' said Alice. \'Why, you.', 86, 'physical', 'default.png', 'available', '2025-06-13 01:09:04', '2025-06-13 01:09:04'),
-(42, 18, 'Rabbit\'s.', 'ARE a simpleton.\' Alice did not venture to go among mad people,\' Alice.', 429, 'physical', 'default.png', 'sold', '2025-06-13 01:09:04', '2025-06-13 01:09:04');
+(1, 1, 'Dormouse.', 'Latitude was, or Longitude I\'ve got to do,\' said the Hatter: \'as the things.', 34, 'digital', 'default.png', 'available', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(2, 1, 'Said his.', 'Hatter said, tossing his head contemptuously. \'I dare say there may be.', 327, 'physical', 'default.png', 'available', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(3, 1, 'Then the.', 'The rabbit-hole went straight on like a tunnel for some way, and then the.', 368, 'physical', 'default.png', 'sold', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(4, 2, 'I shan\'t.', 'Duchess, \'and that\'s the jury-box,\' thought Alice, \'to speak to this mouse?.', 469, 'digital', 'default.png', 'sold', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(5, 3, 'But, now.', 'I must have prizes.\' \'But who is Dinah, if I like being that person, I\'ll come.', 436, 'digital', 'default.png', 'available', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(6, 3, 'Off with.', 'Let me see--how IS it to annoy, Because he knows it teases.\' CHORUS. (In which.', 294, 'physical', 'default.png', 'sold', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(7, 4, 'For, you.', 'White Rabbit: it was a table in the sand with wooden spades, then a row of.', 426, 'physical', 'default.png', 'sold', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(8, 4, 'And will.', 'Alice was too small, but at last she spread out her hand, and a sad tale!\'.', 349, 'digital', 'default.png', 'sold', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(9, 4, 'Rabbit\'s.', 'THE KING AND QUEEN OF HEARTS. Alice was so small as this before, never! And I.', 125, 'physical', 'default.png', 'sold', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(10, 5, 'She soon.', 'Mock Turtle. \'And how many hours a day is very confusing.\' \'It isn\'t,\' said.', 212, 'physical', 'default.png', 'sold', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(11, 5, 'Allow me.', 'I shan\'t! YOU do it!--That I won\'t, then!--Bill\'s to go on. \'And so these.', 446, 'physical', 'default.png', 'available', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(12, 6, 'He moved.', 'I am in the pool rippling to the Caterpillar, just as the hall was very like a.', 16, 'digital', 'default.png', 'available', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(13, 6, 'Bill had.', 'Mouse\'s tail; \'but why do you know why it\'s called a whiting?\' \'I never was so.', 71, 'digital', 'default.png', 'sold', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(14, 7, 'YOU must.', 'Cat, she was holding, and she tried to speak, but for a few minutes that she.', 25, 'physical', 'default.png', 'available', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(15, 8, 'Dormouse.', 'Alice; \'I daresay it\'s a set of verses.\' \'Are they in the flurry of the.', 252, 'digital', 'default.png', 'sold', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(16, 8, 'I wonder.', 'Dormouse. \'Don\'t talk nonsense,\' said Alice more boldly: \'you know you\'re.', 54, 'digital', 'default.png', 'sold', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(17, 8, 'Dormouse.', 'It did so indeed, and much sooner than she had wept when she had felt quite.', 222, 'physical', 'default.png', 'sold', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(18, 9, 'Oh dear!.', 'I\'ve kept her eyes anxiously fixed on it, or at any rate: go and live in that.', 145, 'physical', 'default.png', 'sold', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(19, 9, 'Cat went.', 'Poor Alice! It was opened by another footman in livery, with a great many more.', 232, 'physical', 'default.png', 'available', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(20, 10, 'I should.', 'SOME change in my life!\' Just as she could, and soon found an opportunity of.', 210, 'digital', 'default.png', 'sold', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(21, 10, 'Queen in.', 'Majesty?\' he asked. \'Begin at the beginning,\' the King added in a solemn tone.', 160, 'physical', 'default.png', 'sold', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(22, 11, 'Dormouse.', 'First, she dreamed of little animals and birds waiting outside. The poor.', 121, 'physical', 'default.png', 'available', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(23, 11, 'So Alice.', 'Alice. \'Then you should say \"With what porpoise?\"\' \'Don\'t you mean that you.', 126, 'digital', 'default.png', 'available', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(24, 11, 'Duck and.', 'Dodo, \'the best way to change them--\' when she was about a whiting to a snail.', 320, 'digital', 'default.png', 'sold', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(25, 12, 'But they.', 'And beat him when he sneezes; For he can thoroughly enjoy The pepper when he.', 212, 'physical', 'default.png', 'available', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(26, 13, 'For this.', 'There was a large one, but it had no pictures or conversations in it, \'and.', 375, 'digital', 'default.png', 'sold', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(27, 13, 'You MUST.', 'Hatter: \'as the things between whiles.\' \'Then you should say \"With what.', 48, 'digital', 'default.png', 'available', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(28, 14, 'Cat went.', 'Alice. \'Nothing WHATEVER?\' persisted the King. (The jury all wrote down all.', 402, 'physical', 'default.png', 'sold', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(29, 14, 'And beat.', 'Lobster Quadrille, that she was saying, and the executioner went off like an.', 96, 'digital', 'default.png', 'sold', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(30, 14, 'Alice in.', 'Turtle.\' These words were followed by a row of lamps hanging from the change.', 390, 'digital', 'default.png', 'sold', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(31, 15, 'Rabbit\'s.', 'See how eagerly the lobsters to the fifth bend, I think?\' he said in a rather.', 66, 'physical', 'default.png', 'available', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(32, 15, 'THE KING.', 'I to do it.\' (And, as you say \"What a pity!\"?\' the Rabbit hastily interrupted.', 193, 'digital', 'default.png', 'sold', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(33, 15, 'The jury.', 'Alice hastily replied; \'at least--at least I mean what I was going to begin.', 106, 'physical', 'default.png', 'sold', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(34, 16, 'She felt.', 'Why, I do it again and again.\' \'You are old,\' said the Hatter, who turned pale.', 110, 'digital', 'default.png', 'sold', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(35, 16, 'And they.', 'Number One,\' said Alice. \'Of course not,\' said Alice as she had made the whole.', 459, 'physical', 'default.png', 'sold', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(36, 17, 'Dormouse.', 'CHAPTER VI. Pig and Pepper For a minute or two she walked on in these words.', 392, 'physical', 'default.png', 'available', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(37, 18, 'Mouse to.', 'Why, I wouldn\'t say anything about it, you know.\' \'Who is it I can\'t show it.', 160, 'digital', 'default.png', 'sold', '2025-06-18 04:57:21', '2025-06-18 04:57:21'),
+(38, 18, 'I should.', 'Queen, but she did not wish to offend the Dormouse went on, \'you see, a dog.', 108, 'digital', 'default.png', 'available', '2025-06-18 04:57:21', '2025-06-18 04:57:21');
 
 -- --------------------------------------------------------
 
@@ -438,7 +448,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (20, '2025_06_12_150024_create_credit_logs_table', 1),
 (21, '2025_06_12_150033_create_marketplace_items_table', 1),
 (22, '2025_06_12_150045_create_marketplace_orders_table', 1),
-(23, '2025_06_12_161419_add_user_id_to_forums_table', 1);
+(23, '2025_06_12_161419_add_user_id_to_forums_table', 1),
+(24, '2025_06_12_181225_create_failed_logins_table', 1),
+(25, '2025_06_18_200531_add_user_type_to_users_table', 2);
 
 -- --------------------------------------------------------
 
@@ -474,66 +486,66 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `user_id`, `content`, `image`, `type`, `visibility`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Alice found at first she thought it over here,\' said the King, the Queen, who was gently brushing away some dead leaves that lay far below her. \'What CAN all that green stuff be?\' said Alice. \'I.', 'https://via.placeholder.com/640x480.png/007744?text=cats+Post+magni', 'image', 'public', '2025-06-13 01:09:02', '2025-06-13 01:09:02'),
-(2, 1, 'I think that there was no \'One, two, three, and away,\' but they all moved off, and she ran off as hard as she heard her sentence three of the crowd below, and there stood the Queen of Hearts, she.', 'https://via.placeholder.com/640x480.png/0066ff?text=cats+Post+repudiandae', 'text', 'friends', '2025-06-13 01:09:02', '2025-06-13 01:09:02'),
-(3, 1, 'Alice did not at all a proper way of keeping up the other, and growing sometimes taller and sometimes shorter, until she had been to the Knave of Hearts, she made out what it was: at first she.', 'https://via.placeholder.com/640x480.png/00cc99?text=cats+Post+numquam', 'text', 'private', '2025-06-13 01:09:02', '2025-06-13 01:09:02'),
-(4, 2, 'At this moment Alice appeared, she was playing against herself, for this time the Queen said to Alice, flinging the baby joined):-- \'Wow! wow! wow!\' \'Here! you may nurse it a bit, if you drink much.', 'https://via.placeholder.com/640x480.png/00ffdd?text=cats+Post+dolores', 'text', 'public', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(5, 2, 'France-- Then turn not pale, beloved snail, but come and join the dance? Will you, won\'t you join the dance? Will you, won\'t you, will you, won\'t you join the dance? Will you, won\'t you, will you.', 'https://via.placeholder.com/640x480.png/00aa22?text=cats+Post+quia', 'text', 'public', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(6, 2, 'I shall have to beat time when I got up this morning, but I grow at a king,\' said Alice. The King looked anxiously at the moment, \'My dear! I shall fall right THROUGH the earth! How funny it\'ll.', 'https://via.placeholder.com/640x480.png/007755?text=cats+Post+qui', 'video', 'friends', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(7, 3, 'I hadn\'t to bring tears into her eyes; and once again the tiny hands were clasped upon her arm, and timidly said \'Consider, my dear: she is such a neck as that! No, no! You\'re a serpent; and there\'s.', 'https://via.placeholder.com/640x480.png/0044cc?text=cats+Post+sequi', 'text', 'public', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(8, 3, 'Mouse was swimming away from him, and said to herself that perhaps it was not a bit afraid of them!\' \'And who are THESE?\' said the cook. \'Treacle,\' said the White Rabbit returning, splendidly.', 'https://via.placeholder.com/640x480.png/0066ee?text=cats+Post+maxime', 'video', 'friends', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(9, 3, 'King, \'and don\'t look at all a proper way of settling all difficulties, great or small. \'Off with their hands and feet at the Duchess said after a minute or two, they began running when they passed.', 'https://via.placeholder.com/640x480.png/00ff55?text=cats+Post+est', 'image', 'public', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(10, 4, 'The King looked anxiously at the window.\' \'THAT you won\'t\' thought Alice, \'they\'re sure to kill it in with the lobsters, out to be a LITTLE larger, sir, if you like!\' the Duchess to play croquet.', 'https://via.placeholder.com/640x480.png/00aa55?text=cats+Post+error', 'text', 'public', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(11, 4, 'Alice\'s first thought was that she was now, and she at once and put it to be beheaded!\' \'What for?\' said the Queen had only one who got any advantage from the sky! Ugh, Serpent!\' \'But I\'m NOT a.', 'https://via.placeholder.com/640x480.png/00ffbb?text=cats+Post+perspiciatis', 'image', 'private', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(12, 4, 'Queen, who was beginning to grow to my jaw, Has lasted the rest were quite silent, and looked into its face was quite a crowd of little Alice and all the things I used to come upon them THIS size.', 'https://via.placeholder.com/640x480.png/0099ee?text=cats+Post+pariatur', 'text', 'public', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(13, 5, 'Dodo managed it.) First it marked out a race-course, in a tone of delight, and rushed at the Cat\'s head with great curiosity, and this Alice thought she might as well wait, as she left her, leaning.', 'https://via.placeholder.com/640x480.png/008899?text=cats+Post+natus', 'video', 'friends', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(14, 5, 'She\'ll get me executed, as sure as ferrets are ferrets! Where CAN I have to whisper a hint to Time, and round the rosetree; for, you see, so many different sizes in a tone of great surprise. \'Of.', 'https://via.placeholder.com/640x480.png/00aa11?text=cats+Post+cupiditate', 'image', 'friends', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(15, 5, 'Who ever saw one that size? Why, it fills the whole she thought it had finished this short speech, they all moved off, and she hurried out of the house till she shook the house, and the pool.', 'https://via.placeholder.com/640x480.png/008822?text=cats+Post+recusandae', 'video', 'private', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(16, 6, 'Bill! I wouldn\'t be in before the trial\'s over!\' thought Alice. \'I\'m glad they\'ve begun asking riddles.--I believe I can go back by railway,\' she said to the little magic bottle had now had its full.', 'https://via.placeholder.com/640x480.png/00cc55?text=cats+Post+non', 'text', 'public', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(17, 6, 'Alice heard it before,\' said Alice,) and round goes the clock in a very poor speaker,\' said the Mock Turtle went on, \'and most things twinkled after that--only the March Hare and the Gryphon.', 'https://via.placeholder.com/640x480.png/003388?text=cats+Post+quas', 'text', 'private', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(18, 6, 'They all sat down at once, in a very difficult question. However, at last it sat down at her feet, for it flashed across her mind that she was nine feet high, and her eyes to see what was the cat.).', 'https://via.placeholder.com/640x480.png/0044aa?text=cats+Post+maiores', 'image', 'public', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(19, 7, 'Alice,) and round goes the clock in a sort of knot, and then quietly marched off after the candle is like after the candle is like after the rest of the what?\' said the White Rabbit, jumping up and.', 'https://via.placeholder.com/640x480.png/001111?text=cats+Post+ut', 'text', 'friends', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(20, 7, 'Cat said, waving its right paw round, \'lives a Hatter: and in a sorrowful tone, \'I\'m afraid I can\'t get out of the bill, \"French, music, AND WASHING--extra.\"\' \'You couldn\'t have wanted it much,\'.', 'https://via.placeholder.com/640x480.png/00aa00?text=cats+Post+aut', 'image', 'friends', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(21, 7, 'Alice kept her waiting!\' Alice felt a little wider. \'Come, it\'s pleased so far,\' said the Lory, with a sudden burst of tears, until there was nothing on it (as she had been broken to pieces.', 'https://via.placeholder.com/640x480.png/000022?text=cats+Post+unde', 'text', 'private', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(22, 8, 'Alice opened the door between us. For instance, if you like!\' the Duchess sneezed occasionally; and as for the accident of the ground, Alice soon began talking to herself, and shouted out, \'You\'d.', 'https://via.placeholder.com/640x480.png/00bb88?text=cats+Post+animi', 'image', 'public', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(23, 8, 'King, \'that saves a world of trouble, you know, upon the other queer noises, would change (she knew) to the part about her and to stand on their slates, when the White Rabbit. She was a little.', 'https://via.placeholder.com/640x480.png/0099ff?text=cats+Post+est', 'image', 'private', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(24, 8, 'I\'m certain! I must sugar my hair.\" As a duck with its wings. \'Serpent!\' screamed the Gryphon. \'--you advance twice--\' \'Each with a great deal of thought, and looked at them with the words don\'t FIT.', 'https://via.placeholder.com/640x480.png/00ccff?text=cats+Post+et', 'image', 'private', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(25, 9, 'French mouse, come over with William the Conqueror.\' (For, with all their simple joys, remembering her own ears for having missed their turns, and she looked down, was an uncomfortably sharp chin.', 'https://via.placeholder.com/640x480.png/0000ee?text=cats+Post+deleniti', 'video', 'public', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(26, 9, 'I beg your pardon!\' she exclaimed in a twinkling! Half-past one, time for dinner!\' (\'I only wish it was,\' said the Pigeon in a few minutes that she remained the same as they used to call him.', 'https://via.placeholder.com/640x480.png/006699?text=cats+Post+sit', 'image', 'public', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(27, 9, 'HE went mad, you know--\' She had just begun to dream that she did not seem to see how the game was in managing her flamingo: she succeeded in curving it down \'important,\' and some \'unimportant.\'.', 'https://via.placeholder.com/640x480.png/00ccee?text=cats+Post+aspernatur', 'image', 'public', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(28, 10, 'WAS a narrow escape!\' said Alice, (she had kept a piece of rudeness was more than that, if you were down here with me! There are no mice in the world! Oh, my dear Dinah! I wonder what I say--that\'s.', 'https://via.placeholder.com/640x480.png/0077ee?text=cats+Post+sit', 'text', 'private', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(29, 10, 'King. Here one of the pack, she could not possibly reach it: she could have been ill.\' \'So they were,\' said the Duchess, the Duchess! Oh! won\'t she be savage if I\'ve kept her waiting!\' Alice felt so.', 'https://via.placeholder.com/640x480.png/00dd11?text=cats+Post+atque', 'text', 'friends', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(30, 10, 'I am very tired of being such a rule at processions; \'and besides, what would happen next. First, she tried to fancy to herself how this same little sister of hers would, in the other. \'I beg your.', 'https://via.placeholder.com/640x480.png/0044ff?text=cats+Post+veritatis', 'text', 'private', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(31, 1, 'Alice thought to herself \'Now I can remember feeling a little while, however, she waited for a baby: altogether Alice did not sneeze, were the two creatures, who had got burnt, and eaten up by wild.', 'https://via.placeholder.com/640x480.png/0066aa?text=cats+Post+ex', 'image', 'private', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(32, 1, 'M, such as mouse-traps, and the others took the least idea what to say when I got up this morning, but I THINK I can go back by railway,\' she said to the tarts on the spot.\' This did not wish to.', 'https://via.placeholder.com/640x480.png/001177?text=cats+Post+quia', 'text', 'friends', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(33, 1, 'Caterpillar, just as if she did not at all comfortable, and it sat for a baby: altogether Alice did not notice this question, but hurriedly went on, \'and most things twinkled after that--only the.', 'https://via.placeholder.com/640x480.png/00ffee?text=cats+Post+laborum', 'image', 'private', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(34, 2, 'Mouse was swimming away from her as she could, for her to wink with one finger for the baby, it was a very curious to know your history, you know,\' said the Dodo. Then they all spoke at once, she.', 'https://via.placeholder.com/640x480.png/00bb66?text=cats+Post+animi', 'video', 'friends', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(35, 2, 'So she began: \'O Mouse, do you like the look of the officers: but the Hatter said, turning to Alice: he had to double themselves up and down in an impatient tone: \'explanations take such a dear.', 'https://via.placeholder.com/640x480.png/001100?text=cats+Post+eos', 'image', 'public', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(36, 2, 'What happened to you? Tell us all about it!\' and he poured a little now and then; such as, that a moment\'s delay would cost them their lives. All the time they had a consultation about this, and she.', 'https://via.placeholder.com/640x480.png/00ee77?text=cats+Post+corporis', 'image', 'public', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(37, 3, 'Mock Turtle a little startled by seeing the Cheshire Cat: now I shall fall right THROUGH the earth! How funny it\'ll seem, sending presents to one\'s own feet! And how odd the directions will look!.', 'https://via.placeholder.com/640x480.png/0088cc?text=cats+Post+dolores', 'video', 'friends', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(38, 3, 'Mouse, turning to the end: then stop.\' These were the two sides of it; then Alice dodged behind a great crash, as if she meant to take out of the crowd below, and there they lay sprawling about.', 'https://via.placeholder.com/640x480.png/003377?text=cats+Post+assumenda', 'text', 'private', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(39, 3, 'I don\'t like it, yer honour, at all, at all!\' \'Do as I do,\' said the Hatter: \'as the things between whiles.\' \'Then you shouldn\'t talk,\' said the Gryphon replied rather crossly: \'of course you know.', 'https://via.placeholder.com/640x480.png/007744?text=cats+Post+officia', 'image', 'private', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(40, 4, 'Pigeon went on, turning to Alice. \'Nothing,\' said Alice. The poor little juror (it was Bill, the Lizard) could not help bursting out laughing: and when she had sat down again very sadly and quietly.', 'https://via.placeholder.com/640x480.png/00bbee?text=cats+Post+veritatis', 'image', 'private', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(41, 4, 'They are waiting on the hearth and grinning from ear to ear. \'Please would you like the largest telescope that ever was! Good-bye, feet!\' (for when she was trying to fix on one, the cook till his.', 'https://via.placeholder.com/640x480.png/000044?text=cats+Post+labore', 'text', 'private', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(42, 4, 'I can\'t put it into his plate. Alice did not sneeze, were the cook, and a great deal to ME,\' said the Cat: \'we\'re all mad here. I\'m mad. You\'re mad.\' \'How do you call it sad?\' And she began nibbling.', 'https://via.placeholder.com/640x480.png/0033cc?text=cats+Post+praesentium', 'text', 'private', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(43, 5, 'By the use of this was of very little way off, and had just begun to dream that she was playing against herself, for she had never done such a curious plan!\' exclaimed Alice. \'That\'s the first.', 'https://via.placeholder.com/640x480.png/0000dd?text=cats+Post+ut', 'video', 'friends', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(44, 5, 'Go on!\' \'I\'m a poor man,\' the Hatter went on, looking anxiously round to see you again, you dear old thing!\' said the Duchess, \'and that\'s why. Pig!\' She said it to be lost, as she could. The next.', 'https://via.placeholder.com/640x480.png/00ee55?text=cats+Post+ut', 'video', 'public', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(45, 5, 'Alice; \'I might as well to introduce some other subject of conversation. While she was quite silent for a minute or two sobs choked his voice. \'Same as if a dish or kettle had been jumping about.', 'https://via.placeholder.com/640x480.png/003322?text=cats+Post+optio', 'video', 'private', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(46, 6, 'Why, there\'s hardly enough of it at all,\' said Alice: \'three inches is such a curious dream, dear, certainly: but now run in to your places!\' shouted the Queen, and Alice, were in custody and under.', 'https://via.placeholder.com/640x480.png/0077ff?text=cats+Post+asperiores', 'text', 'public', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(47, 6, 'Queen to-day?\' \'I should think you might like to show you! A little bright-eyed terrier, you know, upon the other ladder?--Why, I hadn\'t begun my tea--not above a week or so--and what with the next.', 'https://via.placeholder.com/640x480.png/00bbbb?text=cats+Post+praesentium', 'image', 'private', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(48, 6, 'This time there were any tears. No, there were no tears. \'If you\'re going to say,\' said the young Crab, a little faster?\" said a whiting to a shriek, \'and just as I used--and I don\'t care which.', 'https://via.placeholder.com/640x480.png/00dd88?text=cats+Post+optio', 'image', 'private', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(49, 7, 'Alice, \'to pretend to be executed for having missed their turns, and she felt that it had made. \'He took me for a little shaking among the trees had a little wider. \'Come, it\'s pleased so far,\' said.', 'https://via.placeholder.com/640x480.png/00ff99?text=cats+Post+ut', 'video', 'private', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(50, 7, 'Alice could bear: she got into a pig,\' Alice quietly said, just as well as she leant against a buttercup to rest her chin upon Alice\'s shoulder, and it put the Lizard in head downwards, and the.', 'https://via.placeholder.com/640x480.png/004499?text=cats+Post+neque', 'video', 'public', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(51, 7, 'Heads below!\' (a loud crash)--\'Now, who did that?--It was Bill, the Lizard) could not think of anything else. CHAPTER V. Advice from a Caterpillar The Caterpillar and Alice was just possible it had.', 'https://via.placeholder.com/640x480.png/00aacc?text=cats+Post+laborum', 'image', 'private', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(52, 8, 'Dormouse was sitting next to her. \'I wish I hadn\'t quite finished my tea when I was going to happen next. First, she tried her best to climb up one of the month, and doesn\'t tell what o\'clock it.', 'https://via.placeholder.com/640x480.png/002266?text=cats+Post+optio', 'video', 'public', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(53, 8, 'Father William replied to his ear. Alice considered a little, half expecting to see what the flame of a large mushroom growing near her, she began, in rather a complaining tone, \'and they drew all.', 'https://via.placeholder.com/640x480.png/00ddcc?text=cats+Post+exercitationem', 'video', 'private', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(54, 8, 'It doesn\'t look like one, but the Mouse was swimming away from him, and said to herself how this same little sister of hers would, in the pool a little quicker. \'What a pity it wouldn\'t stay!\'.', 'https://via.placeholder.com/640x480.png/00aa66?text=cats+Post+facere', 'image', 'friends', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(55, 9, 'White Rabbit blew three blasts on the slate. \'Herald, read the accusation!\' said the Caterpillar. Alice thought to herself, as she added, to herself, rather sharply; \'I advise you to set them free.', 'https://via.placeholder.com/640x480.png/007799?text=cats+Post+quia', 'text', 'private', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(56, 9, 'Alice very politely; but she remembered the number of changes she had asked it aloud; and in despair she put her hand on the spot.\' This did not notice this question, but hurriedly went on, \'What\'s.', 'https://via.placeholder.com/640x480.png/00eeff?text=cats+Post+similique', 'video', 'friends', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(57, 9, 'Footman went on in the last words out loud, and the arm that was linked into hers began to say anything. \'Why,\' said the Gryphon: and it set to work nibbling at the picture.) \'Up, lazy thing!\' said.', 'https://via.placeholder.com/640x480.png/002266?text=cats+Post+explicabo', 'text', 'friends', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(58, 10, 'CAN all that stuff,\' the Mock Turtle in a moment. \'Let\'s go on crying in this affair, He trusts to you never had to sing you a present of everything I\'ve said as yet.\' \'A cheap sort of present!\'.', 'https://via.placeholder.com/640x480.png/0088ff?text=cats+Post+omnis', 'video', 'friends', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(59, 10, 'Alice again, in a tone of delight, which changed into alarm in another moment, when she heard something like it,\' said Alice, surprised at this, she came upon a little before she had nibbled some.', 'https://via.placeholder.com/640x480.png/007799?text=cats+Post+beatae', 'video', 'private', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(60, 10, 'At last the Gryphon whispered in a soothing tone: \'don\'t be angry about it. And yet I wish you would have done that, you know,\' said Alice in a tone of great curiosity. \'It\'s a mineral, I THINK,\'.', 'https://via.placeholder.com/640x480.png/000055?text=cats+Post+expedita', 'text', 'friends', '2025-06-13 01:09:03', '2025-06-13 01:09:03');
+(1, 1, 'That he met in the common way. So they went on growing, and growing, and very neatly and simply arranged; the only difficulty was, that if something wasn\'t done about it in a tone of great surprise.', 'https://via.placeholder.com/640x480.png/0000ff?text=cats+Post+accusamus', 'image', 'friends', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(2, 1, 'Hatter, and he went on again: \'Twenty-four hours, I THINK; or is it directed to?\' said one of the e--e--evening, Beautiful, beautiful Soup! \'Beautiful Soup! Who cares for you?\' said the Caterpillar.', 'https://via.placeholder.com/640x480.png/004433?text=cats+Post+dolorem', 'video', 'private', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(3, 1, 'Don\'t let him know she liked them best, For this must be off, then!\' said the Mock Turtle a little timidly, for she felt unhappy. \'It was much pleasanter at home,\' thought poor Alice, \'when one.', 'https://via.placeholder.com/640x480.png/0011ff?text=cats+Post+deleniti', 'text', 'public', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(4, 2, 'Alice desperately: \'he\'s perfectly idiotic!\' And she kept on good terms with him, he\'d do almost anything you liked with the game,\' the Queen added to one of the Rabbit\'s voice along--\'Catch him.', 'https://via.placeholder.com/640x480.png/00ffbb?text=cats+Post+ipsam', 'text', 'public', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(5, 2, 'White Rabbit, \'but it seems to be sure; but I don\'t care which happens!\' She ate a little way forwards each time and a scroll of parchment in the flurry of the e--e--evening, Beautiful, beautiful.', 'https://via.placeholder.com/640x480.png/00dd55?text=cats+Post+laborum', 'text', 'friends', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(6, 2, 'I to do it.\' (And, as you liked.\' \'Is that the best thing to nurse--and she\'s such a dreadful time.\' So Alice got up this morning, but I THINK I can listen all day about it!\' Last came a little.', 'https://via.placeholder.com/640x480.png/00ee88?text=cats+Post+qui', 'video', 'private', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(7, 3, 'There was certainly English. \'I don\'t think it\'s at all like the tone of great relief. \'Call the next witness. It quite makes my forehead ache!\' Alice watched the White Rabbit: it was talking in his.', 'https://via.placeholder.com/640x480.png/004433?text=cats+Post+commodi', 'image', 'private', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(8, 3, 'Dinah\'ll be sending me on messages next!\' And she went back to them, they set to work at once set to work nibbling at the sudden change, but very politely: \'Did you speak?\' \'Not I!\' said the Lory.', 'https://via.placeholder.com/640x480.png/000044?text=cats+Post+at', 'text', 'private', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(9, 3, 'ARE OLD, FATHER WILLIAM,\' to the Queen. \'Can you play croquet?\' The soldiers were silent, and looked at it gloomily: then he dipped it into his plate. Alice did not quite sure whether it was too.', 'https://via.placeholder.com/640x480.png/00ee77?text=cats+Post+fuga', 'image', 'private', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(10, 4, 'Eaglet. \'I don\'t believe you do lessons?\' said Alice, timidly; \'some of the moment they saw her, they hurried back to the Queen, \'Really, my dear, YOU must cross-examine the next witness.\' And he.', 'https://via.placeholder.com/640x480.png/00bb66?text=cats+Post+ut', 'video', 'public', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(11, 4, 'I hadn\'t cried so much!\' Alas! it was her dream:-- First, she dreamed of little cartwheels, and the soldiers had to pinch it to be no sort of idea that they must needs come wriggling down from the.', 'https://via.placeholder.com/640x480.png/007777?text=cats+Post+voluptatem', 'video', 'public', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(12, 4, 'Alice ventured to ask. \'Suppose we change the subject. \'Ten hours the first to speak. \'What size do you know what you would have called him a fish)--and rapped loudly at the Hatter, and he went on.', 'https://via.placeholder.com/640x480.png/004444?text=cats+Post+saepe', 'image', 'friends', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(13, 5, 'Bill!\' then the puppy jumped into the air, and came back again. \'Keep your temper,\' said the Queen. \'Sentence first--verdict afterwards.\' \'Stuff and nonsense!\' said Alice very politely; but she knew.', 'https://via.placeholder.com/640x480.png/00ffff?text=cats+Post+quo', 'video', 'public', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(14, 5, 'But here, to Alice\'s great surprise, the Duchess\'s knee, while plates and dishes crashed around it--once more the pig-baby was sneezing and howling alternately without a moment\'s pause. The only.', 'https://via.placeholder.com/640x480.png/000077?text=cats+Post+a', 'text', 'public', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(15, 5, 'Alice, that she might as well as she spoke--fancy CURTSEYING as you\'re falling through the neighbouring pool--she could hear him sighing as if she was in managing her flamingo: she succeeded in.', 'https://via.placeholder.com/640x480.png/00cc99?text=cats+Post+occaecati', 'text', 'friends', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(16, 6, 'I can\'t quite follow it as you liked.\' \'Is that the best cat in the last concert!\' on which the words a little, and then sat upon it.) \'I\'m glad I\'ve seen that done,\' thought Alice. \'I wonder what.', 'https://via.placeholder.com/640x480.png/002255?text=cats+Post+id', 'video', 'private', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(17, 6, 'And she began looking at them with one elbow against the door, and tried to open her mouth; but she felt certain it must make me grow large again, for this time with the words all coming different.', 'https://via.placeholder.com/640x480.png/0099aa?text=cats+Post+doloremque', 'text', 'public', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(18, 6, 'Alice dodged behind a great interest in questions of eating and drinking. \'They lived on treacle,\' said the Dormouse; \'--well in.\' This answer so confused poor Alice, that she had never done such a.', 'https://via.placeholder.com/640x480.png/0088ff?text=cats+Post+provident', 'video', 'private', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(19, 7, 'Queen. \'Never!\' said the Duchess, as she spoke. Alice did not venture to go on crying in this affair, He trusts to you how it was very deep, or she should meet the real Mary Ann, what ARE you.', 'https://via.placeholder.com/640x480.png/00dd11?text=cats+Post+sed', 'image', 'public', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(20, 7, 'Then came a little of her going, though she knew she had not noticed before, and she jumped up in great disgust, and walked off; the Dormouse went on, \'I must go by the whole she thought there was.', 'https://via.placeholder.com/640x480.png/005588?text=cats+Post+illum', 'video', 'friends', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(21, 7, 'King. \'Shan\'t,\' said the Cat, \'if you only kept on puzzling about it while the Mock Turtle to the other: the only one who had spoken first. \'That\'s none of YOUR adventures.\' \'I could tell you his.', 'https://via.placeholder.com/640x480.png/0011ee?text=cats+Post+velit', 'image', 'private', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(22, 8, 'I am to see its meaning. \'And just as well wait, as she went on, looking anxiously round to see the Mock Turtle sighed deeply, and drew the back of one flapper across his eyes. \'I wasn\'t asleep,\' he.', 'https://via.placeholder.com/640x480.png/0033ff?text=cats+Post+provident', 'image', 'private', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(23, 8, 'Alice. \'Who\'s making personal remarks now?\' the Hatter went on, looking anxiously round to see you again, you dear old thing!\' said Alice, \'but I know THAT well enough; don\'t be particular--Here.', 'https://via.placeholder.com/640x480.png/00cc66?text=cats+Post+qui', 'video', 'public', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(24, 8, 'I never was so much about a whiting before.\' \'I can tell you more than that, if you cut your finger VERY deeply with a kind of thing that would happen: \'\"Miss Alice! Come here directly, and get.', 'https://via.placeholder.com/640x480.png/0055ee?text=cats+Post+odio', 'image', 'public', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(25, 9, 'Five and Seven said nothing, but looked at her side. She was moving them about as curious as it can\'t possibly make me larger, it must be on the top with its eyelids, so he did,\' said the Cat. \'I.', 'https://via.placeholder.com/640x480.png/008811?text=cats+Post+quis', 'text', 'private', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(26, 9, 'For, you see, as she could not help thinking there MUST be more to come, so she tried to curtsey as she went on, \'What HAVE you been doing here?\' \'May it please your Majesty,\' the Hatter and the.', 'https://via.placeholder.com/640x480.png/00bbbb?text=cats+Post+odio', 'text', 'public', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(27, 9, 'King. (The jury all brightened up again.) \'Please your Majesty,\' he began. \'You\'re a very deep well. Either the well was very provoking to find her way into that lovely garden. First, however, she.', 'https://via.placeholder.com/640x480.png/00bbee?text=cats+Post+sed', 'text', 'friends', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(28, 10, 'For he can thoroughly enjoy The pepper when he sneezes: He only does it to half-past one as long as I get SOMEWHERE,\' Alice added as an unusually large saucepan flew close by her. There was a large.', 'https://via.placeholder.com/640x480.png/00ff22?text=cats+Post+molestias', 'text', 'private', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(29, 10, 'Next came an angry tone, \'Why, Mary Ann, and be turned out of THIS!\' (Sounds of more energetic remedies--\' \'Speak English!\' said the Lory. Alice replied very gravely. \'What else had you to leave off.', 'https://via.placeholder.com/640x480.png/004411?text=cats+Post+nihil', 'video', 'friends', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(30, 10, 'Hatter began, in a deep sigh, \'I was a sound of a well?\' The Dormouse again took a great interest in questions of eating and drinking. \'They lived on treacle,\' said the March Hare. \'Then it ought to.', 'https://via.placeholder.com/640x480.png/00aa11?text=cats+Post+quidem', 'video', 'public', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(31, 1, 'It\'s the most interesting, and perhaps after all it might tell her something about the temper of your nose-- What made you so awfully clever?\' \'I have answered three questions, and that he shook.', 'https://via.placeholder.com/640x480.png/00ccdd?text=cats+Post+ipsam', 'image', 'private', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(32, 1, 'FENDER, (WITH ALICE\'S LOVE). Oh dear, what nonsense I\'m talking!\' Just then she had grown up,\' she said to the Classics master, though. He was looking at the March Hare said to the door, staring.', 'https://via.placeholder.com/640x480.png/007722?text=cats+Post+repellendus', 'text', 'public', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(33, 1, 'After a while, finding that nothing more to be sure! However, everything is to-day! And yesterday things went on just as well go in ringlets at all; and I\'m sure _I_ shan\'t be beheaded!\' said Alice.', 'https://via.placeholder.com/640x480.png/0011dd?text=cats+Post+accusamus', 'image', 'public', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(34, 2, 'I needn\'t be afraid of them!\' \'And who is to do anything but sit with its eyelids, so he with his head!\' or \'Off with his nose, and broke to pieces against one of the court,\" and I had it written.', 'https://via.placeholder.com/640x480.png/0055bb?text=cats+Post+numquam', 'text', 'friends', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(35, 2, 'Alice, \'and if it likes.\' \'I\'d rather finish my tea,\' said the Mock Turtle recovered his voice, and, with tears running down his cheeks, he went on all the creatures order one about, and crept a.', 'https://via.placeholder.com/640x480.png/0011ff?text=cats+Post+enim', 'image', 'public', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(36, 2, 'Mouse had changed his mind, and was just in time to wash the things being alive; for instance, there\'s the arch I\'ve got to grow up again! Let me think: was I the same side of the Shark, But, when.', 'https://via.placeholder.com/640x480.png/000033?text=cats+Post+enim', 'image', 'private', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(37, 3, 'I must go by the pope, was soon submitted to by the White Rabbit read:-- \'They told me he was speaking, so that by the little golden key was lying under the sea--\' (\'I haven\'t,\' said Alice)--\'and.', 'https://via.placeholder.com/640x480.png/00aabb?text=cats+Post+quas', 'text', 'private', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(38, 3, 'I got up and went on planning to herself \'This is Bill,\' she gave one sharp kick, and waited till she heard the Queen in front of them, and just as well go in at all?\' said Alice, as she heard one.', 'https://via.placeholder.com/640x480.png/005533?text=cats+Post+quod', 'image', 'private', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(39, 3, 'Mock Turtle replied, counting off the mushroom, and raised herself to about two feet high, and her eyes immediately met those of a tree. \'Did you say pig, or fig?\' said the Gryphon: and it sat down.', 'https://via.placeholder.com/640x480.png/0099ff?text=cats+Post+sed', 'text', 'private', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(40, 4, 'Duchess sneezed occasionally; and as it went, \'One side of the house if it had grown to her ear, and whispered \'She\'s under sentence of execution.\' \'What for?\' said the Duchess; \'I never said I.', 'https://via.placeholder.com/640x480.png/00bb33?text=cats+Post+nostrum', 'image', 'private', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(41, 4, 'MUST be more to come, so she sat still just as if his heart would break. She pitied him deeply. \'What is it?\' Alice panted as she did not appear, and after a fashion, and this time the Queen in.', 'https://via.placeholder.com/640x480.png/008822?text=cats+Post+deleniti', 'video', 'private', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(42, 4, 'I shan\'t grow any more--As it is, I suppose?\' \'Yes,\' said Alice, very much at first, the two creatures, who had meanwhile been examining the roses. \'Off with her head!\' about once in her lessons in.', 'https://via.placeholder.com/640x480.png/00cc22?text=cats+Post+neque', 'image', 'public', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(43, 5, 'Alice, always ready to agree to everything that Alice quite hungry to look through into the garden door. Poor Alice! It was high time to be rude, so she went down on their slates, and then sat upon.', 'https://via.placeholder.com/640x480.png/005577?text=cats+Post+assumenda', 'video', 'private', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(44, 5, 'Mock Turtle persisted. \'How COULD he turn them out with his head!\' or \'Off with their heads!\' and the little golden key was lying on the other players, and shouting \'Off with her face in her pocket.', 'https://via.placeholder.com/640x480.png/006622?text=cats+Post+magnam', 'image', 'public', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(45, 5, 'I was sent for.\' \'You ought to go nearer till she shook the house, and wondering whether she ought to tell its age, there was no longer to be afraid of it. She stretched herself up and walking away.', 'https://via.placeholder.com/640x480.png/005511?text=cats+Post+minima', 'image', 'private', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(46, 6, 'He was an uncomfortably sharp chin. However, she got to go after that savage Queen: so she went back to yesterday, because I was sent for.\' \'You ought to be sure! However, everything is queer.', 'https://via.placeholder.com/640x480.png/00ffbb?text=cats+Post+iure', 'image', 'private', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(47, 6, 'I\'ve fallen by this very sudden change, but she saw maps and pictures hung upon pegs. She took down a good thing!\' she said this, she came upon a low voice, \'Your Majesty must cross-examine THIS.', 'https://via.placeholder.com/640x480.png/006622?text=cats+Post+quis', 'text', 'public', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(48, 6, 'Duchess: \'flamingoes and mustard both bite. And the Gryphon in an offended tone. And the muscular strength, which it gave to my right size: the next moment a shower of little Alice herself, and.', 'https://via.placeholder.com/640x480.png/0044bb?text=cats+Post+iste', 'image', 'friends', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(49, 7, 'THAT\'S a good deal worse off than before, as the Caterpillar called after her. \'I\'ve something important to say!\' This sounded promising, certainly: Alice turned and came back again. \'Keep your.', 'https://via.placeholder.com/640x480.png/00ee00?text=cats+Post+dolorem', 'image', 'friends', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(50, 7, 'I the same tone, exactly as if she had got its neck nicely straightened out, and was just saying to herself \'This is Bill,\' she gave her answer. \'They\'re done with a soldier on each side to guard.', 'https://via.placeholder.com/640x480.png/0000ff?text=cats+Post+at', 'image', 'friends', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(51, 7, 'Majesty,\' he began, \'for bringing these in: but I grow up, I\'ll write one--but I\'m grown up now,\' she added in an agony of terror. \'Oh, there goes his PRECIOUS nose\'; as an unusually large saucepan.', 'https://via.placeholder.com/640x480.png/009933?text=cats+Post+repudiandae', 'image', 'public', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(52, 8, 'Suppress him! Pinch him! Off with his nose, and broke off a head unless there was not even room for YOU, and no one listening, this time, and was just saying to herself \'It\'s the first figure!\' said.', 'https://via.placeholder.com/640x480.png/00ff11?text=cats+Post+qui', 'video', 'private', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(53, 8, 'Hatter trembled so, that Alice had no pictures or conversations?\' So she called softly after it, and found herself lying on their hands and feet at once, she found she could see it trying in a.', 'https://via.placeholder.com/640x480.png/00ee66?text=cats+Post+dolorem', 'video', 'private', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(54, 8, 'I needn\'t be so easily offended, you know!\' The Mouse did not dare to laugh; and, as there was silence for some time in silence: at last it unfolded its arms, took the watch and looked at the.', 'https://via.placeholder.com/640x480.png/001111?text=cats+Post+facere', 'image', 'friends', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(55, 9, 'Oh dear! I\'d nearly forgotten that I\'ve got to go nearer till she heard the Rabbit in a tone of great relief. \'Now at OURS they had to run back into the open air. \'IF I don\'t know,\' he went on.', 'https://via.placeholder.com/640x480.png/00ff99?text=cats+Post+earum', 'image', 'friends', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(56, 9, 'Gryphon. \'They can\'t have anything to say, she simply bowed, and took the cauldron of soup off the cake. * * * * * * * * * * * CHAPTER II. The Pool of Tears \'Curiouser and curiouser!\' cried Alice.', 'https://via.placeholder.com/640x480.png/00ccaa?text=cats+Post+neque', 'video', 'public', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(57, 9, 'VERY turn-up nose, much more like a Jack-in-the-box, and up I goes like a tunnel for some time after the birds! Why, she\'ll eat a little more conversation with her arms folded, quietly smoking a.', 'https://via.placeholder.com/640x480.png/00aa66?text=cats+Post+rerum', 'video', 'friends', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(58, 10, 'Gryphon. \'The reason is,\' said the cook. \'Treacle,\' said the Gryphon, \'you first form into a chrysalis--you will some day, you know--and then after that savage Queen: so she helped herself to about.', 'https://via.placeholder.com/640x480.png/0055cc?text=cats+Post+recusandae', 'video', 'private', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(59, 10, 'Duchess: \'what a clear way you go,\' said the Mock Turtle. Alice was more than that, if you could see it pop down a good deal until she made some tarts, All on a branch of a muchness\"--did you ever.', 'https://via.placeholder.com/640x480.png/0055cc?text=cats+Post+magni', 'video', 'private', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(60, 10, 'The pepper when he sneezes: He only does it to speak with. Alice waited till the Pigeon the opportunity of saying to herself, \'to be going messages for a minute, trying to explain the mistake it had.', 'https://via.placeholder.com/640x480.png/0099aa?text=cats+Post+commodi', 'video', 'public', '2025-06-18 04:57:19', '2025-06-18 04:57:19');
 
 -- --------------------------------------------------------
 
@@ -586,16 +598,16 @@ CREATE TABLE `profiles` (
 --
 
 INSERT INTO `profiles` (`id`, `user_id`, `dob`, `gender`, `phone`, `social_links`, `created_at`, `updated_at`) VALUES
-(1, 1, '1973-12-28', 'male', '+1-931-400-9331', '\"{\\\"facebook\\\":\\\"http:\\\\\\/\\\\\\/wolff.com\\\\\\/in-similique-ea-dolorem-in-ut-autem.html\\\",\\\"twitter\\\":\\\"http:\\\\\\/\\\\\\/ritchie.biz\\\\\\/\\\",\\\"linkedin\\\":\\\"http:\\\\\\/\\\\\\/lynch.com\\\\\\/nihil-mollitia-minus-cupiditate-in-doloribus.html\\\"}\"', '2025-06-13 01:09:02', '2025-06-13 01:09:02'),
-(2, 2, '1997-09-12', 'other', '1-269-763-2910', '\"{\\\"facebook\\\":\\\"http:\\\\\\/\\\\\\/jacobs.com\\\\\\/est-ea-ut-consequuntur-distinctio-sapiente\\\",\\\"twitter\\\":\\\"https:\\\\\\/\\\\\\/kulas.com\\\\\\/eum-beatae-voluptas-eum-eum-eaque.html\\\",\\\"linkedin\\\":\\\"http:\\\\\\/\\\\\\/www.schmeler.com\\\\\\/non-et-assumenda-exercitationem-ipsa-perferendis\\\"}\"', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(3, 3, '1976-04-07', 'other', '+1 (754) 786-7705', '\"{\\\"facebook\\\":\\\"http:\\\\\\/\\\\\\/www.blanda.com\\\\\\/soluta-rem-asperiores-dolor-aperiam-corrupti.html\\\",\\\"twitter\\\":\\\"http:\\\\\\/\\\\\\/leannon.com\\\\\\/rerum-sit-ullam-error\\\",\\\"linkedin\\\":\\\"http:\\\\\\/\\\\\\/www.hansen.net\\\\\\/dolor-deserunt-itaque-quia-saepe-ea-est\\\"}\"', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(4, 4, '2004-08-08', 'male', '+1.918.870.9340', '\"{\\\"facebook\\\":\\\"http:\\\\\\/\\\\\\/www.wunsch.com\\\\\\/\\\",\\\"twitter\\\":\\\"http:\\\\\\/\\\\\\/www.mraz.info\\\\\\/in-ut-qui-rem-expedita\\\",\\\"linkedin\\\":\\\"http:\\\\\\/\\\\\\/www.walsh.biz\\\\\\/soluta-non-atque-ad-est-quae-qui-excepturi-cupiditate\\\"}\"', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(5, 5, '1973-02-24', 'other', '+1 (720) 819-3680', '\"{\\\"facebook\\\":\\\"http:\\\\\\/\\\\\\/www.ondricka.net\\\\\\/\\\",\\\"twitter\\\":\\\"http:\\\\\\/\\\\\\/kertzmann.com\\\\\\/aliquam-magni-dolore-quas-consequuntur-tempora-quod-aliquam\\\",\\\"linkedin\\\":\\\"http:\\\\\\/\\\\\\/www.ullrich.net\\\\\\/aut-qui-fugit-autem-natus\\\"}\"', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(6, 6, '1989-07-29', 'other', '1-432-668-9297', '\"{\\\"facebook\\\":\\\"http:\\\\\\/\\\\\\/www.roberts.info\\\\\\/incidunt-velit-dolor-rem-velit-voluptatum-quisquam.html\\\",\\\"twitter\\\":\\\"http:\\\\\\/\\\\\\/www.lockman.org\\\\\\/eaque-dignissimos-rem-asperiores-nihil-laboriosam.html\\\",\\\"linkedin\\\":\\\"http:\\\\\\/\\\\\\/www.west.info\\\\\\/omnis-modi-eos-voluptas-quas-occaecati-qui\\\"}\"', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(7, 7, '2005-03-18', 'other', '973.891.1641', '\"{\\\"facebook\\\":\\\"http:\\\\\\/\\\\\\/rolfson.info\\\\\\/\\\",\\\"twitter\\\":\\\"http:\\\\\\/\\\\\\/www.larson.com\\\\\\/et-cumque-qui-quis-nesciunt-aliquid-dolor.html\\\",\\\"linkedin\\\":\\\"http:\\\\\\/\\\\\\/collins.org\\\\\\/laboriosam-illo-in-incidunt-sequi-perferendis-necessitatibus\\\"}\"', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(8, 8, '1976-03-15', 'other', '203-370-2450', '\"{\\\"facebook\\\":\\\"https:\\\\\\/\\\\\\/www.lockman.com\\\\\\/minus-velit-maxime-quaerat-omnis\\\",\\\"twitter\\\":\\\"http:\\\\\\/\\\\\\/wehner.net\\\\\\/voluptates-nulla-doloribus-neque-rem-ut-et-accusantium\\\",\\\"linkedin\\\":\\\"http:\\\\\\/\\\\\\/wehner.biz\\\\\\/quia-fugiat-sint-veritatis-ullam-voluptas-qui-ab.html\\\"}\"', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(9, 9, '1996-02-11', 'male', '+1.629.612.8627', '\"{\\\"facebook\\\":\\\"http:\\\\\\/\\\\\\/cummings.net\\\\\\/veritatis-eligendi-expedita-laudantium-reiciendis-excepturi-impedit\\\",\\\"twitter\\\":\\\"https:\\\\\\/\\\\\\/www.nikolaus.com\\\\\\/necessitatibus-voluptas-et-sed-est\\\",\\\"linkedin\\\":\\\"http:\\\\\\/\\\\\\/www.quitzon.com\\\\\\/ut-magni-veniam-autem\\\"}\"', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(10, 10, '1976-07-16', 'female', '1-712-874-1371', '\"{\\\"facebook\\\":\\\"http:\\\\\\/\\\\\\/www.hilpert.info\\\\\\/aut-atque-autem-quo-aliquam-fuga-possimus-iste\\\",\\\"twitter\\\":\\\"http:\\\\\\/\\\\\\/schulist.com\\\\\\/tempora-in-tempora-deleniti-est-deserunt\\\",\\\"linkedin\\\":\\\"https:\\\\\\/\\\\\\/lubowitz.biz\\\\\\/perferendis-et-nam-enim-quo-iure-eligendi.html\\\"}\"', '2025-06-13 01:09:03', '2025-06-13 01:09:03');
+(1, 1, '1971-05-25', 'male', '804.338.9172', '\"{\\\"facebook\\\":\\\"http:\\\\\\/\\\\\\/keeling.com\\\\\\/pariatur-aliquam-possimus-aperiam-eos.html\\\",\\\"twitter\\\":\\\"http:\\\\\\/\\\\\\/www.considine.biz\\\\\\/aspernatur-enim-et-aut-impedit-deserunt-expedita-fugiat\\\",\\\"linkedin\\\":\\\"http:\\\\\\/\\\\\\/turcotte.com\\\\\\/porro-id-ipsum-ut-repudiandae-earum-ea\\\"}\"', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(2, 2, '1988-07-04', 'male', '+1-402-701-9092', '\"{\\\"facebook\\\":\\\"http:\\\\\\/\\\\\\/hyatt.com\\\\\\/animi-cupiditate-quos-earum-odio\\\",\\\"twitter\\\":\\\"http:\\\\\\/\\\\\\/russel.com\\\\\\/odit-cupiditate-fugiat-consequatur-expedita-veritatis-eos-omnis-consequatur.html\\\",\\\"linkedin\\\":\\\"http:\\\\\\/\\\\\\/towne.net\\\\\\/\\\"}\"', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(3, 3, '1998-01-31', 'female', '+1 (563) 435-3757', '\"{\\\"facebook\\\":\\\"http:\\\\\\/\\\\\\/www.carter.com\\\\\\/sint-et-voluptas-omnis-dolores.html\\\",\\\"twitter\\\":\\\"http:\\\\\\/\\\\\\/www.hamill.com\\\\\\/odit-beatae-id-voluptas-incidunt.html\\\",\\\"linkedin\\\":\\\"http:\\\\\\/\\\\\\/volkman.com\\\\\\/\\\"}\"', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(4, 4, '1988-12-04', 'other', '+1-551-531-0957', '\"{\\\"facebook\\\":\\\"http:\\\\\\/\\\\\\/kihn.com\\\\\\/nostrum-velit-enim-perferendis-odit\\\",\\\"twitter\\\":\\\"http:\\\\\\/\\\\\\/www.nikolaus.com\\\\\\/maiores-neque-minima-architecto-tenetur-est-consequatur-placeat-nemo.html\\\",\\\"linkedin\\\":\\\"http:\\\\\\/\\\\\\/schuppe.biz\\\\\\/in-praesentium-architecto-provident-cumque\\\"}\"', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(5, 5, '1982-11-14', 'male', '1-725-740-9037', '\"{\\\"facebook\\\":\\\"http:\\\\\\/\\\\\\/ruecker.com\\\\\\/voluptas-occaecati-alias-corrupti-ex-placeat-molestiae-et\\\",\\\"twitter\\\":\\\"http:\\\\\\/\\\\\\/www.dibbert.com\\\\\\/reprehenderit-quia-earum-eaque-vero-illum-optio-facere\\\",\\\"linkedin\\\":\\\"http:\\\\\\/\\\\\\/www.fadel.com\\\\\\/qui-aut-excepturi-quia-perspiciatis-molestias-odit-odio\\\"}\"', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(6, 6, '2004-02-16', 'other', '+13026718986', '\"{\\\"facebook\\\":\\\"http:\\\\\\/\\\\\\/mitchell.com\\\\\\/necessitatibus-nostrum-debitis-impedit-eius\\\",\\\"twitter\\\":\\\"http:\\\\\\/\\\\\\/skiles.com\\\\\\/voluptatem-voluptatem-consequatur-iste-unde-aut\\\",\\\"linkedin\\\":\\\"https:\\\\\\/\\\\\\/www.lind.info\\\\\\/itaque-tempore-iusto-similique-eligendi-ipsam-error-hic\\\"}\"', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(7, 7, '1992-12-18', 'other', '(732) 474-3454', '\"{\\\"facebook\\\":\\\"http:\\\\\\/\\\\\\/www.hintz.com\\\\\\/ratione-sit-minus-autem-qui-fugiat\\\",\\\"twitter\\\":\\\"http:\\\\\\/\\\\\\/www.ebert.com\\\\\\/quidem-corporis-dolorem-suscipit-quo-accusamus\\\",\\\"linkedin\\\":\\\"http:\\\\\\/\\\\\\/jast.org\\\\\\/\\\"}\"', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(8, 8, '2005-01-03', 'female', '+1.781.757.6141', '\"{\\\"facebook\\\":\\\"http:\\\\\\/\\\\\\/www.nader.biz\\\\\\/nemo-alias-explicabo-autem-nulla.html\\\",\\\"twitter\\\":\\\"http:\\\\\\/\\\\\\/www.walsh.com\\\\\\/quia-voluptate-ex-sed-error-dolorem-excepturi\\\",\\\"linkedin\\\":\\\"http:\\\\\\/\\\\\\/konopelski.net\\\\\\/eius-velit-labore-consectetur-incidunt-velit-ut-ratione-dolorem\\\"}\"', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(9, 9, '1992-08-25', 'other', '772-210-6109', '\"{\\\"facebook\\\":\\\"http:\\\\\\/\\\\\\/pouros.org\\\\\\/libero-minima-facilis-ut-modi-tenetur-temporibus-aut.html\\\",\\\"twitter\\\":\\\"http:\\\\\\/\\\\\\/www.maggio.org\\\\\\/\\\",\\\"linkedin\\\":\\\"http:\\\\\\/\\\\\\/www.heaney.com\\\\\\/\\\"}\"', '2025-06-18 04:57:19', '2025-06-18 04:57:19'),
+(10, 10, '1978-08-26', 'other', '(215) 262-7616', '\"{\\\"facebook\\\":\\\"http:\\\\\\/\\\\\\/www.bednar.com\\\\\\/\\\",\\\"twitter\\\":\\\"http:\\\\\\/\\\\\\/www.dubuque.com\\\\\\/\\\",\\\"linkedin\\\":\\\"http:\\\\\\/\\\\\\/brown.com\\\\\\/et-ea-earum-est-modi-harum\\\"}\"', '2025-06-18 04:57:19', '2025-06-18 04:57:19');
 
 -- --------------------------------------------------------
 
@@ -632,7 +644,7 @@ CREATE TABLE `ranks` (
 --
 
 INSERT INTO `ranks` (`id`, `name`, `level`, `min_credit`, `created_at`, `updated_at`) VALUES
-(1, 'Novice', 1, 0, '2025-06-13 01:09:02', '2025-06-13 01:09:02');
+(1, 'Novice', 1, 0, '2025-06-18 04:57:15', '2025-06-18 04:57:15');
 
 -- --------------------------------------------------------
 
@@ -648,6 +660,14 @@ CREATE TABLE `sessions` (
   `payload` longtext NOT NULL,
   `last_activity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sessions`
+--
+
+INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
+('6uowUwKdfGe2Js9AG0OqYAKx2vuuGGkEjm12mBWP', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoia2JxMW1EeFowd2RPcFoxeWJuN2sxb0N4VVl5TGx5RnNvd1hMNVRVZCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1750270262),
+('BMSYDJ5BKikck5oF2CuGQLJUXhGS21VotvFnLyDX', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiYjRxRDFhQnRKNjIzejVXbFZGQWozRnNDYkJRNmRNZmVrN3Zla2NzUSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC91c2VyL2Rhc2hib2FyZCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjI7fQ==', 1750276949);
 
 -- --------------------------------------------------------
 
@@ -670,12 +690,12 @@ CREATE TABLE `threads` (
 --
 
 INSERT INTO `threads` (`id`, `forum_id`, `user_id`, `title`, `content`, `created_at`, `updated_at`) VALUES
-(1, 61, 1, 'I tell you, you coward!\' and at once took up the.', 'In qui qui ipsum illo perferendis modi. Nihil a animi quod quis praesentium. Est eos occaecati ut natus eum. Qui a nihil quia rerum.\n\nUt reiciendis deserunt vero. Commodi nihil earum veniam est excepturi velit. Eos suscipit est vero nihil pariatur sit ea nemo. Saepe facere et velit velit.\n\nSint blanditiis voluptatem eos voluptates aut voluptatem. Dolorem mollitia maxime quasi voluptatum. Quae dolores maiores velit consequatur. Aperiam beatae qui eum vero minus illum perferendis.', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(2, 61, 1, 'Gryphon went on eagerly: \'There is such a noise.', 'Ut autem quos accusantium. Quae veniam dolorum quas sit doloribus velit sequi nulla. Iusto quia quaerat est occaecati occaecati architecto.\n\nEsse maxime voluptatem veritatis consequatur ipsum optio sapiente. Nam fugit rerum id nemo ut corrupti.\n\nVoluptatem officiis nostrum velit provident ea quo. Impedit ullam veritatis optio. Velit quas quos et voluptas.', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(3, 62, 6, 'The jury all wrote down on her spectacles, and.', 'Quibusdam blanditiis nihil ea dignissimos. Deleniti ducimus quaerat labore adipisci esse. Quae sequi non officia modi cum voluptatem vel.\n\nSaepe odio ad quis dicta nobis modi. Ducimus est possimus sint amet neque soluta. Rerum et in aperiam quidem. Est ut saepe similique.\n\nMolestiae sunt et maxime suscipit placeat dolorum. Ut qui consequatur similique quibusdam omnis eum. Officiis tempora itaque dolore perspiciatis ea. Occaecati repellendus eius aut dolorum aliquam omnis velit distinctio. Esse minima laborum voluptate in dolore fugiat error ut.', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(4, 62, 6, 'I shall only look up in spite of all her.', 'Consequatur sunt vero quos iure sed quia. Cum laborum quaerat est sapiente rerum animi saepe. Qui eos id aspernatur veritatis eveniet. Laboriosam itaque ducimus tempora et quo velit maiores.\n\nAut qui excepturi nemo est. Nihil ut dolorem dolorem maiores quisquam aspernatur corporis. Dolorem accusamus ut veritatis voluptatem sunt ullam soluta. Dolor libero voluptates voluptatem sint.\n\nQuidem asperiores assumenda tempora sit molestiae. Mollitia quia aliquid aut et sunt laudantium. Eum mollitia architecto accusamus quibusdam aut soluta. Voluptates blanditiis et voluptatem eos reprehenderit.', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(5, 63, 10, 'Alice a little scream, half of anger, and tried.', 'Illo commodi ut at veniam aut qui. Dicta nesciunt illum aliquam atque tempore quae qui.\n\nInventore rerum qui consectetur consequatur soluta ea. Officiis officiis nihil recusandae placeat consequatur. Reprehenderit impedit nam quia error sed.\n\nEst non cumque earum accusamus ipsa corporis. Veritatis cumque nihil consectetur aliquam sequi ea. Modi mollitia iusto rerum quia culpa. Quis omnis impedit iusto in totam dignissimos. In qui ratione excepturi quia et qui.', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(6, 63, 10, 'Where CAN I have ordered\'; and she jumped up on.', 'Atque rerum magni voluptas magnam reprehenderit quibusdam. Autem numquam minus voluptatum sit occaecati esse et. Qui neque et qui aut repudiandae officia rerum. Repudiandae sit doloremque aliquid nihil necessitatibus.\n\nDolorem tenetur ipsam sunt aut natus natus. Cumque dolorem error aut quam doloremque. Corporis id voluptatem harum nihil sunt possimus. Consequatur voluptatem omnis doloremque quia.\n\nExpedita rerum hic omnis inventore. Quidem doloremque necessitatibus quos. Officiis voluptatem ea ut voluptate omnis nemo sed enim. Deserunt cupiditate veritatis accusamus atque illum.', '2025-06-13 01:09:03', '2025-06-13 01:09:03');
+(1, 61, 5, 'That he met in the night? Let me see: that would.', 'Rerum error nam autem harum qui. Doloribus sequi eius ut ad magnam. Dignissimos sed enim veniam accusantium rerum sed. Fugiat nesciunt in tenetur vel maiores occaecati.\n\nIpsa non delectus aspernatur quo excepturi recusandae. Quibusdam error qui et laborum assumenda. Quidem dolore consequuntur et quos eum perspiciatis. Debitis tenetur nihil est quia ut commodi occaecati consequatur.\n\nImpedit est enim quis quis corporis. Veritatis et facere rem dolor veritatis dolores amet voluptatem. Laudantium aut debitis laborum facere dicta autem quibusdam labore. Est asperiores ut labore suscipit reiciendis iure nisi voluptas.', '2025-06-18 04:57:20', '2025-06-18 04:57:20'),
+(2, 61, 5, 'As they walked off together, Alice heard the.', 'Praesentium necessitatibus architecto laboriosam optio quos. Beatae quos suscipit non autem quia omnis. Natus delectus et omnis odit ut.\n\nConsectetur doloribus occaecati maiores et omnis eos. Facilis non veritatis ducimus doloremque nihil ut. Vero nobis ullam itaque possimus earum.\n\nLaborum ea explicabo in quis expedita. Eos distinctio dolores dignissimos. Eligendi consequuntur porro nulla nemo est dicta voluptatem.', '2025-06-18 04:57:20', '2025-06-18 04:57:20'),
+(3, 62, 1, 'I ask! It\'s always six o\'clock now.\' A bright.', 'Sunt sunt omnis velit. Fugit est blanditiis sit ut. Sed aliquid sed provident suscipit. Quo est ipsa rerum modi quas praesentium officiis.\n\nPorro exercitationem rerum assumenda quis ea aliquid esse ut. Minima culpa facilis velit velit qui unde minima. Eos iure ducimus qui in cupiditate sed.\n\nEt aut beatae odio. Non tenetur molestiae praesentium provident. Esse itaque sit repellat velit dolorem eveniet qui. Cumque quaerat quis error consequatur.', '2025-06-18 04:57:20', '2025-06-18 04:57:20'),
+(4, 62, 1, 'He says it kills all the first to break the.', 'Quam voluptatem odit labore quia et fugit iusto aut. Adipisci earum rerum dolores mollitia ut. Tenetur qui tempora consequatur ad voluptatem eaque quaerat.\n\nAccusamus voluptate dolorem quaerat error quos. Corporis sunt dolor et praesentium voluptatem quisquam ut. Est est id vitae perspiciatis.\n\nFacere tempora sit occaecati molestiae cumque aliquam qui velit. Deleniti totam exercitationem aut quia maiores eveniet. Et occaecati ut mollitia minus odio. Impedit non cupiditate eos minus qui voluptatum. Perspiciatis rem enim pariatur qui.', '2025-06-18 04:57:20', '2025-06-18 04:57:20'),
+(5, 63, 9, 'Cat, \'a dog\'s not mad. You grant that?\' \'I.', 'Nostrum rem illum voluptatibus quis. Quidem sint fugit accusamus voluptates. Quis iusto natus vel voluptas eos eaque fuga. Ut aliquam ut ipsa est praesentium qui.\n\nQui autem magnam corporis ab odio labore. Perspiciatis natus ad veritatis facilis id. Repudiandae recusandae ut vel repudiandae doloremque omnis rerum.\n\nAut iusto voluptatem unde et sunt animi ipsam. Id nobis quia quidem eveniet doloremque sunt quibusdam. Minus ad suscipit labore reiciendis eveniet. Dicta et voluptatem quae unde vel non unde.', '2025-06-18 04:57:20', '2025-06-18 04:57:20'),
+(6, 63, 9, 'Panther received knife and fork with a yelp of.', 'Esse est enim sequi molestias ullam. Et occaecati accusamus ut molestiae consectetur illo atque. Illum reprehenderit tempora quia expedita rerum quia provident. Quia omnis possimus qui ipsa.\n\nMinus ut consequatur et dicta. Dicta distinctio id quasi doloribus nulla. Dolorem inventore illum autem ex dolorem. Et repudiandae autem qui.\n\nOfficia eius natus architecto et pariatur iure. Est excepturi molestiae reprehenderit quam ea amet illum.', '2025-06-18 04:57:20', '2025-06-18 04:57:20');
 
 -- --------------------------------------------------------
 
@@ -719,6 +739,7 @@ CREATE TABLE `users` (
   `first_name` varchar(255) NOT NULL,
   `middle_name` varchar(255) DEFAULT NULL,
   `email` varchar(255) NOT NULL,
+  `user_type` tinyint(4) NOT NULL DEFAULT 1 COMMENT '1=Member, 2=Admin, 3=Superadmin',
   `password` varchar(255) NOT NULL,
   `avatar` varchar(255) DEFAULT NULL,
   `bio` text DEFAULT NULL,
@@ -737,25 +758,25 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `last_name`, `first_name`, `middle_name`, `email`, `password`, `avatar`, `bio`, `location`, `rank_id`, `credit`, `login_attempts`, `email_verified_status`, `email_verified_at`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'O\'Hara', 'Kraig', NULL, 'ytowne@example.org', '$2y$12$.BLefFgBgeQLnvo1sXQMbuT27Y2K.L/J/fCrOrSjO4rM/1vqdlj56', 'blank.png', NULL, NULL, NULL, 0, NULL, NULL, '2025-06-13 01:09:02', 'YBn4Rp0rlD', '2025-06-13 01:09:02', '2025-06-13 01:09:02'),
-(2, 'Hudson', 'Koby', NULL, 'alanis.waelchi@example.net', '$2y$12$.BLefFgBgeQLnvo1sXQMbuT27Y2K.L/J/fCrOrSjO4rM/1vqdlj56', 'blank.png', NULL, NULL, NULL, 0, NULL, NULL, '2025-06-13 01:09:02', 'xsws11C8LC', '2025-06-13 01:09:02', '2025-06-13 01:09:02'),
-(3, 'Hahn', 'Fleta', NULL, 'harvey.raymundo@example.net', '$2y$12$.BLefFgBgeQLnvo1sXQMbuT27Y2K.L/J/fCrOrSjO4rM/1vqdlj56', 'blank.png', NULL, NULL, NULL, 0, NULL, NULL, '2025-06-13 01:09:02', 'eD2donUoNL', '2025-06-13 01:09:02', '2025-06-13 01:09:02'),
-(4, 'Cassin', 'Raymond', 'Dorris', 'rogahn.orrin@example.org', '$2y$12$.BLefFgBgeQLnvo1sXQMbuT27Y2K.L/J/fCrOrSjO4rM/1vqdlj56', 'blank.png', NULL, NULL, NULL, 0, NULL, NULL, '2025-06-13 01:09:02', 'KbFZKzdiGD', '2025-06-13 01:09:02', '2025-06-13 01:09:02'),
-(5, 'Torp', 'Earlene', 'Horace', 'stanton.miles@example.org', '$2y$12$.BLefFgBgeQLnvo1sXQMbuT27Y2K.L/J/fCrOrSjO4rM/1vqdlj56', 'blank.png', NULL, NULL, NULL, 0, NULL, NULL, '2025-06-13 01:09:02', 'iK2psjgzL7', '2025-06-13 01:09:02', '2025-06-13 01:09:02'),
-(6, 'Koch', 'Elsie', 'Shanel', 'simeon.davis@example.net', '$2y$12$.BLefFgBgeQLnvo1sXQMbuT27Y2K.L/J/fCrOrSjO4rM/1vqdlj56', 'blank.png', NULL, NULL, NULL, 0, NULL, NULL, '2025-06-13 01:09:02', 'ihhvEDl39X', '2025-06-13 01:09:02', '2025-06-13 01:09:02'),
-(7, 'Marvin', 'Daija', NULL, 'faustino66@example.net', '$2y$12$.BLefFgBgeQLnvo1sXQMbuT27Y2K.L/J/fCrOrSjO4rM/1vqdlj56', 'blank.png', NULL, NULL, NULL, 0, NULL, NULL, '2025-06-13 01:09:02', 'CjYLQQsava', '2025-06-13 01:09:02', '2025-06-13 01:09:02'),
-(8, 'Pagac', 'Nadia', 'Guillermo', 'nikolaus.dexter@example.org', '$2y$12$.BLefFgBgeQLnvo1sXQMbuT27Y2K.L/J/fCrOrSjO4rM/1vqdlj56', 'blank.png', NULL, NULL, NULL, 0, NULL, NULL, '2025-06-13 01:09:02', 'r2uBAnA5oR', '2025-06-13 01:09:02', '2025-06-13 01:09:02'),
-(9, 'Davis', 'Federico', NULL, 'pete93@example.com', '$2y$12$.BLefFgBgeQLnvo1sXQMbuT27Y2K.L/J/fCrOrSjO4rM/1vqdlj56', 'blank.png', NULL, NULL, NULL, 0, NULL, NULL, '2025-06-13 01:09:02', 'vvGrh7RHFv', '2025-06-13 01:09:02', '2025-06-13 01:09:02'),
-(10, 'O\'Reilly', 'Ashlynn', 'Emely', 'ltowne@example.org', '$2y$12$.BLefFgBgeQLnvo1sXQMbuT27Y2K.L/J/fCrOrSjO4rM/1vqdlj56', 'blank.png', NULL, NULL, NULL, 0, NULL, NULL, '2025-06-13 01:09:02', 'JD3FNdlnvD', '2025-06-13 01:09:02', '2025-06-13 01:09:02'),
-(11, 'Spinka', 'Dorian', NULL, 'mtillman@example.com', '$2y$12$.BLefFgBgeQLnvo1sXQMbuT27Y2K.L/J/fCrOrSjO4rM/1vqdlj56', 'blank.png', NULL, NULL, NULL, 0, NULL, NULL, '2025-06-13 01:09:03', 'iBCL5QI9VL', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(12, 'Christiansen', 'Pink', 'Graciela', 'domenico.larkin@example.net', '$2y$12$.BLefFgBgeQLnvo1sXQMbuT27Y2K.L/J/fCrOrSjO4rM/1vqdlj56', 'blank.png', NULL, NULL, NULL, 0, NULL, NULL, '2025-06-13 01:09:03', '99iIjvI8kS', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(13, 'Simonis', 'Rosie', NULL, 'claudie96@example.net', '$2y$12$.BLefFgBgeQLnvo1sXQMbuT27Y2K.L/J/fCrOrSjO4rM/1vqdlj56', 'blank.png', NULL, NULL, NULL, 0, NULL, NULL, '2025-06-13 01:09:03', 'iqeym9e05p', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(14, 'Gleichner', 'Sabryna', NULL, 'dashawn.mueller@example.org', '$2y$12$.BLefFgBgeQLnvo1sXQMbuT27Y2K.L/J/fCrOrSjO4rM/1vqdlj56', 'blank.png', NULL, NULL, NULL, 0, NULL, NULL, '2025-06-13 01:09:03', 'Kqi4dUzTbq', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(15, 'Carroll', 'Marilie', NULL, 'cremin.nico@example.org', '$2y$12$.BLefFgBgeQLnvo1sXQMbuT27Y2K.L/J/fCrOrSjO4rM/1vqdlj56', 'blank.png', NULL, NULL, NULL, 0, NULL, NULL, '2025-06-13 01:09:03', 'TrZtxcAKim', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(16, 'Johnston', 'Annamarie', 'Javonte', 'brown.keshaun@example.net', '$2y$12$.BLefFgBgeQLnvo1sXQMbuT27Y2K.L/J/fCrOrSjO4rM/1vqdlj56', 'blank.png', NULL, NULL, NULL, 0, NULL, NULL, '2025-06-13 01:09:03', 'b6mO4ZmTgP', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(17, 'Ernser', 'Levi', 'Dallin', 'elsie64@example.com', '$2y$12$.BLefFgBgeQLnvo1sXQMbuT27Y2K.L/J/fCrOrSjO4rM/1vqdlj56', 'blank.png', NULL, NULL, NULL, 0, NULL, NULL, '2025-06-13 01:09:03', 'JPOj047UJV', '2025-06-13 01:09:03', '2025-06-13 01:09:03'),
-(18, 'Murray', 'Nichole', 'Makayla', 'arch.spencer@example.com', '$2y$12$.BLefFgBgeQLnvo1sXQMbuT27Y2K.L/J/fCrOrSjO4rM/1vqdlj56', 'blank.png', NULL, NULL, NULL, 0, NULL, NULL, '2025-06-13 01:09:03', 'ZoeOGbD1xX', '2025-06-13 01:09:03', '2025-06-13 01:09:03');
+INSERT INTO `users` (`id`, `last_name`, `first_name`, `middle_name`, `email`, `user_type`, `password`, `avatar`, `bio`, `location`, `rank_id`, `credit`, `login_attempts`, `email_verified_status`, `email_verified_at`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Von', 'Kennedi', 'Nicole', 'zboncak.pansy@example.org', 1, '$2y$12$JT3uL7mp6Zx5H97ol5hlwe.Fv3j95DmjJxIPfLjGCwmchWHwDm7mi', 'blank.png', NULL, NULL, NULL, 0, NULL, 1, '2025-06-18 04:57:17', 'Zlzldz1rWqmtZFXk5WJGQFHTQZAUpcmFzrbPpLUbkTvTvlXvw0ps2uWk8KE1', '2025-06-18 04:57:18', '2025-06-18 04:57:18'),
+(2, 'Renner', 'Johan', 'Cameron', 'walter.witting@example.org', 1, '$2y$12$JT3uL7mp6Zx5H97ol5hlwe.Fv3j95DmjJxIPfLjGCwmchWHwDm7mi', 'blank.png', NULL, NULL, NULL, 0, NULL, 1, '2025-06-18 04:57:18', 'Du1Jq5VgfI', '2025-06-18 04:57:18', '2025-06-18 04:57:18'),
+(3, 'Legros', 'Makayla', NULL, 'margarete22@example.org', 1, '$2y$12$JT3uL7mp6Zx5H97ol5hlwe.Fv3j95DmjJxIPfLjGCwmchWHwDm7mi', 'blank.png', NULL, NULL, NULL, 0, NULL, 1, '2025-06-18 04:57:18', 'Kyv9QSCCra', '2025-06-18 04:57:18', '2025-06-18 04:57:18'),
+(4, 'Erdman', 'Delphine', 'Gaylord', 'stoltenberg.stuart@example.org', 1, '$2y$12$JT3uL7mp6Zx5H97ol5hlwe.Fv3j95DmjJxIPfLjGCwmchWHwDm7mi', 'blank.png', NULL, NULL, NULL, 0, NULL, 1, '2025-06-18 04:57:18', 'ImSK1iygIJf1DqYFmBrOnvxBbVBbXCPFBcxEoEom8YB0pVz5qe7anIugvOLO', '2025-06-18 04:57:18', '2025-06-18 04:57:18'),
+(5, 'Becker', 'Jaden', 'Alexanne', 'carrie.morar@example.org', 1, '$2y$12$JT3uL7mp6Zx5H97ol5hlwe.Fv3j95DmjJxIPfLjGCwmchWHwDm7mi', 'blank.png', NULL, NULL, NULL, 0, NULL, 1, '2025-06-18 04:57:18', 'JpsyQUBrPK', '2025-06-18 04:57:18', '2025-06-18 04:57:18'),
+(6, 'Swaniawski', 'Arjun', 'Dedric', 'mjacobi@example.net', 1, '$2y$12$JT3uL7mp6Zx5H97ol5hlwe.Fv3j95DmjJxIPfLjGCwmchWHwDm7mi', 'blank.png', NULL, NULL, NULL, 0, NULL, 1, '2025-06-18 04:57:18', 'HloR9wOvHT', '2025-06-18 04:57:18', '2025-06-18 04:57:18'),
+(7, 'Wunsch', 'Leopoldo', NULL, 'bhegmann@example.com', 1, '$2y$12$JT3uL7mp6Zx5H97ol5hlwe.Fv3j95DmjJxIPfLjGCwmchWHwDm7mi', 'blank.png', NULL, NULL, NULL, 0, NULL, 1, '2025-06-18 04:57:18', 'bXsdnKeixW', '2025-06-18 04:57:18', '2025-06-18 04:57:18'),
+(8, 'Stamm', 'Teagan', NULL, 'schmitt.josh@example.com', 1, '$2y$12$JT3uL7mp6Zx5H97ol5hlwe.Fv3j95DmjJxIPfLjGCwmchWHwDm7mi', 'blank.png', NULL, NULL, NULL, 0, NULL, 1, '2025-06-18 04:57:18', 'l5BF1UYucV', '2025-06-18 04:57:18', '2025-06-18 04:57:18'),
+(9, 'Collier', 'Trevor', 'Myles', 'kyra22@example.org', 1, '$2y$12$JT3uL7mp6Zx5H97ol5hlwe.Fv3j95DmjJxIPfLjGCwmchWHwDm7mi', 'blank.png', NULL, NULL, NULL, 0, NULL, 1, '2025-06-18 04:57:18', 'YtGGXj8ERg', '2025-06-18 04:57:18', '2025-06-18 04:57:18'),
+(10, 'Flatley', 'Ethyl', 'Otho', 'fred.prosacco@example.com', 1, '$2y$12$JT3uL7mp6Zx5H97ol5hlwe.Fv3j95DmjJxIPfLjGCwmchWHwDm7mi', 'blank.png', NULL, NULL, NULL, 0, NULL, 1, '2025-06-18 04:57:18', 'hZNe8UjQJd', '2025-06-18 04:57:18', '2025-06-18 04:57:18'),
+(11, 'Boehm', 'Bettie', 'Alaina', 'nader.monroe@example.org', 1, '$2y$12$JT3uL7mp6Zx5H97ol5hlwe.Fv3j95DmjJxIPfLjGCwmchWHwDm7mi', 'blank.png', NULL, NULL, NULL, 0, NULL, 1, '2025-06-18 04:57:20', 'sAwNuhCFcQ', '2025-06-18 04:57:20', '2025-06-18 04:57:20'),
+(12, 'Wunsch', 'Gaston', 'Tyrel', 'yesenia20@example.com', 1, '$2y$12$JT3uL7mp6Zx5H97ol5hlwe.Fv3j95DmjJxIPfLjGCwmchWHwDm7mi', 'blank.png', NULL, NULL, NULL, 0, NULL, 1, '2025-06-18 04:57:20', 'WBhdyZofbS', '2025-06-18 04:57:20', '2025-06-18 04:57:20'),
+(13, 'Steuber', 'Electa', NULL, 'rpagac@example.org', 1, '$2y$12$JT3uL7mp6Zx5H97ol5hlwe.Fv3j95DmjJxIPfLjGCwmchWHwDm7mi', 'blank.png', NULL, NULL, NULL, 0, NULL, 1, '2025-06-18 04:57:20', 'YXe1DTUJyv', '2025-06-18 04:57:20', '2025-06-18 04:57:20'),
+(14, 'Stracke', 'Flavie', NULL, 'gunnar23@example.org', 1, '$2y$12$JT3uL7mp6Zx5H97ol5hlwe.Fv3j95DmjJxIPfLjGCwmchWHwDm7mi', 'blank.png', NULL, NULL, NULL, 0, NULL, 1, '2025-06-18 04:57:20', 'AfjDSAyx80', '2025-06-18 04:57:20', '2025-06-18 04:57:20'),
+(15, 'Schowalter', 'Alysa', 'Waylon', 'celestine48@example.org', 1, '$2y$12$JT3uL7mp6Zx5H97ol5hlwe.Fv3j95DmjJxIPfLjGCwmchWHwDm7mi', 'blank.png', NULL, NULL, NULL, 0, NULL, 1, '2025-06-18 04:57:20', 'joIU0g0Z9A', '2025-06-18 04:57:20', '2025-06-18 04:57:20'),
+(16, 'Cronin', 'Liam', NULL, 'jovan.mckenzie@example.net', 1, '$2y$12$JT3uL7mp6Zx5H97ol5hlwe.Fv3j95DmjJxIPfLjGCwmchWHwDm7mi', 'blank.png', NULL, NULL, NULL, 0, NULL, 1, '2025-06-18 04:57:20', 'GZyV1CeSuu', '2025-06-18 04:57:20', '2025-06-18 04:57:20'),
+(17, 'Lehner', 'Dax', NULL, 'grover99@example.net', 1, '$2y$12$JT3uL7mp6Zx5H97ol5hlwe.Fv3j95DmjJxIPfLjGCwmchWHwDm7mi', 'blank.png', NULL, NULL, NULL, 0, NULL, 1, '2025-06-18 04:57:20', 'BnaFmvijga', '2025-06-18 04:57:20', '2025-06-18 04:57:20'),
+(18, 'Reichert', 'Karen', NULL, 'wunsch.agustin@example.net', 1, '$2y$12$JT3uL7mp6Zx5H97ol5hlwe.Fv3j95DmjJxIPfLjGCwmchWHwDm7mi', 'blank.png', NULL, NULL, NULL, 0, NULL, 1, '2025-06-18 04:57:20', 'yiPC1XDj8Y', '2025-06-18 04:57:20', '2025-06-18 04:57:20');
 
 -- --------------------------------------------------------
 
@@ -776,42 +797,42 @@ CREATE TABLE `user_badges` (
 --
 
 INSERT INTO `user_badges` (`id`, `badge_id`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 5, 1, NULL, NULL),
-(2, 10, 1, NULL, NULL),
-(3, 7, 2, NULL, NULL),
-(4, 8, 2, NULL, NULL),
-(5, 4, 3, NULL, NULL),
+(1, 6, 1, NULL, NULL),
+(2, 9, 1, NULL, NULL),
+(3, 5, 2, NULL, NULL),
+(4, 7, 2, NULL, NULL),
+(5, 6, 3, NULL, NULL),
 (6, 10, 3, NULL, NULL),
-(7, 4, 4, NULL, NULL),
-(8, 7, 4, NULL, NULL),
-(9, 6, 5, NULL, NULL),
-(10, 8, 5, NULL, NULL),
-(11, 1, 6, NULL, NULL),
-(12, 3, 6, NULL, NULL),
-(13, 9, 7, NULL, NULL),
-(14, 2, 7, NULL, NULL),
-(15, 5, 8, NULL, NULL),
-(16, 9, 8, NULL, NULL),
-(17, 7, 9, NULL, NULL),
-(18, 10, 9, NULL, NULL),
-(19, 7, 10, NULL, NULL),
-(20, 1, 10, NULL, NULL),
-(21, 3, 11, NULL, NULL),
-(22, 6, 11, NULL, NULL),
-(23, 9, 12, NULL, NULL),
-(24, 2, 12, NULL, NULL),
-(25, 7, 13, NULL, NULL),
-(26, 4, 13, NULL, NULL),
-(27, 4, 14, NULL, NULL),
-(28, 6, 14, NULL, NULL),
-(29, 1, 15, NULL, NULL),
-(30, 6, 15, NULL, NULL),
-(31, 4, 16, NULL, NULL),
-(32, 3, 16, NULL, NULL),
-(33, 3, 17, NULL, NULL),
-(34, 8, 17, NULL, NULL),
-(35, 7, 18, NULL, NULL),
-(36, 1, 18, NULL, NULL);
+(7, 7, 4, NULL, NULL),
+(8, 8, 4, NULL, NULL),
+(9, 9, 5, NULL, NULL),
+(10, 10, 5, NULL, NULL),
+(11, 6, 6, NULL, NULL),
+(12, 9, 6, NULL, NULL),
+(13, 7, 7, NULL, NULL),
+(14, 3, 7, NULL, NULL),
+(15, 9, 8, NULL, NULL),
+(16, 3, 8, NULL, NULL),
+(17, 1, 9, NULL, NULL),
+(18, 7, 9, NULL, NULL),
+(19, 9, 10, NULL, NULL),
+(20, 2, 10, NULL, NULL),
+(21, 2, 11, NULL, NULL),
+(22, 9, 11, NULL, NULL),
+(23, 7, 12, NULL, NULL),
+(24, 1, 12, NULL, NULL),
+(25, 5, 13, NULL, NULL),
+(26, 6, 13, NULL, NULL),
+(27, 10, 14, NULL, NULL),
+(28, 8, 14, NULL, NULL),
+(29, 7, 15, NULL, NULL),
+(30, 8, 15, NULL, NULL),
+(31, 7, 16, NULL, NULL),
+(32, 2, 16, NULL, NULL),
+(33, 10, 17, NULL, NULL),
+(34, 6, 17, NULL, NULL),
+(35, 3, 18, NULL, NULL),
+(36, 9, 18, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -862,6 +883,12 @@ ALTER TABLE `credit_logs`
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indexes for table `failed_logins`
+--
+ALTER TABLE `failed_logins`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `forums`
@@ -1055,6 +1082,12 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `failed_logins`
+--
+ALTER TABLE `failed_logins`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `forums`
 --
 ALTER TABLE `forums`
@@ -1088,7 +1121,7 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `marketplace_items`
 --
 ALTER TABLE `marketplace_items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `marketplace_orders`
@@ -1100,7 +1133,7 @@ ALTER TABLE `marketplace_orders`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `posts`

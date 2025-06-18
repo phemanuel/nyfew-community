@@ -96,7 +96,7 @@
                     </span>
                 </a>  
                 
-                <h3 class="side-title"> Contacts </h3>
+                <!-- <h3 class="side-title"> Contacts </h3>
 
                 <div class="contact-list my-2 ml-1">
                     
@@ -127,7 +127,7 @@
                         <div class="contact-username"> Alex Dolgove</div>
                     </a>
     
-                </div>
+                </div> -->
     
                 <ul class="side_links" data-sub-title="Pages">
                     <li><a href="feed.html"> <ion-icon name="settings-outline" class="side-icon"></ion-icon>  <span> Setting  </span> </a> 

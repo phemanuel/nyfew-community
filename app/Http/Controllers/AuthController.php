@@ -62,6 +62,7 @@ class AuthController extends Controller
                 'remember_token' => $email_token,                             
                 'avatar' => 'blank.jpg',                
                 'login_attempts' => 0,
+                'user_type' => '1',
             ]);
             
 

@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\User;
+use App\Models\Group;
+use Carbon\Carbon;
 
 use Illuminate\Http\Request;
 
@@ -10,6 +13,16 @@ class DashboardController extends Controller
 
     public function index()
     {
-        return view('dashboard.user-dashboard');
-    }
+        $today = Carbon::today();
+        
+        $birthdayUsers = User::whereHas('profile', function ($query) use ($today) {
+        $query->whereMonth('dob', $today->month)
+              ->whereDay('dob', $today->day);
+        })->with('profile')->get();
+
+        $members = User::where('user_type', 1)->get();
+        $groups = Group::all();
+
+        return view('dashboard.user-dashboard', compact('members','birthdayUsers','groups'));
+        }
 }
