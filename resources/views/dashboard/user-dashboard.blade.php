@@ -49,8 +49,8 @@
                 
                             <a href="#create-post" uk-toggle="target: body ; cls: story-active">
                                 <div class="single_story">
-                                    <img src="assets/images/avatars/avatar-lg-1.jpg" alt="">
-                                    <div class="story-avatar"> <img src="assets/images/avatars/avatar-6.jpg" alt=""></div>
+                                    <img src="{{asset('dashboard/assets/images/avatars/avatar-lg-1.jpg')}}" alt="">
+                                    <div class="story-avatar"> <img src="{{asset('dashboard/assets/images/avatars/avatar-lg-1.jpg')}}" alt=""></div>
                                     <div class="story-content"> <h4>Erica Jones </h4> </div>
                                 </div>
                             </a>

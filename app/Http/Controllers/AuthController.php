@@ -72,7 +72,7 @@ class AuthController extends Controller
             session(['email_token' => $email_token]);
             session(['email_message' => $email_message]);
 
-            //return redirect()->route('login')->with('success', 'Account created successful.');
+            
             return redirect('send-mail');
         } catch (ValidationException $e) {
             // Validation failed. Redirect back with validation errors.
