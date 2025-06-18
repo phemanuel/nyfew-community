@@ -99,59 +99,7 @@
                                             <span> $16.99 </span>
                                             <button class="type"> Remove</button>
                                         </div>
-                                    </li>
-                                    <li>
-                                        <div class="cart_avatar">
-                                            <img src="assets/images/product/15.jpg" alt="">
-                                        </div>
-                                        <div class="cart_text">
-                                            <div class=" font-semibold leading-4 mb-1.5 text-base line-clamp-1"> Herbal Shampoo </div>
-                                            <p class="text-sm">Type Herbel  </p>
-                                        </div>
-                                        <div class="cart_price">
-                                            <span> $12.99 </span>
-                                            <button class="type"> Remove</button>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="cart_avatar">
-                                            <img src="assets/images/product/14.jpg" alt="">
-                                        </div>
-                                        <div class="cart_text">
-                                            <div class=" font-semibold leading-4 mb-1.5 text-base line-clamp-1"> Wood Chair </div>
-                                            <p class="text-sm">Type Furniture  </p>
-                                        </div>
-                                        <div class="cart_price">
-                                            <span> $19.99 </span>
-                                            <button class="type"> Remove</button>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="cart_avatar">
-                                            <img src="assets/images/product/9.jpg" alt="">
-                                        </div>
-                                        <div class="cart_text">
-                                            <div class=" font-semibold leading-4 mb-1.5 text-base line-clamp-1"> Strawberries FreshRipe </div>
-                                            <p class="text-sm">Type Fruit  </p>
-                                        </div>
-                                        <div class="cart_price">
-                                            <span> $12.99 </span>
-                                            <button class="type"> Remove</button>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="cart_avatar">
-                                            <img src="assets/images/product/2.jpg" alt="">
-                                        </div>
-                                        <div class="cart_text">
-                                            <div class=" font-semibold leading-4 mb-1.5 text-base line-clamp-1"> Wireless headphones </div>
-                                            <p class="text-sm">Type Accessories  </p>
-                                        </div>
-                                        <div class="cart_price">
-                                            <span> $14.99 </span>
-                                            <button class="type"> Remove</button>
-                                        </div>
-                                    </li>
+                                    </li>                                    
                                     <li>
                                         <div class="cart_avatar">
                                             <img src="assets/images/product/13.jpg" alt="">
@@ -207,65 +155,7 @@
                                                      <time> 2 hours ago </time>
                                                  </div>
                                              </a>
-                                         </li>
-                                         <li class="not-read">
-                                             <a href="#">
-                                                 <div class="drop_avatar status-online"> <img src="{{asset('dashboard/assets/images/avatars/avatar-2.jpg')}}" alt="">
-                                                 </div>
-                                                 <div class="drop_text">
-                                                     <p>
-                                                        <strong>Stella Johnson</strong> Replay Your Comments in
-                                                        <span class="text-link">Adobe XD Tutorial</span>
-                                                     </p>
-                                                     <time> 9 hours ago </time>
-                                                 </div>
-                                             </a>
-                                         </li>
-                                         <li>
-                                             <a href="#">
-                                                 <div class="drop_avatar"> <img src="{{asset('dashboard/assets/images/avatars/avatar-3.jpg')}}" alt="">
-                                                 </div>
-                                                 <span class="drop_icon bg-gradient-primary">
-                                                    <i class="icon-feather-thumbs-up"></i>
-                                                </span>
-                                                 <div class="drop_text">
-                                                     <p>
-                                                        <strong>Alex Dolgove</strong> Added New Review In Video
-                                                        <span class="text-link">Full Stack PHP Developer</span>
-                                                     </p>
-                                                     <time> 12 hours ago </time>
-                                                 </div>
-                                             </a>
-                                         </li>
-                                         <li>
-                                             <a href="#">
-                                                 <div class="drop_avatar"> <img src="assets/images/avatars/avatar-1.jpg" alt="">
-                                                 </div>
-                                                 <div class="drop_text">
-                                                     <p>
-                                                        <strong>Jonathan Madano</strong> Shared Your Discussion On Video
-                                                        <span class="text-link">Css Flex Box </span>
-                                                     </p>
-                                                     <time> Yesterday </time>
-                                                 </div>
-                                             </a>
-                                         </li>
-                                         <li>
-                                             <a href="#">
-                                                 <div class="drop_avatar"> <img src="assets/images/avatars/avatar-1.jpg" alt="">
-                                                 </div>
-                                                 <span class="drop_icon bg-gradient-primary">
-                                                    <i class="icon-feather-thumbs-up"></i>
-                                                </span>
-                                                 <div class="drop_text">
-                                                     <p>
-                                                        <strong>Adrian Mohani</strong> Like Your Comment On Course
-                                                        <span class="text-link">Javascript Introduction </span>
-                                                     </p>
-                                                     <time> 2 hours ago </time>
-                                                 </div>
-                                             </a>
-                                         </li>
+                                         </li>                                         
                                          <li>
                                              <a href="#">
                                                  <div class="drop_avatar status-online"> <img src="assets/images/avatars/avatar-2.jpg" alt="">
@@ -279,71 +169,7 @@
                                                  </div>
                                              </a>
                                          </li>
-                                         <li>
-                                             <a href="#">
-                                                 <div class="drop_avatar"> <img src="assets/images/avatars/avatar-2.jpg" alt="">
-                                                 </div>
-                                                 <div class="drop_text">
-                                                     <p>
-                                                        <strong>Stella Johnson</strong> Replay Your Comments in
-                                                        <span class="text-link">Programming for Games</span>
-                                                     </p>
-                                                     <time> 9 hours ago </time>
-                                                 </div>
-                                             </a>
-                                         </li>
-                                         <li>
-                                             <a href="#">
-                                                 <div class="drop_avatar"> <img src="assets/images/avatars/avatar-3.jpg" alt="">
-                                                 </div>
-                                                 <div class="drop_text">
-                                                     <p>
-                                                        <strong>Alex Dolgove</strong> Added New Review In Course
-                                                        <span class="text-link">Full Stack PHP Developer</span>
-                                                     </p>
-                                                     <time> 12 hours ago </time>
-                                                 </div>
-                                             </a>
-                                         </li>
-                                         <li>
-                                             <a href="#">
-                                                 <div class="drop_avatar"> <img src="assets/images/avatars/avatar-1.jpg" alt="">
-                                                 </div>
-                                                 <div class="drop_text">
-                                                     <p>
-                                                        <strong>Jonathan Madano</strong> Shared Your Discussion On Course
-                                                        <span class="text-link">Css Flex Box </span>
-                                                     </p>
-                                                     <time> Yesterday </time>
-                                                 </div>
-                                             </a>
-                                         </li>
-                                         <li>
-                                             <a href="#">
-                                                 <div class="drop_avatar"> <img src="assets/images/avatars/avatar-1.jpg" alt="">
-                                                 </div>
-                                                 <div class="drop_text">
-                                                     <p>
-                                                        <strong>Adrian Mohani</strong> Like Your Comment On Course
-                                                        <span class="text-link">Javascript Introduction </span>
-                                                     </p>
-                                                     <time> 2 hours ago </time>
-                                                 </div>
-                                             </a>
-                                         </li>
-                                         <li>
-                                             <a href="#">
-                                                 <div class="drop_avatar"> <img src="assets/images/avatars/avatar-2.jpg" alt="">
-                                                 </div>
-                                                 <div class="drop_text">
-                                                     <p>
-                                                        <strong>Stella Johnson</strong> Replay Your Comments in
-                                                        <span class="text-link">Programming for Games</span>
-                                                     </p>
-                                                     <time> 9 hours ago </time>
-                                                 </div>
-                                             </a>
-                                         </li>
+                                        
                                      </ul> 
                                  </div>
                             </div> 
@@ -378,76 +204,7 @@
                                                 </div>
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="drop_avatar"> <img src="assets/images/avatars/avatar-1.jpg" alt="">
-                                                </div>
-                                                <div class="drop_text">
-                                                    <strong> Adrian Mohani </strong> <time> 6:43 PM</time>
-                                                    <p> Thanks for The Answer sit amet...  </p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="drop_avatar"> <img src="assets/images/avatars/avatar-6.jpg" alt="">
-                                                </div>
-                                                <div class="drop_text">
-                                                    <strong>Alia Dolgove </strong> <time> Wed </time>
-                                                    <p>  Alia just joined Messenger!  </p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="drop_avatar"> <img src="assets/images/avatars/avatar-5.jpg" alt="">
-                                                </div>
-                                                <div class="drop_text">
-                                                    <strong> Jonathan Madano </strong> <time> Sun</time>
-                                                    <p>  Replay Your Comments insit amet consectetur </p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="un-read">
-                                            <a href="#">
-                                                <div class="drop_avatar"> <img src="assets/images/avatars/avatar-2.jpg" alt="">
-                                                </div>
-                                                <div class="drop_text">
-                                                    <strong> Stella Johnson </strong> <time>12:43 PM</time>
-                                                    <p>  Alex will explain you how ...  </p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="drop_avatar"> <img src="assets/images/avatars/avatar-1.jpg" alt="">
-                                                </div>
-                                                <div class="drop_text">
-                                                    <strong> Adrian Mohani </strong> <time> 6:43 PM</time>
-                                                    <p> Thanks for The Answer sit amet...  </p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="drop_avatar"> <img src="assets/images/avatars/avatar-3.jpg" alt="">
-                                                </div>
-                                                <div class="drop_text">
-                                                    <strong>Alia Dolgove </strong> <time> Wed </time>
-                                                    <p>  Alia just joined Messenger!  </p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="drop_avatar"> <img src="assets/images/avatars/avatar-4.jpg" alt="">
-                                                </div>
-                                                <div class="drop_text">
-                                                    <strong> Jonathan Madano </strong> <time> Sun</time>
-                                                    <p>  Replay Your Comments insit amet consectetur </p>
-                                                </div>
-                                            </a>
-                                        </li>
+                                        
                                     </ul>
                                 </div>
                                 <a href="#" class="see-all"> See all in Messages</a>
@@ -464,8 +221,8 @@
                                         <img src="{{asset('dashboard/assets/images/avatars/avatar-2.jpg')}}" alt="">
                                     </div>
                                     <div class="user_name">
-                                        <div> Stella Johnson </div>
-                                        <span> @johnson</span>
+                                        <div> {{auth()->user()->last_name}} {{auth()->user()->first_name}} {{auth()->user()->middle_name}} </div>
+                                        <span>{{ '@' . optional(auth()->user())->first_name }}</span>
                                     </div>
                                 </a>
                                 <hr>

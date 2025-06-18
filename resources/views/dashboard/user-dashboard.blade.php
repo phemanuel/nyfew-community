@@ -49,37 +49,37 @@
                 
                             <a href="#create-post" uk-toggle="target: body ; cls: story-active">
                                 <div class="single_story">
-                                    <img src="{{asset('dashboard/assets/images/avatars/avatar-lg-1.jpg')}}" alt="">
-                                    <div class="story-avatar"> <img src="{{asset('dashboard/assets/images/avatars/avatar-lg-1.jpg')}}" alt=""></div>
-                                    <div class="story-content"> <h4>Erica Jones </h4> </div>
+                                    <img src="{{asset('uploads/adverts/d1.png')}}" alt="">
+                                    <div class="story-avatar"> <img src="{{asset('uploads/adverts/d1.png')}}" alt=""></div>
+                                    <!-- <div class="story-content"> <h4>Erica Jones </h4> </div> -->
                                 </div>
                             </a>
                             <a href="#" uk-toggle="target: body ; cls: story-active">
                                 <div class="single_story">
-                                    <img src="assets/images/avatars/avatar-lg-2.jpg" alt="">
-                                    <div class="story-avatar"> <img src="assets/images/avatars/avatar-2.jpg" alt=""></div>
-                                    <div class="story-content"> <h4>  Dennis Han</h4> </div>
+                                    <img src="{{asset('uploads/adverts/d4.png')}}" alt="">
+                                    <div class="story-avatar"> <img src="{{asset('uploads/adverts/d4.png')}}" alt=""></div>
+                                    <!-- <div class="story-content"> <h4>  Dennis Han</h4> </div> -->
                                 </div>
                             </a>
                             <a href="#" uk-toggle="target: body ; cls: story-active">
                                 <div class="single_story">
-                                    <img src="assets/images/avatars/avatar-lg-3.jpg" alt="">
-                                    <div class="story-avatar"> <img src="assets/images/avatars/avatar-3.jpg" alt=""></div>
-                                    <div class="story-content"> <h4> Alex Mohani</h4> </div>
+                                    <img src="{{asset('uploads/adverts/d7.png')}}" alt="">
+                                    <div class="story-avatar"> <img src="{{asset('uploads/adverts/d7.png')}}" alt=""></div>
+                                    <!-- <div class="story-content"> <h4> Alex Mohani</h4> </div> -->
                                 </div>
                             </a>
                             <a href="#" uk-toggle="target: body ; cls: story-active">
                                 <div class="single_story">
-                                    <img src="assets/images/avatars/avatar-lg-4.jpg" alt="">
-                                    <div class="story-avatar"> <img src="assets/images/avatars/avatar-4.jpg" alt=""></div>
-                                    <div class="story-content"> <h4> Jonathan </h4> </div>
+                                    <img src="{{asset('uploads/adverts/d2.png')}}" alt="">
+                                    <div class="story-avatar"> <img src="{{asset('uploads/adverts/d2.png')}}" alt=""></div>
+                                    <!-- <div class="story-content"> <h4> Jonathan </h4> </div> -->
                                 </div>
                             </a>
                             <a href="#" uk-toggle="target: body ; cls: story-active">
                                 <div class="single_story">
-                                    <img src="assets/images/avatars/avatar-lg-5.jpg" alt="">
-                                    <div class="story-avatar"> <img src="assets/images/avatars/avatar-5.jpg" alt=""></div>
-                                    <div class="story-content"> <h4> Stella Johnson</h4> </div>
+                                    <img src="{{asset('uploads/adverts/p2.png')}}" alt="">
+                                    <div class="story-avatar"> <img src="{{asset('uploads/adverts/p2.png')}}" alt=""></div>
+                                    <!-- <div class="story-content"> <h4> Stella Johnson</h4> </div> -->
                                 </div>
                             </a>
                             
@@ -92,8 +92,8 @@
                         <!-- create post -->
                         <div class="card lg:mx-0 p-4" uk-toggle="target: #create-post-modal">
                             <div class="flex space-x-3">
-                                <img src="assets/images/avatars/avatar-2.jpg" class="w-10 h-10 rounded-full">
-                                <input placeholder="What's Your Mind ? Hamse!" class="bg-gray-100 hover:bg-gray-200 flex-1 h-10 px-6 rounded-full"> 
+                                <img src="{{ asset('uploads/profile-pictures/' . (auth()->user()->avatar ?? 'blank.png')) }}" class="w-10 h-10 rounded-full">
+                                <input placeholder="{{ 'What\'s Your Mind ? ' . auth()->user()->first_name . '!' }}" class="bg-gray-100 hover:bg-gray-200 flex-1 h-10 px-6 rounded-full">
                             </div>
                             <div class="grid grid-flow-col pt-3 -mx-1 -mb-1 font-semibold text-sm">
                                 <div class="hover:bg-gray-100 flex items-center p-1.5 rounded-md cursor-pointer"> 
@@ -761,7 +761,7 @@
                             <div class="bg-white mb-5 px-4 py-3 rounded-md shadow">
                                 <h3 class="text-line-through font-semibold mb-1"> Birthdays </h3>
                                 <div class="-mx-2 duration-300 flex hover:bg-gray-50 px-2 py-2 rounded-md">
-                                    <img src="assets/images/icons/gift-icon.png" class="w-9 h-9 mr-3" alt="">
+                                    <img src="{{asset('dashboard/assets/images/icons/gift-icon.png')}}" class="w-9 h-9 mr-3" alt="">
                                     <p class="line-clamp-2 leading-6"> <strong> Jessica Erica </strong> and <strong> two others </strong>
                                         have a birthdays to day .
                                     </p>
