@@ -36,24 +36,7 @@
                                         <div class="list-name">  Coffee  Addicts </div>
                                     </a> 
                                 </li>
-                                <li> 
-                                    <a href="#">  
-                                        <img src="{{asset('dashboard/assets/images/avatars/avatar-3.jpg')}}" alt="" class="list-avatar">
-                                        <div class="list-name"> Mountain Riders </div>
-                                    </a> 
-                                </li>
-                                <li> 
-                                    <a href="#">  
-                                        <img src="{{asset('dashboard/assets/images/avatars/avatar-4.jpg')}}" alt="" class="list-avatar">
-                                        <div class="list-name"> Property Rent And Sale  </div>
-                                    </a> 
-                                </li>
-                                <li> 
-                                    <a href="#">  
-                                        <img src="{{asset('dashboard/assets/images/avatars/avatar-5.jpg')}}" alt="" class="list-avatar">
-                                        <div class="list-name">  Erica Jones </div>
-                                    </a> 
-                                </li>
+                               
                             </ul>
     
                         </div>
@@ -62,7 +45,7 @@
                     <div class="right_side">
     
                         <div class="header_widgets">
-                            <a href="pages-upgrade.html" class="is_link">  Upgrade </a>   
+                            <!-- <a href="pages-upgrade.html" class="is_link">  Upgrade </a>    -->
                             <a href="#" class="is_icon" uk-tooltip="title: Cart">
                                 <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg>
                             </a>
@@ -212,13 +195,18 @@
          
         
                             <a href="#">
-                                <img src="{{asset('dashboard/assets/images/avatars/avatar-2.jpg')}}" class="is_avatar" alt="">
+                                @php
+                                    $avatar = auth()->user()->avatar;
+                                    $avatarPath = 'uploads/profile-pictures/' . $avatar;
+                                @endphp
+
+                                    <img src="{{ asset(file_exists(public_path($avatarPath)) && $avatar ? $avatarPath : 'uploads/profile-pictures/blank.png') }}" class="is_avatar" alt="">
                             </a>
                             <div uk-drop="mode: click;offset:5" class="header_dropdown profile_dropdown">
 
                                 <a href="timeline.html" class="user">
                                     <div class="user_avatar">
-                                        <img src="{{asset('dashboard/assets/images/avatars/avatar-2.jpg')}}" alt="">
+                                        <img src="{{ asset(file_exists(public_path($avatarPath)) && $avatar ? $avatarPath : 'uploads/profile-pictures/blank.png') }}" class="is_avatar" alt="">
                                     </div>
                                     <div class="user_name">
                                         <div> {{auth()->user()->last_name}} {{auth()->user()->first_name}} {{auth()->user()->middle_name}} </div>

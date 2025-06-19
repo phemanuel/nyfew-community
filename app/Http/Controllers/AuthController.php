@@ -6,6 +6,7 @@ use Exception;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Session;
 use App\Models\User;
+use App\Models\LogActivities;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
@@ -124,7 +125,14 @@ class AuthController extends Controller
                 $request->session()->regenerate(); 
                 // $intendedUrl = session('url.intended', '/');
                 // return redirect()->intended($intendedUrl);
-                return redirect()->route('user-dashboard');
+                //---Log Activity--
+                    LogActivities::create([
+                        'user_id' => $user->id,
+                        'ip_address' => request()->ip(),
+                        'activity' => 'User logged in',
+                        'activity_date' => now(),
+                    ]);
+                return redirect()->route('user-feed');
                 // return response()->json([
                 //     'status' => 'logged in',
                 // ]);
@@ -151,7 +159,14 @@ class AuthController extends Controller
         Auth::guard('web')->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-
+        $user = Auth::user();
+        //---Log Activity--
+                    LogActivities::create([
+                        'user_id' => $user->id,
+                        'ip_address' => request()->ip(),
+                        'activity' => 'User logged out',
+                        'activity_date' => now(),
+                    ]);
         return redirect('/');
 
 

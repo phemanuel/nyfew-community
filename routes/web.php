@@ -26,6 +26,8 @@ Route::post('/reset-password', [CustomForgotPasswordController::class, 'resetPas
     Route::get('/', [AuthController::class, 'home'])->name('home');
     Route::get('/signin', [AuthController::class, 'signin'])
     ->name('signin');
+    Route::get('/signin', [AuthController::class, 'signin'])
+    ->name('login');
     Route::post('signin/store',[AuthController::class, 'signinAction'])
     ->name('signin.action');
     Route::get('signup', [AuthController::class, 'signup'])
@@ -55,8 +57,14 @@ Route::post('/reset-password', [CustomForgotPasswordController::class, 'resetPas
     ->name('email-not-verify');
 
     //----Dashboard routes-----------------
-     Route::get('user/dashboard', [DashboardController::class,'index'])->middleware('auth')
-    ->name('user-dashboard');
+     Route::middleware('auth')->group(function () {
+     Route::get('user/feed', [DashboardController::class, 'index'])
+        ->name('user-feed');
+     Route::post('/posts/{id}/comment', [PostController::class, 'comment'])
+        ->name('posts.comment');
+     Route::post('/posts/{id}/like', [PostController::class, 'like'])
+        ->name('posts.like');
+});
 
 // Route::get('/', function () {
 //     return view('welcome');
