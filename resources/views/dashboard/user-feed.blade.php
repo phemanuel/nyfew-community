@@ -8,7 +8,7 @@
 
     <!-- Favicon -->
     <link href="{{asset('dashboard/assets/images/favicon.png')}}" rel="icon" type="image/png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.19.3/dist/css/uikit.min.css" /> -->
 
     <!-- Basic Page Needs
         ================================================== -->
@@ -94,7 +94,13 @@
                         <div class="card lg:mx-0 p-4" uk-toggle="target: #create-post-modal">
                             <div class="flex space-x-3">
                                 <img src="{{ asset('uploads/profile-pictures/' . (auth()->user()->avatar ?? 'blank.png')) }}" class="w-10 h-10 rounded-full">
-                                <input placeholder="{{ 'What\'s Your Mind ? ' . auth()->user()->first_name . '!' }}" class="bg-gray-100 hover:bg-gray-200 flex-1 h-10 px-6 rounded-full">
+                                <input
+                                    id="createPostTrigger"
+                                    placeholder="{{ 'Got something to share, ' . auth()->user()->first_name . '!' }}"
+                                    class="bg-gray-100 hover:bg-gray-200 flex-1 h-10 px-6 rounded-full"
+                                    data-avatar="{{ asset('uploads/profile-pictures/' . (auth()->user()->avatar ?? 'blank.png')) }}"
+                                    data-name="{{ auth()->user()->first_name }}"
+                                >
                             </div>
                             <div class="grid grid-flow-col pt-3 -mx-1 -mb-1 font-semibold text-sm">
                                 <div class="hover:bg-gray-100 flex items-center p-1.5 rounded-md cursor-pointer"> 
@@ -137,39 +143,55 @@
                                 uk-drop="mode: click;pos: bottom-right;animation: uk-animation-slide-bottom-small">
                                 
                                     <ul class="space-y-1">
-                                        <li> 
-                                            <a href="#" class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md dark:hover:bg-gray-800">
-                                            <i class="uil-favorite mr-1"></i>  Save Post 
-                                            </a> 
-                                        </li>
-                                        <li> 
-                                            <a href="#" class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md dark:hover:bg-gray-800">
-                                            <i class="uil-share-alt mr-1"></i> Turn on Notification
-                                            </a> 
-                                        </li>
-                                        <li> 
-                                            <a href="#" class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md dark:hover:bg-gray-800">
-                                            <i class="uil-edit-alt mr-1"></i>  Report Post 
-                                            </a> 
-                                        </li>
-                                        <li> 
-                                            <a href="#" class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md dark:hover:bg-gray-800">
-                                            <i class="uil-comment-slash mr-1"></i>   Unfollow {{ $post->user->last_name . " " . $post->user->first_name }}
-                                            </a> 
-                                        </li> 
-                                        <li> 
-                                            <a href="#" class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md dark:hover:bg-gray-800">
-                                            <i class="uil-favorite mr-1"></i>  Block  {{ $post->user->last_name . " " . $post->user->first_name }} Profile
-                                            </a> 
-                                        </li>
+                                        @if(auth()->id() !== $post->user_id)
+                                        <!-- Save Post -->
                                         <li>
-                                        <hr class="-mx-2 my-2 dark:border-gray-800">
+                                            <a href="#" class="flex items-center px-4 py-2 rounded-md hover:bg-gray-200 hover:text-gray-800 dark:hover:bg-gray-800">
+                                                <i class="uil-bookmark mr-2 text-blue-500"></i> Save Post
+                                            </a>
                                         </li>
-                                        <!-- <li> 
-                                            <a href="#" class="flex items-center px-3 py-2 text-red-500 hover:bg-red-100 hover:text-red-500 rounded-md dark:hover:bg-red-600">
-                                            <i class="uil-trash-alt mr-1"></i>  Delete
-                                            </a> 
-                                        </li> -->
+
+                                        <!-- Turn on Notification -->
+                                        <li>
+                                            <a href="#" class="flex items-center px-4 py-2 rounded-md hover:bg-gray-200 hover:text-gray-800 dark:hover:bg-gray-800">
+                                                <i class="uil-bell mr-2 text-green-500"></i> Turn on Notification
+                                            </a>
+                                        </li>
+
+                                        <!-- Report Post -->
+                                        <li>
+                                            <a href="#" class="flex items-center px-4 py-2 rounded-md hover:bg-gray-200 hover:text-gray-800 dark:hover:bg-gray-800">
+                                                <i class="uil-exclamation-triangle mr-2 text-yellow-500"></i> Report Post
+                                            </a>
+                                        </li>
+
+                                        <!-- Unfollow/Block -->
+                                        <li>
+                                            <a href="#" class="flex items-center px-4 py-2 rounded-md transition-colors duration-200 hover:bg-gray-100 hover:text-red-600 dark:hover:bg-gray-800 dark:hover:text-red-400">
+                                                <i class="uil-user-times mr-2 text-red-500"></i>
+                                                <span>Unfollow/Block {{ $post->user->last_name . ' ' . $post->user->first_name }}</span>
+                                            </a>
+                                        </li>
+                                        @endif
+                                        <!-- Divider -->
+                                        <!-- <li><hr class="-mx-2 my-2 dark:border-gray-800"></li> -->
+
+                                        <!-- Show only if the authenticated user owns the post -->
+                                        @if(auth()->check() && auth()->id() === $post->user_id)
+                                            <!-- Edit Post -->
+                                            <li>
+                                                <a href="#" class="flex items-center px-4 py-2 rounded-md hover:bg-gray-200 hover:text-gray-800 dark:hover:bg-gray-800">
+                                                    <i class="uil-edit-alt mr-2 text-indigo-500"></i> Edit Post
+                                                </a>
+                                            </li>
+
+                                            <!-- Delete Post -->
+                                            <li>
+                                                <a href="#" class="flex items-center px-4 py-2 rounded-md text-red-500 hover:bg-red-100 hover:text-red-500 dark:hover:bg-red-600">
+                                                    <i class="uil-trash-alt mr-2"></i> Delete
+                                                </a>
+                                            </li>
+                                        @endif
                                     </ul>
                                 
                                 </div>
@@ -335,6 +357,36 @@
                                                             {{ $member->last_name . ' ' . $member->first_name . ' ' . $member->middle_name }}
                                                         </div>
                                                     </a>
+                                                    <!-- Popup for user info -->
+                                                    <div uk-drop="pos: left-center ;animation: uk-animation-slide-left-small">
+                                                            <div class="contact-list-box">
+                                                                <div class="contact-avatar">
+                                                                    <img src="{{ asset('uploads/profile-pictures/' . ($member->avatar ?? 'blank.png')) }}" alt="">
+                                                                    <!-- <span class="user_status status_online"></span> -->
+                                                                </div>
+                                                                <div class="contact-username">   {{ $member->last_name . ' ' . $member->first_name . ' ' . $member->middle_name }}</div>
+                                                                <p class="text-gray-700 dark:text-gray-300 flex items-center gap-2 justify-center text-center">
+                                                                    <ion-icon name="people" class="text-lg text-blue-500"></ion-icon>
+                                                                    <strong>
+                                                                        @if(!empty($member->bio))
+                                                                            {{ $member->bio }}
+                                                                        @else
+                                                                            <span class="italic text-gray-400">No bio provided yet.</span>
+                                                                        @endif
+                                                                    </strong>
+                                                                </p>
+                                                                <div class="contact-list-box-btns">
+                                                                    <button type="button" class="button primary flex-1 block mr-2">
+                                                                        <i class="uil-envelope mr-1"></i> Send message</button>
+                                                                    <button type="button"  href="#" class="button secondary button-icon mr-2">
+                                                                        <i class="uil-list-ul"> </i> </button>
+                                                                    <button type="button" a href="#" class="button secondary button-icon"> 
+                                                                        <i class="uil-ellipsis-h"> </i> 
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    <!-- end -->
                                                 @endforeach
                                             </div>
                                         </li>
@@ -348,8 +400,42 @@
                                                     data-description="{{ $group->description ?? 'No description available' }}"
                                                     data-view-url="#"
                                                     onclick="openGroupModal(this)">
+                                                    <div class="contact-avatar">
+                                                            <img src="{{ asset('uploads/groups/' . ($group->avatar ?? 'blank.png')) }}" alt="">
+                                                            <!-- <span class="user_status {{ $member->is_online ? 'status_online' : '' }}"></span> -->
+                                                        </div>
                                                         <div class="contact-username">{{ $group->name }}</div>
                                                     </a>
+                                                     <!-- Popup for user info -->
+                                                    <div uk-drop="pos: left-center ;animation: uk-animation-slide-left-small">
+                                                            <div class="contact-list-box">
+                                                                <div class="contact-avatar">
+                                                                    <img src="{{ asset('uploads/groups/' . ($group->avatar ?? 'blank.png')) }}" alt="">
+                                                                    <!-- <span class="user_status status_online"></span> -->
+                                                                </div>
+                                                                <div class="contact-username">   {{ $group->name }}</div>
+                                                                <p class="text-gray-700 dark:text-gray-300 flex items-center gap-2 justify-center text-center">
+                                                                    <ion-icon name="people" class="text-lg text-blue-500"></ion-icon>
+                                                                    <strong>
+                                                                        @if(!empty($group->description))
+                                                                            {{$group->description }}
+                                                                        @else
+                                                                            <span class="italic text-gray-400">No description provided yet.</span>
+                                                                        @endif
+                                                                    </strong>
+                                                                </p>
+                                                                <div class="contact-list-box-btns">
+                                                                    <button type="button" class="button primary flex-1 block mr-2">
+                                                                        <i class="uil-users-alt mr-1"></i> View Group</button>
+                                                                    <button type="button"  href="#" class="button secondary button-icon mr-2">
+                                                                        <i class="uil-list-ul"> </i> </button>
+                                                                    <button type="button" a href="#" class="button secondary button-icon"> 
+                                                                        <i class="uil-ellipsis-h"> </i> 
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    <!-- end -->
                                                 @endforeach
                                             </div>
                                         </li>
@@ -823,11 +909,10 @@
                 <button class="uk-modal-close-default bg-gray-100 rounded-full p-2.5 right-2" type="button" uk-close uk-tooltip="title: Close ; pos: bottom ;offset:7"></button>
             </div>
             <div class="flex flex-1 items-start space-x-4 p-5">
-                <img src="assets/images/avatars/avatar-2.jpg"
-                    class="bg-gray-200 border border-white rounded-full w-11 h-11">
+                <img src="{{ asset('uploads/profile-pictures/' . (auth()->user()->avatar ?? 'blank.png')) }}" class="w-10 h-10 rounded-full">
                 <div class="flex-1 pt-2">
                     <textarea class="uk-textare text-black shadow-none focus:shadow-none text-xl font-medium resize-none" rows="5"
-                        placeholder="What's Your Mind ? Stella!"></textarea>
+                        placeholder="{{ 'Got something to share, ' . auth()->user()->first_name . '!' }}"></textarea>
                 </div>
     
             </div>
@@ -876,7 +961,8 @@
 
     <!-- Member Modal -->
     <div id="memberModal" class="uk-modal" uk-modal>
-        <div class="uk-modal-dialog uk-modal-body uk-border-rounded uk-box-shadow-large" style="max-width: 400px; background-color: #fffaf0;">
+        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical rounded-lg p-0 lg:w-5/12 relative shadow-2xl uk-animation-slide-bottom-small" style="max-width: 400px; background-color: #fffaf0;">
+       
             <button class="uk-modal-close-default" type="button" uk-close></button>
 
             <div class="uk-text-center uk-margin">
@@ -887,13 +973,19 @@
 
             <div class="uk-flex uk-flex-center uk-margin-top uk-grid-small" uk-grid>
                 <div>
-                    <a href="#" id="viewProfileBtn" class="uk-button uk-button-secondary">View Profile</a>
+                    <a href="#" hidden
+                    class="bg-black-600 flex h-9 items-center justify-center rounded-lg text-white px-12 font-semibold">
+                   View Profile </a>
                 </div>
                 <div>
-                    <a href="#" id="messageBtn" class="uk-button uk-button-default">Message</a>
+                    <a href="#" hidden
+                    class="bg-blue-600 flex h-9 items-center justify-center rounded-lg text-white px-12 font-semibold">
+                    Message </a>
                 </div>
                 <div>
-                    <a href="#" id="chatBtn" class="uk-button uk-button-primary">Chat</a>
+                    <a href="#" hidden
+                    class="bg-green-600 flex h-9 items-center justify-center rounded-lg text-white px-12 font-semibold">
+                    Chat </a>
                 </div>
             </div>
         </div>
@@ -977,6 +1069,7 @@
         this.remove(); // hide the button after expanding
     });
 </script>
+
      <!-- Javascript
     ================================================== -->
      <script src="../../code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -986,8 +1079,9 @@
     <script src="{{asset('dashboard/assets/js/custom.js')}}"></script>
     <script src="{{asset('dashboard/assets/js/bootstrap-select.min.js')}}"></script>
     <script src="../../unpkg.com/ionicons%405.2.3/dist/ionicons.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.3/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.19.3/dist/js/uikit-icons.min.js"></script> -->
+
 </body>
 
 <!-- Mirrored from demo.foxthemes.net/socialite/feed.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 20 Jul 2023 17:41:40 GMT -->

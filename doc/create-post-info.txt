@@ -1,0 +1,64 @@
+Community-Centric Prompts
+What would you like to share, {{ auth()->user()->first_name }}?
+
+Say something to the community
+
+Contribute your thoughts, {{ auth()->user()->first_name }}
+
+Have an idea or experience to share?
+
+What’s going on in your world, {{ auth()->user()->first_name }}?
+
+Start a discussion, {{ auth()->user()->first_name }}
+
+How can we support you today, {{ auth()->user()->first_name }}?
+
+Let’s hear your voice, {{ auth()->user()->first_name }}
+
+Share your thoughts with us
+
+Anything on your heart, {{ auth()->user()->first_name }}?
+
+Motivational
+Inspire someone today, {{ auth()->user()->first_name }}
+
+Your words matter — share them
+
+Be the spark — say something powerful
+
+Share your journey, empower someone
+
+Let your light shine, {{ auth()->user()->first_name }}
+
+🎉 Fun & Friendly
+Got something cool to share?
+
+Spill the tea, {{ auth()->user()->first_name }} ☕
+
+What’s poppin’? Tell us!
+
+Any good news today?
+
+Drop a thought or two 👇
+
+👥 Community-Focused
+How are you feeling today, {{ auth()->user()->first_name }}?
+
+What would you love the community to know?
+
+Say hi or start a chat!
+
+Let’s connect — share something
+
+Bring your voice to the table
+
+📝 Formal or Reflective
+Write your thoughts here
+
+Start a meaningful conversation
+
+Express yourself here, {{ auth()->user()->first_name }}
+
+Share your perspective
+
+Open up — we’re listening
