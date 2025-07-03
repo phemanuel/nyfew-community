@@ -206,13 +206,13 @@
     <!-- Post Interactions -->
     <div class="p-4 space-y-3">
         <div class="flex space-x-4 lg:font-bold">            
-            <a href="#" class="flex items-center space-x-2">
-                <div class="p-2 rounded-full  text-black lg:bg-gray-100 dark:bg-gray-600 ">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="22" height="22" class="dark:text-gray-100">
-                                                <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" />
-                                            </svg>
-                                        </div>
-                <div>Like ({{ $post->likes->count() }})</div>
+            <a href="javascript:void(0)" class="like-btn flex items-center space-x-2" data-post-id="{{ $post->id }}">
+                <div class="p-2 rounded-full text-black lg:bg-gray-100 dark:bg-gray-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="22" height="22" class="dark:text-gray-100">
+                        <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" />
+                    </svg>
+                </div>
+                <div class="like-count">{{ $post->likes->count() }}</div>
             </a>
             <a href="#" class="flex items-center space-x-2">
                 <div class="p-2 rounded-full  text-black lg:bg-gray-100 dark:bg-gray-600">
@@ -220,7 +220,7 @@
                                                 <path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd" />
                                             </svg>
                                         </div>
-                <div>Comment ({{ $post->comments->count() }})</div>
+                <div>{{ $post->comments->count() }}</div>
             </a>
             <a href="#" class="flex items-center space-x-2 flex-1 justify-end">
                                         <div class="p-2 rounded-full  text-black lg:bg-gray-100 dark:bg-gray-600">
@@ -233,45 +233,73 @@
         </div>
 
 
-        <!-- Example Likes Display -->
-        <div class="flex items-center space-x-3 pt-2"> 
-            <div class="flex items-center">
-                @foreach ($post->likes->take(3) as $like)
-                    <img src="{{ $like->user->avatar ? asset('uploads/profile-pictures/' . $like->user->avatar) : asset('uploads/profile-pictures/blank.png') }}"
-     alt=""
-     class="w-6 h-6 rounded-full border-2 border-white dark:border-gray-900 {{ !$loop->first ? '-ml-2' : '' }}">
+        <div id="likes-section-{{ $post->id }}">
+            {{-- Existing likes UI here --}}
+            <!-- Example Likes Display -->
+            <div class="flex items-center space-x-3 pt-2"> 
+                <div class="flex items-center">
+                    @foreach ($post->likes->take(3) as $like)
+                        <img src="{{ $like->user->avatar ? asset('uploads/profile-pictures/' . $like->user->avatar) : asset('uploads/profile-pictures/blank.png') }}"
+                        alt=""
+                        class="w-6 h-6 rounded-full border-2 border-white dark:border-gray-900 {{ !$loop->first ? '-ml-2' : '' }}">
+                    @endforeach
+                </div>
+                <div class="dark:text-gray-100">
+                @if ($post->likes->isNotEmpty())
+                    <div class="dark:text-gray-100">
+                        Liked by <strong>{{ $post->likes->first()->user->first_name }}</strong>
+                        @if ($post->likes->count() > 1)
+                            and <strong>{{ $post->likes->count() - 1 }} {{ Str::plural('other', $post->likes->count() - 1) }}</strong>
+                        @endif
+                    </div>
+                @endif
+                </div>
+            </div>
+        </div>        
+
+        <!-- Comments Container -->
+        <div id="comments-section-{{ $post->id }}">
+            {{-- Existing comments UI here --}}
+            <!-- Comments -->
+            <div class="border-t py-4 space-y-4 dark:border-gray-600">
+                @foreach ($post->comments->take(2) as $comment)
+                    <div class="flex">
+                        <div class="w-10 h-10 rounded-full relative flex-shrink-0">
+                            <img src="{{ $comment->user->avatar ? asset('uploads/profile-pictures/' . $comment->user->avatar) : asset('uploads/profile-pictures/blank.png') }}" alt="" class="absolute h-full rounded-full w-full">
+                        </div>
+                        <div>
+                            <div class="text-gray-700 py-2 px-3 rounded-md bg-gray-100 relative lg:ml-5 ml-2 lg:mr-12 dark:bg-gray-800 dark:text-gray-100">
+                                <p class="leading-6">{{ $comment->comment }}</p>
+                                <div class="absolute w-3 h-3 top-3 -left-1 bg-gray-100 transform rotate-45 dark:bg-gray-800"></div>
+                            </div>
+                            <div class="text-xs flex items-center space-x-3 mt-2 ml-5">
+                                <span>{{ $comment->created_at->diffForHumans() }}</span>
+                            </div>
+                        </div>
+                    </div>
                 @endforeach
             </div>
-            <div class="dark:text-gray-100">
-            @if ($post->likes->isNotEmpty())
-                <div class="dark:text-gray-100">
-                    Liked by <strong>{{ $post->likes->first()->user->name }}</strong>
-                    @if ($post->likes->count() > 1)
-                        and <strong>{{ $post->likes->count() - 1 }} {{ Str::plural('other', $post->likes->count() - 1) }}</strong>
-                    @endif
-                </div>
-            @endif
-            </div>
         </div>
-
-        <!-- Comments -->
-        <div class="border-t py-4 space-y-4 dark:border-gray-600">
-            @foreach ($post->comments->take(2) as $comment)
-                <div class="flex">
-                    <div class="w-10 h-10 rounded-full relative flex-shrink-0">
-                        <img src="{{ $comment->user->avatar ? asset('uploads/profile-pictures/' . $lcomment->user->avatar) : asset('uploads/profile-pictures/blank.png') }}" alt="" class="absolute h-full rounded-full w-full">
-                    </div>
-                    <div>
-                        <div class="text-gray-700 py-2 px-3 rounded-md bg-gray-100 relative lg:ml-5 ml-2 lg:mr-12 dark:bg-gray-800 dark:text-gray-100">
-                            <p class="leading-6">{{ $comment->body }}</p>
-                            <div class="absolute w-3 h-3 top-3 -left-1 bg-gray-100 transform rotate-45 dark:bg-gray-800"></div>
-                        </div>
-                        <div class="text-xs flex items-center space-x-3 mt-2 ml-5">
-                            <span>{{ $comment->created_at->diffForHumans() }}</span>
-                        </div>
-                    </div>
+        
+        <!-- comment as a user -->
+                <div class="bg-gray-100 rounded-full relative dark:bg-gray-800 border-t">
+                    <input 
+                    class="comment-input" 
+                    data-post-id="{{ $post->id }}"
+                    placeholder="Leave a Comment.. {{ auth()->user()->first_name }}"  
+                    style="border: 1px solid rgb(158, 152, 38); color: black; background: transparent; padding: 10px; border-radius: 4px;"
+                    >
+                <div class="-m-0.5 absolute bottom-0 flex items-center right-3 text-xl">
+                                        <a href="#">
+                                            <ion-icon name="happy-outline" class="hover:bg-gray-200 p-1.5 rounded-full"></ion-icon>
+                                        </a>
+                                        <a href="#">
+                                            <ion-icon name="image-outline" class="hover:bg-gray-200 p-1.5 rounded-full"></ion-icon>
+                                        </a>
+                                        <a href="#">
+                                            <ion-icon name="link-outline" class="hover:bg-gray-200 p-1.5 rounded-full"></ion-icon>
+                                        </a> 
                 </div>
-            @endforeach
         </div>
 
     </div>
@@ -1008,6 +1036,7 @@
         </div>
     </div>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     function openMemberModal(el) {
         document.getElementById('memberAvatar').src = el.dataset.avatar;
@@ -1068,6 +1097,80 @@
         document.querySelectorAll('.extra-contact').forEach(el => el.classList.remove('hidden'));
         this.remove(); // hide the button after expanding
     });
+</script>
+<script>
+$(document).ready(function() {
+    // Like Post
+    $('.like-btn').click(function() {
+        let postId = $(this).data('post-id');
+        let likeBtn = $(this);
+
+        console.log('Sending like request for post ID:', postId);
+
+        $.post("{{ route('post.like') }}", {
+            post_id: postId,
+            _token: "{{ csrf_token() }}"
+        })
+        .done(function(response) {
+            console.log('Like response:', response);
+
+            let countSpan = likeBtn.find('.like-count');
+            let currentCount = parseInt(countSpan.text());
+
+            if (response.status === 'liked') {
+                countSpan.text(currentCount + 1);
+            } else if (response.status === 'unliked') {
+                countSpan.text(currentCount - 1);
+            }
+        })
+        .fail(function(jqXHR, textStatus, errorThrown) {
+            console.error('Error liking post:', {
+                postId: postId,
+                status: textStatus,
+                error: errorThrown,
+                response: jqXHR.responseText
+            });
+        });
+    });
+
+    // Comment Post
+    $('.comment-input').keypress(function(e) {
+        if (e.which == 13) {
+            let input = $(this);
+            let comment = input.val();
+            let postId = input.data('post-id');
+
+            if (comment.trim() == '') return;
+
+            console.log('Sending comment:', { postId, comment });
+
+            $.post("{{ route('post.comment') }}", {
+                post_id: postId,
+                comment: comment,
+                _token: "{{ csrf_token() }}"
+            })
+            .done(function(response) {
+                console.log('Comment response:', response);
+
+                if (response.status === 'success') {
+                    $('.comment-section-' + postId).append(
+                        `<p><strong>${response.user}:</strong> ${response.comment}</p>`
+                    );
+                    input.val('');
+                }
+            })
+            .fail(function(jqXHR, textStatus, errorThrown) {
+                console.error('Error posting comment:', {
+                    postId: postId,
+                    comment: comment,
+                    status: textStatus,
+                    error: errorThrown,
+                    response: jqXHR.responseText
+                });
+            });
+        }
+    });
+});
 </script>
 
      <!-- Javascript

@@ -9,7 +9,7 @@
                         </span>
 
                         <div id="logo">
-                            <a href="feed.html"> 
+                            <a href="{{route('user-feed')}}"> 
                                 <img src="{{asset('dashboard/assets/images/logo.png')}}" alt="">
                                 <img src="{{asset('dashboard/assets/images/logo-mobile.png')}}" class="logo_mobile" alt="">
                             </a>

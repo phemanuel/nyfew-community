@@ -3,6 +3,7 @@
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\CustomForgotPasswordController;
 use App\Http\Middleware\TrackFailedLoginAttempts;
 use Illuminate\Support\Facades\Route;
@@ -60,10 +61,14 @@ Route::post('/reset-password', [CustomForgotPasswordController::class, 'resetPas
      Route::middleware('auth')->group(function () {
      Route::get('user/feed', [DashboardController::class, 'index'])
         ->name('user-feed');
-     Route::post('/posts/{id}/comment', [PostController::class, 'comment'])
-        ->name('posts.comment');
-     Route::post('/posts/{id}/like', [PostController::class, 'like'])
-        ->name('posts.like');
+     Route::post('/posts/comment', [PostController::class, 'commentPost'])
+        ->name('post.comment');
+     Route::post('/posts/like', [PostController::class, 'likePost'])
+        ->name('post.like');
+    Route::get('/posts/{id}/refresh', [PostController::class, 'refreshPostSections'])
+    ->name('post.refresh');
+    Route::get('/posts/{id}/comments', [PostController::class, 'loadAllComments'])
+    ->name('post.comments.all');
 });
 
 // Route::get('/', function () {
