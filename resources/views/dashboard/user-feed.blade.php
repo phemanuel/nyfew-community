@@ -1028,7 +1028,23 @@ $(document).ready(function () {
         $('#comments-modal').addClass('hidden');
     }
 </script>
+<script>
+    $('#posts-container').on('click', '.like-comment-btn', function () {
+    const commentId = $(this).data('comment-id');
 
+    $.ajax({
+        url: '/comments/like/' + commentId,
+        method: 'POST',
+        data: {
+            _token: '{{ csrf_token() }}'
+        },
+        success: function (response) {
+            $('.like-comment-btn[data-comment-id="' + commentId + '"] .like-count').text(response.likeCount);
+        }
+    });
+});
+
+</script>
 
 
 

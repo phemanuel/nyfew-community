@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 20, 2025 at 01:14 AM
+-- Generation Time: Jul 09, 2025 at 11:51 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -79,6 +79,36 @@ CREATE TABLE `cache_locks` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `comment_likes`
+--
+
+CREATE TABLE `comment_likes` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `comment_id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comment_replies`
+--
+
+CREATE TABLE `comment_replies` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `post_id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
+  `parent_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `comment` text NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `credit_logs`
 --
 
@@ -121,6 +151,13 @@ CREATE TABLE `failed_logins` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `failed_logins`
+--
+
+INSERT INTO `failed_logins` (`id`, `ip_address`, `email`, `created_at`, `updated_at`) VALUES
+(1, '127.0.0.1', 'aracely22@example.net', '2025-07-09 22:46:09', '2025-07-09 22:46:09');
 
 -- --------------------------------------------------------
 
@@ -352,7 +389,9 @@ CREATE TABLE `log_activities` (
 --
 
 INSERT INTO `log_activities` (`id`, `user_id`, `ip_address`, `activity`, `activity_date`, `created_at`, `updated_at`) VALUES
-(1, 5, '127.0.0.1', 'User logged in', '2025-06-20 05:51:09', '2025-06-20 05:51:09', '2025-06-20 05:51:09');
+(1, 5, '127.0.0.1', 'User logged in', '2025-06-20 05:51:09', '2025-06-20 05:51:09', '2025-06-20 05:51:09'),
+(2, 18, '127.0.0.1', 'User logged in', '2025-07-09 22:44:30', '2025-07-09 22:44:30', '2025-07-09 22:44:30'),
+(3, 15, '127.0.0.1', 'User logged in', '2025-07-09 22:46:28', '2025-07-09 22:46:28', '2025-07-09 22:46:28');
 
 -- --------------------------------------------------------
 
@@ -497,7 +536,13 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (24, '2025_06_12_181225_create_failed_logins_table', 1),
 (25, '2025_06_18_200531_add_user_type_to_users_table', 1),
 (26, '2025_06_19_221708_create_log_activities_table', 1),
-(27, '2025_06_19_221749_add_video_to_posts_table', 1);
+(27, '2025_06_19_221749_add_video_to_posts_table', 1),
+(28, '2025_07_09_203726_create_comment_replies_table', 2),
+(29, '2025_07_09_203728_create_comment_likes_table', 3),
+(30, '2025_07_09_203729_create_comment_replies_table', 4),
+(31, '2025_07_09_203730_create_comment_likes_table', 5),
+(32, '2025_07_09_214738_comment_like', 6),
+(33, '2025_07_09_214820_comment_replies', 6);
 
 -- --------------------------------------------------------
 
@@ -623,7 +668,8 @@ INSERT INTO `posts` (`id`, `user_id`, `content`, `image`, `video`, `type`, `visi
 (87, 19, 'I can guess that,\' she added in a trembling voice to a lobster--\' (Alice began to repeat it, but her head was so much into the book her sister kissed her, and said, \'It WAS a curious feeling!\' said.', '\"[\\\"uploads\\\\\\/posts\\\\\\/post_vgXLV5sFLY.jpg\\\"]\"', NULL, 'image', 'private', '2025-06-20 05:26:19', '2025-06-20 05:26:19'),
 (88, 20, 'WAISTCOAT-POCKET, and looked at the Footman\'s head: it just now.\' \'It\'s the oldest rule in the air. She did not seem to be\"--or if you\'d rather not.\' \'We indeed!\' cried the Mouse, who was talking.', NULL, '\"[\\\"https:\\\\\\/\\\\\\/sample-videos.com\\\\\\/video123\\\\\\/mp4\\\\\\/720\\\\\\/big_buck_bunny_720p_10mb.mp4\\\"]\"', 'video', 'public', '2025-06-20 05:26:22', '2025-06-20 05:26:22'),
 (89, 20, 'King, and the m--\' But here, to Alice\'s side as she ran; but the Hatter began, in a low, weak voice. \'Now, I give you fair warning,\' shouted the Gryphon, before Alice could bear: she got up, and.', '\"[\\\"uploads\\\\\\/posts\\\\\\/post_P7rqyXyOpv.jpg\\\"]\"', '\"[\\\"https:\\\\\\/\\\\\\/www.w3schools.com\\\\\\/html\\\\\\/mov_bbb.mp4\\\"]\"', 'image+video', 'friends', '2025-06-20 05:26:22', '2025-06-20 05:26:22'),
-(90, 20, 'Queen\'s Croquet-Ground A large rose-tree stood near the centre of the trees behind him. \'--or next day, maybe,\' the Footman remarked, \'till tomorrow--\' At this moment the door as you might catch a.', NULL, '\"[\\\"https:\\\\\\/\\\\\\/sample-videos.com\\\\\\/video123\\\\\\/mp4\\\\\\/720\\\\\\/big_buck_bunny_720p_1mb.mp4\\\"]\"', 'video', 'private', '2025-06-20 05:26:22', '2025-06-20 05:26:22');
+(90, 20, 'Queen\'s Croquet-Ground A large rose-tree stood near the centre of the trees behind him. \'--or next day, maybe,\' the Footman remarked, \'till tomorrow--\' At this moment the door as you might catch a.', NULL, '\"[\\\"https:\\\\\\/\\\\\\/sample-videos.com\\\\\\/video123\\\\\\/mp4\\\\\\/720\\\\\\/big_buck_bunny_720p_1mb.mp4\\\"]\"', 'video', 'private', '2025-06-20 05:26:22', '2025-06-20 05:26:22'),
+(98, 15, 'I have got something new to share with you guys.', NULL, NULL, 'text', 'public', '2025-07-10 02:45:20', '2025-07-10 02:45:20');
 
 -- --------------------------------------------------------
 
@@ -640,6 +686,15 @@ CREATE TABLE `post_comments` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `post_comments`
+--
+
+INSERT INTO `post_comments` (`id`, `post_id`, `user_id`, `comment`, `created_at`, `updated_at`) VALUES
+(16, 98, 15, 'I have 10 AI tools that can improve your productivity', '2025-07-10 02:56:19', '2025-07-10 02:56:19'),
+(17, 98, 15, 'ChatGPT', '2025-07-10 03:04:16', '2025-07-10 03:04:16'),
+(18, 98, 15, 'Web Sock', '2025-07-10 03:04:31', '2025-07-10 03:04:31');
+
 -- --------------------------------------------------------
 
 --
@@ -653,6 +708,14 @@ CREATE TABLE `post_likes` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `post_likes`
+--
+
+INSERT INTO `post_likes` (`id`, `post_id`, `user_id`, `created_at`, `updated_at`) VALUES
+(13, 88, 15, '2025-07-10 02:45:23', '2025-07-10 02:45:23'),
+(14, 98, 15, '2025-07-10 02:56:15', '2025-07-10 02:56:15');
 
 -- --------------------------------------------------------
 
@@ -746,7 +809,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('FvZ0XRwEgFgLmVe0zjrHLHDRVK6p0jdpEfTTtJ9G', 5, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiZWdvZ21ud25ZY3ZRVGU2NWQ3RjJIZEJseUpUVTI3N2xtNnN3SnpGMiI7czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czoyODoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL2xvZ291dCI7fXM6OToiX3ByZXZpb3VzIjthOjE6e3M6MzoidXJsIjtzOjMxOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvdXNlci9mZWVkIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6NTt9', 1750374637);
+('2FfKyjLu0GnWiIMIIbgDBL50lLEcovDER3qvUIQY', 15, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiS2hsTnoyU2tvWXdlN2xmaW92RTBWMzJHQUE4ekliOTNma1lCR1pOTyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC91c2VyL2ZlZWQiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjM6InVybCI7YToxOntzOjg6ImludGVuZGVkIjtzOjI4OiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvbG9nb3V0Ijt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTU7fQ==', 1752093019);
 
 -- --------------------------------------------------------
 
@@ -852,10 +915,10 @@ INSERT INTO `users` (`id`, `last_name`, `first_name`, `middle_name`, `email`, `u
 (12, 'O\'Connell', 'Isaias', NULL, 'amara.wyman@example.com', 1, '$2y$12$LEa4FSa2yaW8TjnDpve7ceeU7EvtXQWN3yh2GNR6Wyurh9iFDDNo.', 'blank.png', NULL, NULL, NULL, 0, NULL, 1, '2025-06-20 05:22:18', 'jyACOWldYy', '2025-06-20 05:22:18', '2025-06-20 05:22:18'),
 (13, 'Lind', 'Melissa', 'Pearl', 'alice.cronin@example.net', 1, '$2y$12$LEa4FSa2yaW8TjnDpve7ceeU7EvtXQWN3yh2GNR6Wyurh9iFDDNo.', 'blank.png', NULL, NULL, NULL, 0, NULL, 1, '2025-06-20 05:22:18', 'PvuLxy5dMt', '2025-06-20 05:22:18', '2025-06-20 05:22:18'),
 (14, 'Stokes', 'Leanna', NULL, 'pmccullough@example.net', 1, '$2y$12$LEa4FSa2yaW8TjnDpve7ceeU7EvtXQWN3yh2GNR6Wyurh9iFDDNo.', 'blank.png', NULL, NULL, NULL, 0, NULL, 1, '2025-06-20 05:22:18', '781uW43srj', '2025-06-20 05:22:18', '2025-06-20 05:22:18'),
-(15, 'Beer', 'Destini', NULL, 'aracely22@example.net', 1, '$2y$12$LEa4FSa2yaW8TjnDpve7ceeU7EvtXQWN3yh2GNR6Wyurh9iFDDNo.', 'blank.png', NULL, NULL, NULL, 0, NULL, 1, '2025-06-20 05:22:18', 'AK9rsY8ANU', '2025-06-20 05:22:18', '2025-06-20 05:22:18'),
+(15, 'Beer', 'Destini', NULL, 'aracely22@example.net', 1, '$2y$12$LEa4FSa2yaW8TjnDpve7ceeU7EvtXQWN3yh2GNR6Wyurh9iFDDNo.', 'blank.png', NULL, NULL, NULL, 0, NULL, 1, '2025-06-20 05:22:18', 'AK9rsY8ANU', '2025-06-20 05:22:18', '2025-07-09 22:46:09'),
 (16, 'Turner', 'Rocky', NULL, 'nabernathy@example.com', 1, '$2y$12$LEa4FSa2yaW8TjnDpve7ceeU7EvtXQWN3yh2GNR6Wyurh9iFDDNo.', 'blank.png', NULL, NULL, NULL, 0, NULL, 1, '2025-06-20 05:22:18', 'lUSUdlwZHG', '2025-06-20 05:22:18', '2025-06-20 05:22:18'),
 (17, 'Monahan', 'Theodora', 'Jennie', 'leon87@example.com', 1, '$2y$12$LEa4FSa2yaW8TjnDpve7ceeU7EvtXQWN3yh2GNR6Wyurh9iFDDNo.', 'blank.png', NULL, NULL, NULL, 0, NULL, 1, '2025-06-20 05:22:18', '4O1MzcXWZH', '2025-06-20 05:22:18', '2025-06-20 05:22:18'),
-(18, 'Cummings', 'Leila', NULL, 'padberg.korbin@example.net', 1, '$2y$12$LEa4FSa2yaW8TjnDpve7ceeU7EvtXQWN3yh2GNR6Wyurh9iFDDNo.', 'blank.png', NULL, NULL, NULL, 0, NULL, 1, '2025-06-20 05:22:18', 'V5H9Lh2At9', '2025-06-20 05:22:18', '2025-06-20 05:22:18'),
+(18, 'Cummings', 'Leila', NULL, 'padberg.korbin@example.net', 1, '$2y$12$LEa4FSa2yaW8TjnDpve7ceeU7EvtXQWN3yh2GNR6Wyurh9iFDDNo.', 'blank.png', NULL, NULL, NULL, 0, NULL, 1, '2025-06-20 05:22:18', 'BdPPaxcYC9r2UyRR5glrq3m1lOqnTzAwBjrD66ASga2A1bJAifWAXP2zYAoG', '2025-06-20 05:22:18', '2025-06-20 05:22:18'),
 (19, 'Hamill', 'Jennifer', 'Aurelio', 'russell.mosciski@example.org', 1, '$2y$12$LEa4FSa2yaW8TjnDpve7ceeU7EvtXQWN3yh2GNR6Wyurh9iFDDNo.', 'blank.png', NULL, NULL, NULL, 0, NULL, 1, '2025-06-20 05:22:18', 'IXFRIyiE8m', '2025-06-20 05:22:18', '2025-06-20 05:22:18'),
 (20, 'Ritchie', 'Pietro', 'Deshawn', 'ihane@example.org', 1, '$2y$12$LEa4FSa2yaW8TjnDpve7ceeU7EvtXQWN3yh2GNR6Wyurh9iFDDNo.', 'blank.png', NULL, NULL, NULL, 0, NULL, 1, '2025-06-20 05:22:18', 'BOgQSurylM', '2025-06-20 05:22:18', '2025-06-20 05:22:18'),
 (21, 'Lockman', 'Gregorio', NULL, 'omitchell@example.com', 1, '$2y$12$LEa4FSa2yaW8TjnDpve7ceeU7EvtXQWN3yh2GNR6Wyurh9iFDDNo.', 'blank.png', NULL, NULL, NULL, 0, NULL, 1, '2025-06-20 05:26:22', 'ZkPrAb9DPf', '2025-06-20 05:26:22', '2025-06-20 05:26:22'),
@@ -978,6 +1041,23 @@ ALTER TABLE `cache`
 --
 ALTER TABLE `cache_locks`
   ADD PRIMARY KEY (`key`);
+
+--
+-- Indexes for table `comment_likes`
+--
+ALTER TABLE `comment_likes`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `comment_likes_comment_id_foreign` (`comment_id`),
+  ADD KEY `comment_likes_user_id_foreign` (`user_id`);
+
+--
+-- Indexes for table `comment_replies`
+--
+ALTER TABLE `comment_replies`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `comment_replies_post_id_foreign` (`post_id`),
+  ADD KEY `comment_replies_user_id_foreign` (`user_id`),
+  ADD KEY `comment_replies_parent_id_foreign` (`parent_id`);
 
 --
 -- Indexes for table `credit_logs`
@@ -1185,6 +1265,18 @@ ALTER TABLE `badges`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT for table `comment_likes`
+--
+ALTER TABLE `comment_likes`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `comment_replies`
+--
+ALTER TABLE `comment_replies`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `credit_logs`
 --
 ALTER TABLE `credit_logs`
@@ -1200,7 +1292,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `failed_logins`
 --
 ALTER TABLE `failed_logins`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `forums`
@@ -1236,7 +1328,7 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `log_activities`
 --
 ALTER TABLE `log_activities`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `marketplace_items`
@@ -1254,25 +1346,25 @@ ALTER TABLE `marketplace_orders`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 
 --
 -- AUTO_INCREMENT for table `post_comments`
 --
 ALTER TABLE `post_comments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `post_likes`
 --
 ALTER TABLE `post_likes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `profiles`
@@ -1331,6 +1423,21 @@ ALTER TABLE `user_quests`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `comment_likes`
+--
+ALTER TABLE `comment_likes`
+  ADD CONSTRAINT `comment_likes_comment_id_foreign` FOREIGN KEY (`comment_id`) REFERENCES `post_comments` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `comment_likes_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `comment_replies`
+--
+ALTER TABLE `comment_replies`
+  ADD CONSTRAINT `comment_replies_parent_id_foreign` FOREIGN KEY (`parent_id`) REFERENCES `comment_replies` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `comment_replies_post_id_foreign` FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `comment_replies_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `credit_logs`

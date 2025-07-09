@@ -6,6 +6,7 @@ use App\Models\PostLike;
 use App\Models\PostComment;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\CommentLike;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\View;
 
@@ -90,6 +91,23 @@ class PostController extends Controller
             'html' => $html
         ]);
     }
-    
+
+
+    public function likeComment($id)
+    {
+        $comment = CommentLike::findOrFail($id);
+
+        $like = $comment->likes()->where('user_id', auth()->id())->first();
+
+        if ($like) {
+            $like->delete(); // toggle
+        } else {
+            $comment->likes()->create(['user_id' => auth()->id()]);
+        }
+
+        return response()->json([
+            'likeCount' => $comment->likes()->count()
+        ]);
+    }
 
 }

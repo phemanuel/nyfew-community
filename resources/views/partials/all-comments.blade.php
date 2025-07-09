@@ -13,5 +13,8 @@
                 <span>{{ $comment->created_at->diffForHumans() }}</span>
             </div>
         </div>
+        <a href="javascript:void(0)" class="like-comment-btn" data-comment-id="{{ $comment->id }}">
+            ❤️ <span class="like-count">{{ $comment->likes->count() }}</span>
+        </a>
     </div>
 @endforeach
