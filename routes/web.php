@@ -58,17 +58,16 @@ Route::post('/reset-password', [CustomForgotPasswordController::class, 'resetPas
     ->name('email-not-verify');
 
     //----Dashboard routes-----------------
-     Route::middleware('auth')->group(function () {
-     Route::get('user/feed', [DashboardController::class, 'index'])
+    Route::middleware('auth')->group(function () {
+    Route::get('user/feed', [DashboardController::class, 'index'])
         ->name('user-feed');
-     Route::post('/posts/comment', [PostController::class, 'commentPost'])
+    Route::post('/posts/comment/{post}', [PostController::class, 'commentPost'])
         ->name('post.comment');
-     Route::post('/posts/like', [PostController::class, 'likePost'])
+    Route::post('/posts/like/{post}', [PostController::class, 'likePost'])
         ->name('post.like');
-    Route::get('/posts/{id}/refresh', [PostController::class, 'refreshPostSections'])
-    ->name('post.refresh');
-    Route::get('/posts/{id}/comments', [PostController::class, 'loadAllComments'])
-    ->name('post.comments.all');
+    Route::post('/posts/store', [PostController::class, 'store'])
+    ->name('posts.store');
+    
 });
 
 // Route::get('/', function () {

@@ -46,10 +46,16 @@
     
                         <div class="header_widgets">
                             <!-- <a href="pages-upgrade.html" class="is_link">  Upgrade </a>    -->
-                            <a href="#" class="is_icon" uk-tooltip="title: Cart">
-                                <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg>
+                            <a href="#" id="goHome" class="is_icon" uk-tooltip="title: Home">
+                                <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10 2L2 9h2v9h5v-5h2v5h5V9h2L10 2z" />
+                                </svg>
                             </a>
-                            <div uk-drop="mode: click" class="header_dropdown dropdown_cart">
+                            
+                            <!-- <a href="#" class="is_icon" uk-tooltip="title: Cart">
+                                <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg>
+                            </a> -->
+                            <!-- <div uk-drop="mode: click" class="header_dropdown dropdown_cart">
                              
                                 <div class="drop_headline">
                                     <h4>  My Cart </h4>
@@ -102,7 +108,7 @@
                                     <p> Subtotal : $ 320 </p>
                                     <h1> Total :  <strong> $ 320</strong> </h1>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <a href="#" class="is_icon" uk-tooltip="title: Notifications">
                                 <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path></svg>
@@ -258,3 +264,9 @@
                 </div>
             </div>
         </header>
+        <script>
+    document.getElementById('goHome').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>

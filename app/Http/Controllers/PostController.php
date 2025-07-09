@@ -5,72 +5,55 @@ namespace App\Http\Controllers;
 use App\Models\PostLike;
 use App\Models\PostComment;
 use Illuminate\Http\Request;
+use App\Models\Post;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\View;
 
 
 class PostController extends Controller
 {
     //
 
-    public function likePost(Request $request)
+    public function likePost(Post $post)
     {
-        try {
-            $postId = $request->post_id;
-            $userId = auth()->id();
+        $user = auth()->user();
 
-            Log::info('Like request received', ['post_id' => $postId, 'user_id' => $userId]);
+        $like = $post->likes()->where('user_id', $user->id)->first();
 
-            $like = PostLike::where('post_id', $postId)->where('user_id', $userId)->first();
-
-            if ($like) {
-                $like->delete();
-                Log::info('Post unliked', ['post_id' => $postId, 'user_id' => $userId]);
-                return response()->json(['status' => 'unliked']);
-            } else {
-                PostLike::create(['post_id' => $postId, 'user_id' => $userId]);
-                Log::info('Post liked', ['post_id' => $postId, 'user_id' => $userId]);
-                return response()->json(['status' => 'liked']);
-            }
-        } catch (\Exception $e) {
-            Log::error('Error in likePost', [
-                'error' => $e->getMessage(),
-                'post_id' => $request->post_id,
-                'user_id' => auth()->id(),
-            ]);
-            return response()->json(['status' => 'error', 'message' => 'Something went wrong.']);
+        if ($like) {
+            $like->delete(); // Unlike
+        } else {
+            $post->likes()->create(['user_id' => $user->id]);
         }
+
+        $post->load('likes.user');
+
+        $html = view('partials.likes-section', ['post' => $post])->render();
+
+        return response()->json([
+            'likeCount' => $post->likes->count(),
+            'updatedLikesHtml' => $html
+        ]);
     }
 
-    public function commentPost(Request $request)
+    public function commentPost(Request $request, Post $post)
     {
-        try {
-            $request->validate(['comment' => 'required']);
+        $request->validate([
+            'comment' => 'required|string|max:500'
+        ]);
 
-            $comment = PostComment::create([
-                'post_id' => $request->post_id,
-                'user_id' => auth()->id(),
-                'comment' => $request->comment
-            ]);
+        $post->comments()->create([
+            'user_id' => auth()->id(),
+            'comment' => $request->comment
+        ]);
 
-            Log::info('Comment added', [
-                'post_id' => $request->post_id,
-                'user_id' => auth()->id(),
-                'comment' => $request->comment
-            ]);
+        $post->load('comments.user');
 
-            return response()->json([
-                'status' => 'success',
-                'comment' => $comment->comment,
-                'user' => $comment->user->first_name
-            ]);
-        } catch (\Exception $e) {
-            Log::error('Error in commentPost', [
-                'error' => $e->getMessage(),
-                'post_id' => $request->post_id,
-                'user_id' => auth()->id(),
-            ]);
-            return response()->json(['status' => 'error', 'message' => 'Failed to add comment.']);
-        }
+        $html = view('partials.comments-section', ['post' => $post])->render();
+
+        return response()->json([
+            'updatedCommentsHtml' => $html
+        ]);
     }
 
     public function refreshPostSections($postId)
