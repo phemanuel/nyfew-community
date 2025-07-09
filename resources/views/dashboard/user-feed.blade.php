@@ -129,6 +129,7 @@
                             <a href="#" class="bg-white dark:bg-gray-900 font-semibold my-3 px-6 py-2 rounded-full shadow-md dark:bg-gray-800 dark:text-white">
                                 Load more ..</a>
                         </div>
+                        
                 
                     </div>
                     <div class="lg:w-72 w-full">
@@ -959,6 +960,7 @@ $(document).ready(function () {
                 },
                 success: function (response) {
                     $(this).val(''); // Clear input
+                    $('.comment-count[data-post-id="' + postId + '"]').text(response.commentCount);
                     $('#comments-section-' + postId).html(response.updatedCommentsHtml);
                 }.bind(this),
                 error: function () {
@@ -1005,6 +1007,26 @@ $(document).ready(function () {
             });
         });
     });
+</script>
+<script>
+    function loadCommentsModal(postId) {
+        $.ajax({
+            url: '/posts/comments/' + postId,
+            method: 'GET',
+            success: function (response) {
+                $('#modal-comment-count').text(response.commentCount);
+                $('#modal-comments-body').html(response.html);
+                $('#comments-modal').removeClass('hidden');
+            },
+            error: function () {
+                alert("Failed to load comments.");
+            }
+        });
+    }
+
+    function closeCommentsModal() {
+        $('#comments-modal').addClass('hidden');
+    }
 </script>
 
 

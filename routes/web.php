@@ -67,6 +67,8 @@ Route::post('/reset-password', [CustomForgotPasswordController::class, 'resetPas
         ->name('post.like');
     Route::post('/posts/store', [PostController::class, 'store'])
     ->name('posts.store');
+    Route::get('/posts/comments/{post}', [PostController::class, 'loadAllComments'])
+    ->name('posts.comment');
     
 });
 

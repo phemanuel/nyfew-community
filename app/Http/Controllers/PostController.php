@@ -52,6 +52,7 @@ class PostController extends Controller
         $html = view('partials.comments-section', ['post' => $post])->render();
 
         return response()->json([
+            'commentCount' => $post->comments->count(),
             'updatedCommentsHtml' => $html
         ]);
     }
@@ -75,5 +76,20 @@ class PostController extends Controller
             'html' => $html,
         ]);
     }
+
+    public function loadAllComments(Post $post)
+    {
+        $post->load(['comments.user' => function ($q) {
+            $q->orderBy('created_at', 'desc');
+        }]);
+
+        $html = view('partials.all-comments', ['post' => $post])->render();
+
+        return response()->json([
+            'commentCount' => $post->comments->count(),
+            'html' => $html
+        ]);
+    }
+    
 
 }
