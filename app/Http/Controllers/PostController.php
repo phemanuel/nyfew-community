@@ -56,27 +56,23 @@ class PostController extends Controller
         ]);
     }
 
-    public function refreshPostSections($postId)
+    public function store(Request $request)
     {
-        $post = Post::with(['likes.user', 'comments.user'])->findOrFail($postId);
-
-        $sections = view('user-feed', compact('post'))->renderSections();
-
-        return response()->json([
-            'likes' => $sections["likesSection-{$postId}"] ?? '',
-            'comments' => $sections["commentsSection-{$postId}"] ?? '',
+        $request->validate([
+            'content' => 'required|string|max:1000',
         ]);
-    }
 
-    public function loadAllComments($id)
-    {
-        $post = Post::with(['comments.user'])->findOrFail($id);
+        $post = new Post();
+        $post->user_id = auth()->id();
+        $post->content = $request->input('content');
+        $post->save();
 
-        $view = view('partials.comments', compact('post'))->render();
+        // Render the post partial to HTML
+        $html = view('partials.single-post', compact('post'))->render();
 
         return response()->json([
-            'status' => 'success',
-            'html' => $view,
+            'message' => 'Post created successfully',
+            'html' => $html,
         ]);
     }
 
